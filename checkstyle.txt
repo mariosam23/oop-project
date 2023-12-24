@@ -1,0 +1,5 @@
+Starting audit...
+[ERROR] C:\Users\sampe\Desktop\oop-project\oop-project-2023\etapa3\.\src\app\searchBar\filters\FilterUtils.java:161:51: Parameter entries should be final. [FinalParameters]
+[ERROR] C:\Users\sampe\Desktop\oop-project\oop-project-2023\etapa3\.\src\app\searchBar\SearchStrategyFactory.java:20:48: Name 'instance' must match pattern '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'. [ConstantName]
+Audit done.
+Checkstyle ends with 2 errors.
