@@ -17,7 +17,7 @@ import lombok.Getter;
 public final class SearchStrategyFactory {
     private String type;
     @Getter
-    private static final SearchStrategyFactory instance = new SearchStrategyFactory();
+    private static SearchStrategyFactory instance = new SearchStrategyFactory();
 
     private SearchStrategyFactory() { }
 

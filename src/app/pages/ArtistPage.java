@@ -4,6 +4,7 @@ import app.audio.Collections.Album;
 import app.user.Artist;
 import app.pages.pageContent.Event;
 import app.pages.pageContent.Merchandise;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  */
 public final class ArtistPage implements Page {
     private List<Album> albums;
+    @Getter
     private List<Merchandise> merch;
     private List<Event> events;
 

@@ -4,6 +4,7 @@ import app.audio.Collections.AudioCollection;
 import app.audio.Files.AudioFile;
 import app.utils.Enums;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +19,7 @@ public class PlayerSource {
     private Enums.PlayerSourceType type;
     @Getter
     private AudioCollection audioCollection;
-    @Getter
+    @Setter @Getter
     private AudioFile audioFile;
     @Getter
     private int index;
@@ -214,14 +215,4 @@ public class PlayerSource {
     private void updateAudioFile() {
         setAudioFile(audioCollection.getTrackByIndex(index));
     }
-
-    /**
-     * Sets audio file.
-     *
-     * @param audioFile the audio file
-     */
-    public void setAudioFile(final AudioFile audioFile) {
-        this.audioFile = audioFile;
-    }
-
 }

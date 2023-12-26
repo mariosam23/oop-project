@@ -8,6 +8,7 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * The type Player.
@@ -21,8 +22,8 @@ public final class Player {
     @Getter
     private String type;
     private final int skipTime = 90;
-
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
+    private Queue<AudioFile> queue;
 
 
     /**

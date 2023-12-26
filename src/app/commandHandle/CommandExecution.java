@@ -12,14 +12,14 @@ import java.util.Map;
  */
 @Getter
 public final class CommandExecution {
-    private final Map<String, CommandType> commandMap = new HashMap<>();
+    private final Map<String, CommandTypes> commandMap = new HashMap<>();
 
     public CommandExecution() {
         addCommands();
     }
 
     private void addCommands() {
-        for (CommandType command : CommandType.values()) {
+        for (CommandTypes command : CommandTypes.values()) {
             String commandName = enumNameToCamelCase(command.name());
             commandMap.put(commandName, command);
         }
@@ -31,7 +31,7 @@ public final class CommandExecution {
      * @return the result of the command
      */
     public ObjectNode executeCommand(final CommandInput commandInput) {
-        CommandType command = commandMap.get(commandInput.getCommand());
+        CommandTypes command = commandMap.get(commandInput.getCommand());
         if (command != null) {
             return command.execute(commandInput);
         }

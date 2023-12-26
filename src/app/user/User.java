@@ -17,7 +17,9 @@ import app.utils.Enums;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -32,7 +34,8 @@ public final class User extends UserAbstract {
     private boolean online;
     private SearchStrategy searchBar;
     private boolean lastSearched;
-    private Page currentPage;
+    private Deque<Page> backHistory = new ArrayDeque<>();
+    private Deque<Page> forwardHistory = new ArrayDeque<>();
 
     /**
      * Instantiates a new User.
@@ -50,7 +53,7 @@ public final class User extends UserAbstract {
         searchBar = null;
         lastSearched = false;
         online = true;
-        currentPage = new HomePage(this);
+        backHistory.push(new HomePage(this));
     }
 
     @Override
@@ -119,7 +122,7 @@ public final class User extends UserAbstract {
                 return "The selected ID is too high.";
             }
 
-            currentPage = selected.getPage();
+            backHistory.push(selected.getPage());
             return "Successfully selected %s's page.".formatted(selected.getUsername());
         } else {
             LibraryEntry selected = (LibraryEntry) searchBar.select(itemNumber);
@@ -579,5 +582,39 @@ public final class User extends UserAbstract {
         }
 
         player.simulatePlayer(time);
+    }
+
+    /**
+     * Gets current page.
+     *
+     * @return the current page
+     */
+    public Page getCurrentPage() {
+        return backHistory.peek();
+    }
+
+    /**
+     * Sets current page.
+     */
+    public void setCurrentPage(final Page page) {
+        backHistory.push(page);
+    }
+
+    public String previousPage() {
+        if (backHistory.size() > 1) {
+            forwardHistory.push(backHistory.pop());
+            return "The user " + getUsername() + " has navigated successfully to the previous page.";
+        } else {
+            return "There are no pages left to go back.";
+        }
+    }
+
+    public String nextPage() {
+        if (!forwardHistory.isEmpty()) {
+            backHistory.push(forwardHistory.pop());
+            return "The user " + getUsername() + " has navigated successfully to the next page.";
+        } else {
+            return "There are no pages left to go forward.";
+        }
     }
 }

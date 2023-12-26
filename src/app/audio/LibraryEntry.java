@@ -21,6 +21,13 @@ public abstract class LibraryEntry {
     }
 
     /**
+     * Gets owner.
+     *
+     * @return the owner
+     */
+    public abstract String getOwner();
+
+    /**
      * Matches name boolean.
      *
      * @param nameFilter the name

@@ -424,6 +424,11 @@ public final class CommandRunner {
         return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 
+    public static ObjectNode removeMerch(final CommandInput commandInput) {
+        String message = admin.removeMerch(commandInput);
+        return new OutputBuilder<>(commandInput).withMessage(message).build();
+    }
+
     /**
      * Add announcement object node.
      *
@@ -534,5 +539,19 @@ public final class CommandRunner {
     public static ObjectNode getTop5Playlists(final CommandInput commandInput) {
         List<String> playlists = admin.getTop5Playlists();
         return new OutputBuilder<String>(commandInput).withResult(playlists).build();
+    }
+
+    public static ObjectNode previousPage(final CommandInput commandInput) {
+        User user = admin.getUser(commandInput.getUsername());
+        String message = user.previousPage();
+
+        return new OutputBuilder<>(commandInput).withMessage(message).build();
+    }
+
+    public static ObjectNode nextPage(final CommandInput commandInput) {
+        User user = admin.getUser(commandInput.getUsername());
+        String message = user.nextPage();
+
+        return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 }

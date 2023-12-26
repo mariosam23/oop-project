@@ -44,6 +44,11 @@ public final class Song extends AudioFile {
     }
 
     @Override
+    public String getOwner() {
+        return artist;
+    }
+
+    @Override
     public boolean matchesAlbum(final String albumName) {
         return this.getAlbum().equalsIgnoreCase(albumName);
     }

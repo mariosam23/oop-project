@@ -193,7 +193,7 @@ public final class Admin {
      */
     public Host getHost(final String username) {
         return hosts.stream()
-                .filter(artist -> artist.getUsername().equals(username))
+                .filter(host -> host.getUsername().equals(username))
                 .findFirst()
                 .orElse(null);
     }
@@ -625,6 +625,31 @@ public final class Admin {
         return "%s has added new merchandise successfully.".formatted(username);
     }
 
+    public String removeMerch(final CommandInput command) {
+        String username = command.getUsername();
+        String merchName = command.getName();
+        UserAbstract currentUser = getAbstractUser(username);
+
+        if (currentUser == null) {
+            return "The username %s doesn't exist.".formatted(username);
+        } else if (!currentUser.userType().equals("artist")) {
+            return "%s is not an artist.".formatted(username);
+        }
+
+        Artist currentArtist = (Artist) currentUser;
+        Merchandise searchedMerch = currentArtist.getMerch().stream()
+                .filter(merch -> merch.getName().equals(merchName))
+                .findFirst()
+                .orElse(null);
+
+        if (searchedMerch == null) {
+            return "%s doesn't have merchandise with the given name.".formatted(username);
+        }
+
+        currentArtist.getMerch().remove(searchedMerch);
+        return "%s deleted the merchandise successfully.".formatted(username);
+    }
+
     /**
      * Add announcement string.
      *
@@ -709,11 +734,22 @@ public final class Admin {
         switch (nextPage) {
             case "Home" -> user.setCurrentPage(new HomePage(user));
             case "LikedContent" -> user.setCurrentPage(new LikedContentPage(user));
+            case "Artist", "Host" -> {
+                String owner = getCurrentOwner(username);
+                UserAbstract ownerUser = getAbstractUser(owner);
+
+                if (ownerUser.userType().equals("artist")) {
+                    user.setCurrentPage(((Artist) ownerUser).getPage());
+                } else {
+                    user.setCurrentPage(((Host) ownerUser).getPage());
+                }
+            }
             default -> {
                 return "%s is trying to access a non-existent page.".formatted(username);
             }
         }
 
+        user.getForwardHistory().clear();
         return "%s accessed %s successfully.".formatted(username, nextPage);
     }
 
@@ -769,6 +805,20 @@ public final class Admin {
      */
     public List<String> getOnlineUsers() {
         return users.stream().filter(User::isOnline).map(User::getUsername).toList();
+    }
+
+    private String getCurrentOwner(final String normalUser) {
+        User user = getUser(normalUser);
+        AudioCollection currentCollection = user.getPlayer().getCurrentAudioCollection();
+        AudioFile currentFile = user.getPlayer().getCurrentAudioFile();
+
+        if (currentCollection != null) {
+            return currentCollection.getOwner();
+        } else if (currentFile != null) {
+            return currentFile.getOwner();
+        }
+
+        return null;
     }
 
     private Stream<AudioCollection> getAudioCollectionsStream() {
