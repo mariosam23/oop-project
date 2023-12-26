@@ -9,9 +9,10 @@ import java.util.List;
 /**
  * The type Host page.
  */
-public final class HostPage implements Page {
+public final class HostPage extends Page {
     private List<Podcast> podcasts;
     private List<Announcement> announcements;
+    private String owner;
 
     /**
      * Instantiates a new Host page.
@@ -21,6 +22,7 @@ public final class HostPage implements Page {
     public HostPage(final Host host) {
         podcasts = host.getPodcasts();
         announcements = host.getAnnouncements();
+        owner = host.getUsername();
     }
 
     @Override
@@ -34,5 +36,15 @@ public final class HostPage implements Page {
                           announcements.stream().map(announcement -> "%s:\n\t%s\n"
                           .formatted(announcement.getName(), announcement.getDescription()))
                           .toList());
+    }
+
+    @Override
+    public String pageType() {
+        return "Host";
+    }
+
+    @Override
+    public String pageOwner() {
+        return owner;
     }
 }

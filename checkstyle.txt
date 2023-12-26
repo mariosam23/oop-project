@@ -1,10 +1,16 @@
 Starting audit...
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\Admin.java:785:36: Parameter normalUser should be final. [FinalParameters]
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:539:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:546:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\Admin.java:14:16: Using the '.*' form of import should be avoided - app.user.*. [AvoidStarImport]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\Admin.java:630:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\Admin.java:915:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\Admin.java:922:38: 'typecast' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:428:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:545:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:552:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:559:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\commandHandle\CommandRunner.java:565:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\searchBar\filters\FilterUtils.java:161:51: Parameter entries should be final. [FinalParameters]
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:603:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:606: Line is longer than 100 characters (found 101). [LineLength]
-[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:612:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:604:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:607: Line is longer than 100 characters (found 101). [LineLength]
+[ERROR] C:\Users\sampe\Desktop\oop-project\.\src\app\user\User.java:613:5: Missing a Javadoc comment. [MissingJavadocMethod]
 Audit done.
-Checkstyle ends with 7 errors.
+Checkstyle ends with 13 errors.

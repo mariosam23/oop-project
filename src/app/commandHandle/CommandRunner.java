@@ -8,6 +8,7 @@ import app.player.PlayerStats;
 import app.searchBar.filters.Filters;
 import app.user.Artist;
 import app.user.Host;
+import app.user.Notification;
 import app.user.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -553,5 +554,21 @@ public final class CommandRunner {
         String message = user.nextPage();
 
         return new OutputBuilder<>(commandInput).withMessage(message).build();
+    }
+
+    public static ObjectNode subscribe(final CommandInput commandInput) {
+        String message = admin.subscribe(commandInput);
+
+        return new OutputBuilder<>(commandInput).withMessage(message).build();
+    }
+
+    public static ObjectNode getNotifications(final CommandInput commandInput) {
+        User user = admin.getUser(commandInput.getUsername());
+        List<Notification> notifications = new ArrayList<>(user.getNotifications());
+        user.getNotifications().clear();
+
+        return new OutputBuilder<Notification>(commandInput)
+                .withResultFieldName("notifications")
+                .withResult(notifications).build();
     }
 }

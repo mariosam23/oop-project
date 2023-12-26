@@ -265,6 +265,18 @@ public enum CommandTypes {
         public ObjectNode execute(final CommandInput command) {
             return CommandRunner.previousPage(command);
         }
+    },
+    SUBSCRIBE {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.subscribe(command);
+        }
+    },
+    GET_NOTIFICATIONS {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.getNotifications(command);
+        }
     };
 
     /**

@@ -36,6 +36,7 @@ public final class User extends UserAbstract {
     private boolean lastSearched;
     private Deque<Page> backHistory = new ArrayDeque<>();
     private Deque<Page> forwardHistory = new ArrayDeque<>();
+    private List<Notification> notifications = new ArrayList<>();
 
     /**
      * Instantiates a new User.

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * The type Liked content page.
  */
-public final class LikedContentPage implements Page {
+public final class LikedContentPage extends Page {
     /**
      * The Liked songs.
      */
@@ -18,6 +18,7 @@ public final class LikedContentPage implements Page {
      * The Followed playlists.
      */
     private List<Playlist> followedPlaylists;
+    private String owner;
 
     /**
      * Instantiates a new Liked content page.
@@ -27,6 +28,7 @@ public final class LikedContentPage implements Page {
     public LikedContentPage(final User user) {
         likedSongs = user.getLikedSongs();
         followedPlaylists = user.getFollowedPlaylists();
+        owner = user.getUsername();
     }
 
     @Override
@@ -36,5 +38,15 @@ public final class LikedContentPage implements Page {
                           .formatted(song.getName(), song.getArtist())).toList(),
                           followedPlaylists.stream().map(playlist -> "%s - %s"
                           .formatted(playlist.getName(), playlist.getOwner())).toList());
+    }
+
+    @Override
+    public String pageType() {
+        return "LikedContent";
+    }
+
+    @Override
+    public String pageOwner() {
+        return owner;
     }
 }

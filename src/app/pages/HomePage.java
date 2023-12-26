@@ -10,9 +10,10 @@ import java.util.List;
 /**
  * The type Home page.
  */
-public final class HomePage implements Page {
+public final class HomePage extends Page {
     private List<Song> likedSongs;
     private List<Playlist> followedPlaylists;
+    private String owner;
     private final int limit = 5;
 
     /**
@@ -23,6 +24,7 @@ public final class HomePage implements Page {
     public HomePage(final User user) {
         likedSongs = user.getLikedSongs();
         followedPlaylists = user.getFollowedPlaylists();
+        owner = user.getUsername();
     }
 
     @Override
@@ -38,5 +40,15 @@ public final class HomePage implements Page {
                                   - o1.getSongs().stream().map(Song::getLikes).reduce(Integer::sum)
                                   .orElse(0)).limit(limit).map(Playlist::getName)
                           .toList());
+    }
+
+    @Override
+    public String pageType() {
+        return "Home";
+    }
+
+    @Override
+    public String pageOwner() {
+        return owner;
     }
 }

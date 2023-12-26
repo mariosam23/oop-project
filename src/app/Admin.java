@@ -11,12 +11,9 @@ import app.pages.HomePage;
 import app.pages.LikedContentPage;
 import app.player.Player;
 import app.pages.pageContent.Announcement;
-import app.user.Artist;
+import app.user.*;
 import app.pages.pageContent.Event;
-import app.user.Host;
 import app.pages.pageContent.Merchandise;
-import app.user.User;
-import app.user.UserAbstract;
 import app.utils.Constants;
 import fileio.input.LibraryInput;
 import fileio.input.UserInput;
@@ -378,6 +375,8 @@ public final class Admin {
                                                 username,
                                                 newSongs,
                                                 commandInput.getReleaseYear()));
+
+        notify(currentArtist, "New Album", "New Album from " + username + ".");
         return "%s has added new album successfully.".formatted(username);
     }
 
@@ -468,6 +467,7 @@ public final class Admin {
         currentHost.getPodcasts().add(newPodcast);
         podcasts.add(newPodcast);
 
+        notify(currentHost, "New Podcast", "New Podcast from " + username + ".");
         return "%s has added new podcast successfully.".formatted(username);
     }
 
@@ -622,6 +622,8 @@ public final class Admin {
         currentArtist.getMerch().add(new Merchandise(commandInput.getName(),
                                                      commandInput.getDescription(),
                                                      commandInput.getPrice()));
+
+        notify(currentArtist, "New Merchandise", "New Merchandise from " + username + ".");
         return "%s has added new merchandise successfully.".formatted(username);
     }
 
@@ -677,6 +679,8 @@ public final class Admin {
 
         currentHost.getAnnouncements().add(new Announcement(announcementName,
                                                             announcementDescription));
+
+        notify(currentHost, "New Announcement", "New Announcement from " + username + ".");
         return "%s has successfully added new announcement.".formatted(username);
     }
 
@@ -906,6 +910,40 @@ public final class Admin {
             count++;
         }
         return topPlaylists;
+    }
+
+    public String subscribe(final CommandInput command) {
+        UserAbstract currentUser = getAbstractUser(command.getUsername());
+        if (currentUser == null) {
+            return "The username %s doesn't exist.".formatted(command.getUsername());
+        }
+
+        String pageType = ((User) currentUser).getCurrentPage().pageType();
+        String pageOwnerName = ((User)currentUser).getCurrentPage().pageOwner();
+
+        if (!pageType.equals("Artist") && !pageType.equals("Host")) {
+            return "To subscribe you need to be on the page of an artist or host.";
+        }
+
+        ContentCreator pageOwner = (ContentCreator) getAbstractUser(pageOwnerName);
+
+        if (pageOwner.getSubscribers().contains(command.getUsername())) {
+            pageOwner.getSubscribers().remove(command.getUsername());
+            return command.getUsername() + " unsubscribed from "
+                    + pageOwner.getUsername() + " successfully.";
+        } else {
+            pageOwner.getSubscribers().add(command.getUsername());
+            return command.getUsername() + " subscribed to "
+                    + pageOwner.getUsername() + " successfully.";
+        }
+    }
+
+    private void notify(final ContentCreator creator, final String name, final String description) {
+        for (User user : users) {
+            if (creator.getSubscribers().contains(user.getUsername())) {
+                user.getNotifications().add(new Notification(name, description));
+            }
+        }
     }
 
     /**

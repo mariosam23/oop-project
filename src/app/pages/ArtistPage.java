@@ -11,11 +11,12 @@ import java.util.List;
 /**
  * The type Artist page.
  */
-public final class ArtistPage implements Page {
+public final class ArtistPage extends Page {
     private List<Album> albums;
     @Getter
     private List<Merchandise> merch;
     private List<Event> events;
+    private String owner;
 
     /**
      * Instantiates a new Artist page.
@@ -26,6 +27,7 @@ public final class ArtistPage implements Page {
         albums = artist.getAlbums();
         merch = artist.getMerch();
         events = artist.getEvents();
+        owner = artist.getUsername();
     }
 
     @Override
@@ -42,5 +44,15 @@ public final class ArtistPage implements Page {
                                             event.getDate(),
                                             event.getDescription()))
                                  .toList());
+    }
+
+    @Override
+    public String pageType() {
+        return "Artist";
+    }
+
+    @Override
+    public String pageOwner() {
+        return owner;
     }
 }
