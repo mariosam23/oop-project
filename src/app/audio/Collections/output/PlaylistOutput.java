@@ -1,5 +1,6 @@
-package app.audio.Collections;
+package app.audio.Collections.output;
 
+import app.audio.Collections.Playlist;
 import app.utils.Enums;
 import lombok.Getter;
 

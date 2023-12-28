@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.audio.Collections.Album;
-import app.audio.Collections.AlbumOutput;
+import app.audio.Collections.output.AlbumOutput;
 import app.audio.Files.Song;
 import app.pages.ArtistPage;
 import app.pages.pageContent.Event;

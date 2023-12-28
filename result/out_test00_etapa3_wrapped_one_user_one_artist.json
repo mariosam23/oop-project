@@ -430,4 +430,14 @@
   "user" : "alice22",
   "timestamp" : 12393,
   "message" : "Playback loaded successfully."
-}, null, null ]
+}, null, null, {
+  "command" : "endProgram",
+  "result" : {
+    "Pink Floyd" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
+} ]

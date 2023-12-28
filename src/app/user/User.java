@@ -1,8 +1,11 @@
 package app.user;
 
+import app.Admin;
+import app.analytics.monetization.ArtistRevenue;
+import app.analytics.statistics.ArtistStats;
 import app.audio.Collections.AudioCollection;
 import app.audio.Collections.Playlist;
-import app.audio.Collections.PlaylistOutput;
+import app.audio.Collections.output.PlaylistOutput;
 import app.audio.Files.AudioFile;
 import app.audio.Files.Song;
 import app.audio.LibraryEntry;
@@ -153,6 +156,9 @@ public final class User extends UserAbstract {
         if (!searchBar.getLastSearchType().equals("song")
             && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
+        } else if (searchBar.getLastSearchType().equals("song")){
+            String artistName = ((Song) searchBar.getLastSelected()).getArtist();
+            Admin.getInstance().getUserInteractions().putIfAbsent(artistName, new ArtistRevenue());
         }
 
         player.setSource((LibraryEntry) searchBar.getLastSelected(),
@@ -160,7 +166,6 @@ public final class User extends UserAbstract {
         searchBar.clearSelection();
 
         player.pause();
-
         return "Playback loaded successfully.";
     }
 

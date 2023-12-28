@@ -1,5 +1,6 @@
 package app;
 
+import app.analytics.monetization.ArtistRevenue;
 import app.audio.Collections.Album;
 import app.audio.Collections.AudioCollection;
 import app.audio.Collections.Playlist;
@@ -22,16 +23,9 @@ import fileio.input.PodcastInput;
 import fileio.input.EpisodeInput;
 import fileio.input.CommandInput;
 import lombok.Getter;
+import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -48,6 +42,8 @@ public final class Admin {
     private List<Podcast> podcasts = new ArrayList<>();
     private int timestamp = 0;
     private static Admin instance;
+    @Getter @Setter
+    private Map<String, ArtistRevenue> userInteractions = new HashMap<>();
 
     private Admin() {
     }
@@ -95,7 +91,8 @@ public final class Admin {
             for (EpisodeInput episodeInput : podcastInput.getEpisodes()) {
                 episodes.add(new Episode(episodeInput.getName(),
                                          episodeInput.getDuration(),
-                                         episodeInput.getDescription()));
+                                         episodeInput.getDescription(),
+                                         podcastInput.getOwner()));
             }
             podcasts.add(new Podcast(podcastInput.getName(), podcastInput.getOwner(), episodes));
         }
@@ -225,18 +222,54 @@ public final class Admin {
                        .findFirst()
                        .orElse(null);
     }
+    
+    private String validateArtistUser(final String username) {
+        UserAbstract currentUser = getAbstractUser(username);
+
+        if (currentUser == null) {
+            return "The username %s doesn't exist.".formatted(username);
+        } else if (!currentUser.userType().equals("artist")) {
+            return "%s is not an artist.".formatted(username);
+        }
+
+        return null;
+    }
+    
+    private String validateHostUser(final String username) {
+        UserAbstract currentUser = getAbstractUser(username);
+
+        if (currentUser == null) {
+            return "The username %s doesn't exist.".formatted(username);
+        } else if (!currentUser.userType().equals("host")) {
+            return "%s is not a host.".formatted(username);
+        }
+
+        return null;
+    }
+    
+    private String validateNormalUser(final String username) {
+        UserAbstract currentUser = getAbstractUser(username);
+
+        if (currentUser == null) {
+            return "The username %s doesn't exist.".formatted(username);
+        } else if (!currentUser.userType().equals("user")) {
+            return "%s is not a normal user.".formatted(username);
+        }
+
+        return null;
+    }
 
     /**
      * Add new user string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addNewUser(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String type = commandInput.getType();
-        int age = commandInput.getAge();
-        String city = commandInput.getCity();
+    public String addNewUser(final CommandInput command) {
+        String username = command.getUsername();
+        String type = command.getType();
+        int age = command.getAge();
+        String city = command.getCity();
 
         UserAbstract currentUser = getAbstractUser(username);
         if (currentUser != null) {
@@ -332,27 +365,24 @@ public final class Admin {
     /**
      * Add album string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addAlbum(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String albumName = commandInput.getName();
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+    public String addAlbum(final CommandInput command) {
+        String username = command.getUsername();
+        String albumName = command.getName();
+        
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         if (currentArtist.getAlbums().stream()
             .anyMatch(album -> album.getName().equals(albumName))) {
             return "%s has another album with the same name.".formatted(username);
         }
 
-        List<Song> newSongs = commandInput.getSongs().stream()
+        List<Song> newSongs = command.getSongs().stream()
                                        .map(songInput -> new Song(songInput.getName(),
                                                                   songInput.getDuration(),
                                                                   albumName,
@@ -371,10 +401,10 @@ public final class Admin {
 
         songs.addAll(newSongs);
         currentArtist.getAlbums().add(new Album(albumName,
-                                                commandInput.getDescription(),
+                                                command.getDescription(),
                                                 username,
                                                 newSongs,
-                                                commandInput.getReleaseYear()));
+                                                command.getReleaseYear()));
 
         notify(currentArtist, "New Album", "New Album from " + username + ".");
         return "%s has added new album successfully.".formatted(username);
@@ -383,22 +413,18 @@ public final class Admin {
     /**
      * Remove album string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String removeAlbum(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String albumName = commandInput.getName();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+    public String removeAlbum(final CommandInput command) {
+        String username = command.getUsername();
+        String albumName = command.getName();
+        
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         Album searchedAlbum = currentArtist.getAlbum(albumName);
         if (searchedAlbum == null) {
             return "%s doesn't have an album with the given name.".formatted(username);
@@ -430,31 +456,28 @@ public final class Admin {
     /**
      * Add podcast string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addPodcast(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String podcastName = commandInput.getName();
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("host")) {
-            return "%s is not a host.".formatted(username);
+    public String addPodcast(final CommandInput command) {
+        String username = command.getUsername();
+        String podcastName = command.getName();
+        if (validateHostUser(username) != null) {
+            return validateHostUser(username);
         }
 
-        Host currentHost = (Host) currentUser;
+        Host currentHost = getHost(username);
         if (currentHost.getPodcasts().stream()
             .anyMatch(podcast -> podcast.getName().equals(podcastName))) {
             return "%s has another podcast with the same name.".formatted(username);
         }
 
-        List<Episode> episodes = commandInput.getEpisodes().stream()
+        List<Episode> episodes = command.getEpisodes().stream()
                                              .map(episodeInput ->
                                                      new Episode(episodeInput.getName(),
                                                                  episodeInput.getDuration(),
-                                                                 episodeInput.getDescription()))
+                                                                 episodeInput.getDescription(),
+                                                                 username))
                                              .collect(Collectors.toList());
 
         Set<String> episodeNames = new HashSet<>();
@@ -475,21 +498,18 @@ public final class Admin {
     /**
      * Remove podcast string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String removePodcast(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String podcastName = commandInput.getName();
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("host")) {
-            return "%s is not a host.".formatted(username);
+    public String removePodcast(final CommandInput command) {
+        String username = command.getUsername();
+        String podcastName = command.getName();
+        
+        if (validateHostUser(username) != null) {
+            return validateHostUser(username);
         }
 
-        Host currentHost = (Host) currentUser;
+        Host currentHost = getHost(username);
         Podcast searchedPodcast = currentHost.getPodcast(podcastName);
 
         if (searchedPodcast == null) {
@@ -508,57 +528,51 @@ public final class Admin {
     /**
      * Add event string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addEvent(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String eventName = commandInput.getName();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+    public String addEvent(final CommandInput command) {
+        String username = command.getUsername();
+        String eventName = command.getName();
+        
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         if (currentArtist.getEvent(eventName) != null) {
             return "%s has another event with the same name.".formatted(username);
         }
 
-        String date = commandInput.getDate();
+        String date = command.getDate();
 
         if (!checkDate(date)) {
             return "Event for %s does not have a valid date.".formatted(username);
         }
 
         currentArtist.getEvents().add(new Event(eventName,
-                                                commandInput.getDescription(),
-                                                commandInput.getDate()));
+                                                command.getDescription(),
+                                                command.getDate()));
+
+        notify(currentArtist, "New Event", "New Event from " + username + ".");
         return "%s has added new event successfully.".formatted(username);
     }
 
     /**
      * Remove event string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String removeEvent(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String eventName = commandInput.getName();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+    public String removeEvent(final CommandInput command) {
+        String username = command.getUsername();
+        String eventName = command.getName();
+        
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         Event searchedEvent = currentArtist.getEvent(eventName);
         if (searchedEvent == null) {
             return "%s doesn't have an event with the given name.".formatted(username);
@@ -598,30 +612,27 @@ public final class Admin {
     /**
      * Add merch string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addMerch(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        UserAbstract currentUser = getAbstractUser(username);
+    public String addMerch(final CommandInput command) {
+        String username = command.getUsername();
 
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         if (currentArtist.getMerch().stream()
-                         .anyMatch(merch -> merch.getName().equals(commandInput.getName()))) {
+                         .anyMatch(merch -> merch.getName().equals(command.getName()))) {
             return "%s has merchandise with the same name.".formatted(currentArtist.getUsername());
-        } else if (commandInput.getPrice() < 0) {
+        } else if (command.getPrice() < 0) {
             return "Price for merchandise can not be negative.";
         }
 
-        currentArtist.getMerch().add(new Merchandise(commandInput.getName(),
-                                                     commandInput.getDescription(),
-                                                     commandInput.getPrice()));
+        currentArtist.getMerch().add(new Merchandise(command.getName(),
+                                                     command.getDescription(),
+                                                     command.getPrice()));
 
         notify(currentArtist, "New Merchandise", "New Merchandise from " + username + ".");
         return "%s has added new merchandise successfully.".formatted(username);
@@ -630,15 +641,12 @@ public final class Admin {
     public String removeMerch(final CommandInput command) {
         String username = command.getUsername();
         String merchName = command.getName();
-        UserAbstract currentUser = getAbstractUser(username);
 
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("artist")) {
-            return "%s is not an artist.".formatted(username);
+        if (validateArtistUser(username) != null) {
+            return validateArtistUser(username);
         }
 
-        Artist currentArtist = (Artist) currentUser;
+        Artist currentArtist = getArtist(username);
         Merchandise searchedMerch = currentArtist.getMerch().stream()
                 .filter(merch -> merch.getName().equals(merchName))
                 .findFirst()
@@ -655,23 +663,19 @@ public final class Admin {
     /**
      * Add announcement string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String addAnnouncement(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String announcementName = commandInput.getName();
-        String announcementDescription = commandInput.getDescription();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("host")) {
-            return "%s is not a host.".formatted(username);
+    public String addAnnouncement(final CommandInput command) {
+        String username = command.getUsername();
+        String announcementName = command.getName();
+        String announcementDescription = command.getDescription();
+        
+        if (validateHostUser(username) != null) {
+            return validateHostUser(username);
         }
 
-        Host currentHost = (Host) currentUser;
+        Host currentHost = getHost(username);
         Announcement searchedAnnouncement = currentHost.getAnnouncement(announcementName);
         if (searchedAnnouncement != null) {
             return "%s has already added an announcement with this name.";
@@ -687,22 +691,18 @@ public final class Admin {
     /**
      * Remove announcement string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String removeAnnouncement(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String announcementName = commandInput.getName();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("host")) {
-            return "%s is not a host.".formatted(username);
+    public String removeAnnouncement(final CommandInput command) {
+        String username = command.getUsername();
+        String announcementName = command.getName();
+        
+        if (validateHostUser(username) != null) {
+            return validateHostUser(username);
         }
 
-        Host currentHost = (Host) currentUser;
+        Host currentHost = getHost(username);
         Announcement searchAnnouncement = currentHost.getAnnouncement(announcementName);
         if (searchAnnouncement == null) {
             return "%s has no announcement with the given name.".formatted(username);
@@ -715,22 +715,18 @@ public final class Admin {
     /**
      * Change page string.
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String changePage(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        String nextPage = commandInput.getNextPage();
-
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("user")) {
-            return "%s is not a normal user.".formatted(username);
+    public String changePage(final CommandInput command) {
+        String username = command.getUsername();
+        String nextPage = command.getNextPage();
+        
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
         }
 
-        User user = (User) currentUser;
+        User user = getUser(username);
         if (!user.isOnline()) {
             return "%s is offline.".formatted(user.getUsername());
         }
@@ -739,7 +735,7 @@ public final class Admin {
             case "Home" -> user.setCurrentPage(new HomePage(user));
             case "LikedContent" -> user.setCurrentPage(new LikedContentPage(user));
             case "Artist", "Host" -> {
-                String owner = getCurrentOwner(username);
+                String owner = getFileOwner(username);
                 UserAbstract ownerUser = getAbstractUser(owner);
 
                 if (ownerUser.userType().equals("artist")) {
@@ -760,20 +756,17 @@ public final class Admin {
     /**
      * Print current page string.c
      *
-     * @param commandInput the command input
+     * @param command the command input
      * @return the string
      */
-    public String printCurrentPage(final CommandInput commandInput) {
-        String username = commandInput.getUsername();
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
-        } else if (!currentUser.userType().equals("user")) {
-            return "%s is not a normal user.".formatted(username);
+    public String printCurrentPage(final CommandInput command) {
+        String username = command.getUsername();
+        
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
         }
 
-        User user = (User) currentUser;
+        User user = getUser(username);
         if (!user.isOnline()) {
             return "%s is offline.".formatted(user.getUsername());
         }
@@ -788,18 +781,12 @@ public final class Admin {
      * @return the string
      */
     public String switchStatus(final String username) {
-        UserAbstract currentUser = getAbstractUser(username);
-
-        if (currentUser == null) {
-            return "The username %s doesn't exist.".formatted(username);
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
         }
 
-        if (currentUser.userType().equals("user")) {
-            ((User) currentUser).switchStatus();
-            return username + " has changed status successfully.";
-        } else {
-            return username + " is not a normal user.";
-        }
+        getUser(username).switchStatus();
+        return username + " has changed status successfully.";
     }
 
     /**
@@ -811,8 +798,8 @@ public final class Admin {
         return users.stream().filter(User::isOnline).map(User::getUsername).toList();
     }
 
-    private String getCurrentOwner(final String normalUser) {
-        User user = getUser(normalUser);
+    private String getFileOwner(final String normalUserName) {
+        User user = getUser(normalUserName);
         AudioCollection currentCollection = user.getPlayer().getCurrentAudioCollection();
         AudioFile currentFile = user.getPlayer().getCurrentAudioFile();
 
@@ -833,83 +820,6 @@ public final class Admin {
     private Stream<AudioFile> getAudioFilesStream() {
         return users.stream().map(User::getPlayer)
                     .map(Player::getCurrentAudioFile).filter(Objects::nonNull);
-    }
-
-    /**
-     * Gets top 5 album list.
-     *
-     * @return the top 5 album list
-     */
-    public List<String> getTop5AlbumList() {
-        List<Album> albums = artists.stream().map(Artist::getAlbums)
-                                    .flatMap(List::stream).toList();
-
-        final Map<Album, Integer> albumLikes = new HashMap<>();
-        albums.forEach(album -> albumLikes.put(album, album.getSongs().stream()
-                                          .map(Song::getLikes).reduce(0, Integer::sum)));
-
-        return albums.stream().sorted((o1, o2) -> {
-            if ((int) albumLikes.get(o1) == albumLikes.get(o2)) {
-                return o1.getName().compareTo(o2.getName());
-            }
-            return albumLikes.get(o2) - albumLikes.get(o1);
-        }).limit(Constants.LIMIT).map(Album::getName).toList();
-    }
-
-    /**
-     * Gets top 5 artist list.
-     *
-     * @return the top 5 artist list
-     */
-    public List<String> getTop5ArtistList() {
-        final Map<Artist, Integer> artistLikes = new HashMap<>();
-        artists.forEach(artist -> artistLikes.put(artist, artist.getAllSongs().stream()
-                                              .map(Song::getLikes).reduce(0, Integer::sum)));
-
-        return artists.stream().sorted(Comparator.comparingInt(artistLikes::get).reversed())
-                               .limit(Constants.LIMIT).map(Artist::getUsername).toList();
-    }
-
-    /**
-     * Gets top 5 songs.
-     *
-     * @return the top 5 songs
-     */
-    public List<String> getTop5Songs() {
-        List<Song> sortedSongs = new ArrayList<>(songs);
-        sortedSongs.sort(Comparator.comparingInt(Song::getLikes).reversed());
-        List<String> topSongs = new ArrayList<>();
-        int count = 0;
-        for (Song song : sortedSongs) {
-            if (count >= Constants.LIMIT) {
-                break;
-            }
-            topSongs.add(song.getName());
-            count++;
-        }
-        return topSongs;
-    }
-
-    /**
-     * Gets top 5 playlists.
-     *
-     * @return the top 5 playlists
-     */
-    public List<String> getTop5Playlists() {
-        List<Playlist> sortedPlaylists = new ArrayList<>(getPlaylists());
-        sortedPlaylists.sort(Comparator.comparingInt(Playlist::getFollowers)
-                .reversed()
-                .thenComparing(Playlist::getTimestamp, Comparator.naturalOrder()));
-        List<String> topPlaylists = new ArrayList<>();
-        int count = 0;
-        for (Playlist playlist : sortedPlaylists) {
-            if (count >= Constants.LIMIT) {
-                break;
-            }
-            topPlaylists.add(playlist.getName());
-            count++;
-        }
-        return topPlaylists;
     }
 
     public String subscribe(final CommandInput command) {
@@ -938,10 +848,10 @@ public final class Admin {
         }
     }
 
-    private void notify(final ContentCreator creator, final String name, final String description) {
+    private void notify(final ContentCreator creator, final String name, final String descript) {
         for (User user : users) {
             if (creator.getSubscribers().contains(user.getUsername())) {
-                user.getNotifications().add(new Notification(name, description));
+                user.getNotifications().add(new Notification(name, descript));
             }
         }
     }
@@ -956,6 +866,7 @@ public final class Admin {
         artists = new ArrayList<>();
         hosts = new ArrayList<>();
         getAlbums().clear();
+        userInteractions.clear();
         timestamp = 0;
     }
 }

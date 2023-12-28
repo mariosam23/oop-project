@@ -1,13 +1,18 @@
 [ {
+  "command" : "addAlbum",
+  "user" : "Pink Floyd",
+  "timestamp" : 1,
+  "message" : "The username Pink Floyd doesn't exist."
+}, {
   "command" : "addUser",
-  "user" : "TED",
+  "user" : "TED-X",
   "timestamp" : 10,
-  "message" : "The username TED has been added successfully."
+  "message" : "The username TED-X has been added successfully."
 }, {
   "command" : "addPodcast",
-  "user" : "TED",
+  "user" : "TED-X",
   "timestamp" : 15,
-  "message" : "TED has added new podcast successfully."
+  "message" : "TED-X has added new podcast successfully."
 }, {
   "command" : "addUser",
   "user" : "Queen",
@@ -28,12 +33,12 @@
   "user" : "ghiu",
   "timestamp" : 45,
   "message" : "Search returned 1 results",
-  "results" : [ "TED Talks Daily" ]
+  "results" : [ "Auditory Adventures" ]
 }, {
   "command" : "select",
   "user" : "ghiu",
   "timestamp" : 50,
-  "message" : "Successfully selected TED Talks Daily."
+  "message" : "Successfully selected Auditory Adventures."
 }, {
   "command" : "load",
   "user" : "ghiu",
@@ -54,8 +59,8 @@
   "user" : "ghiu",
   "timestamp" : 70,
   "stats" : {
-    "name" : "The Power of Vulnerability",
-    "remainedTime" : 1197,
+    "name" : "Exploring Sonic Landscapes",
+    "remainedTime" : 2685,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -178,4 +183,14 @@
   "user" : "ghiu",
   "timestamp" : 275,
   "message" : "There are no pages left to go forward."
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Queen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

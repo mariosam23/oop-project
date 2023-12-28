@@ -17,6 +17,7 @@ public final class Song extends AudioFile {
     private final Integer releaseYear;
     private final String artist;
     private Integer likes;
+    private Double income;
 
     /**
      * Instantiates a new Song.
@@ -41,6 +42,7 @@ public final class Song extends AudioFile {
         this.releaseYear = releaseYear;
         this.artist = artist;
         this.likes = 0;
+        this.income = 0.0;
     }
 
     @Override

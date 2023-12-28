@@ -5,10 +5,10 @@ import app.audio.Files.AudioFile;
 import app.audio.LibraryEntry;
 import app.utils.Enums;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * The type Player.
@@ -23,7 +23,8 @@ public final class Player {
     private String type;
     private final int skipTime = 90;
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
-    private Queue<AudioFile> queue;
+    @Getter @Setter
+    private ArrayList<AudioFile> history = new ArrayList<>();
 
 
     /**
@@ -170,19 +171,33 @@ public final class Player {
      * @param time the time
      */
     public void simulatePlayer(final int time) {
+        if (source == null || paused) {
+            return;
+        }
+
         int elapsedTime = time;
-        if (!paused) {
-            while (elapsedTime >= source.getDuration()) {
-                elapsedTime -= source.getDuration();
-                next();
-                if (paused) {
-                    break;
-                }
-            }
-            if (!paused) {
-                source.skip(-elapsedTime);
+        while (elapsedTime >= source.getDuration()) {
+            addCurrentAudioToHistory();
+            elapsedTime -= source.getDuration();
+            next();
+
+            if (paused) {
+                return;
             }
         }
+
+        source.skip(-elapsedTime);
+        addCurrentAudioToHistory();
+    }
+
+    private void addCurrentAudioToHistory() {
+        if (history.isEmpty() || !isCurrentAudioInHistory()) {
+            history.add(source.getAudioFile());
+        }
+    }
+
+    private boolean isCurrentAudioInHistory() {
+        return history.get(history.size() - 1).equals(source.getAudioFile());
     }
 
     /**

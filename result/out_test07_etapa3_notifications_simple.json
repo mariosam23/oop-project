@@ -413,4 +413,7 @@
     "name" : "New Album",
     "description" : "New Album from David Bowie."
   } ]
+}, {
+  "command" : "endProgram",
+  "result" : { }
 } ]

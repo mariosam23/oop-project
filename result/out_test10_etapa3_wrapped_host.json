@@ -190,4 +190,7 @@
     "shuffle" : false,
     "paused" : true
   }
-}, null, null, null, null ]
+}, null, null, null, null, {
+  "command" : "endProgram",
+  "result" : { }
+} ]

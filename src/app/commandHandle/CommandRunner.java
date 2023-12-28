@@ -1,9 +1,11 @@
 package app.commandHandle;
 
 import app.Admin;
-import app.audio.Collections.AlbumOutput;
-import app.audio.Collections.PlaylistOutput;
-import app.audio.Collections.PodcastOutput;
+import app.analytics.Analytics;
+import app.analytics.monetization.ArtistRevenue;
+import app.audio.Collections.output.AlbumOutput;
+import app.audio.Collections.output.PlaylistOutput;
+import app.audio.Collections.output.PodcastOutput;
 import app.player.PlayerStats;
 import app.searchBar.filters.Filters;
 import app.user.Artist;
@@ -14,8 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * The type Command runner.
@@ -505,7 +506,7 @@ public final class CommandRunner {
      * @return the top 5 album list
      */
     public static ObjectNode getTop5Albums(final CommandInput commandInput) {
-        List<String> albums = admin.getTop5AlbumList();
+        List<String> albums = Analytics.getTop5AlbumList(admin.getArtists());
         return new OutputBuilder<String>(commandInput).withResult(albums).build();
     }
 
@@ -516,7 +517,7 @@ public final class CommandRunner {
      * @return the top 5 artist list
      */
     public static ObjectNode getTop5Artists(final CommandInput commandInput) {
-        List<String> artists = admin.getTop5ArtistList();
+        List<String> artists = Analytics.getTop5ArtistList(admin.getArtists());
         return new OutputBuilder<String>(commandInput).withResult(artists).build();
     }
 
@@ -527,7 +528,7 @@ public final class CommandRunner {
      * @return the top 5 songs
      */
     public static ObjectNode getTop5Songs(final CommandInput commandInput) {
-        List<String> songs = admin.getTop5Songs();
+        List<String> songs = Analytics.getTop5Songs(admin.getSongs());
         return new OutputBuilder<String>(commandInput).withResult(songs).build();
     }
 
@@ -538,7 +539,7 @@ public final class CommandRunner {
      * @return the top 5 playlists
      */
     public static ObjectNode getTop5Playlists(final CommandInput commandInput) {
-        List<String> playlists = admin.getTop5Playlists();
+        List<String> playlists = Analytics.getTop5Playlists(admin.getPlaylists());
         return new OutputBuilder<String>(commandInput).withResult(playlists).build();
     }
 
@@ -571,4 +572,5 @@ public final class CommandRunner {
                 .withResultFieldName("notifications")
                 .withResult(notifications).build();
     }
+
 }

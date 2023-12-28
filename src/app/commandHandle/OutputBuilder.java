@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,6 +24,7 @@ public class OutputBuilder<T> {
     private ObjectNode objectNode;
     private Boolean swap;
     private String resultFieldName = "result";
+    private Map<String, ?> mapResult;
 
     public OutputBuilder(final CommandInput commandInput) {
         objectMapper = new ObjectMapper();
@@ -48,6 +50,16 @@ public class OutputBuilder<T> {
      */
     public OutputBuilder<T> withResults(final ArrayList<String> resultsOut) {
         this.results = resultsOut;
+        return this;
+    }
+
+    /**
+     * Sets the output results for any type of object using a map structure.
+     * @param mapRes the map of results
+     * @return
+     */
+    public OutputBuilder<T> withMapResult(final Map<String, ?> mapRes) {
+        this.mapResult = mapRes;
         return this;
     }
 
@@ -116,7 +128,7 @@ public class OutputBuilder<T> {
             }
         }
 
-        if (cmdInput.getTimestamp() != 0) {
+        if (cmdInput.getTimestamp() != null) {
             objectNode.put("timestamp", cmdInput.getTimestamp());
         }
 
@@ -124,7 +136,9 @@ public class OutputBuilder<T> {
             objectNode.put("message", message);
         }
 
-        if (result != null) {
+        if (mapResult != null) {
+            objectNode.put(resultFieldName, objectMapper.valueToTree(mapResult));
+        } else if (result != null) {
             objectNode.put(resultFieldName, objectMapper.valueToTree(result));
         }
 

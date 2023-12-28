@@ -414,4 +414,14 @@
   "user" : "jack29",
   "timestamp" : 2995,
   "message" : "Playback loaded successfully."
-}, null, null ]
+}, null, null, {
+  "command" : "endProgram",
+  "result" : {
+    "Radiohead" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
+} ]

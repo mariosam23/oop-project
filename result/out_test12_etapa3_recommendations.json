@@ -101,4 +101,14 @@
   "command" : "printCurrentPage",
   "timestamp" : 135,
   "message" : "Liked songs:\n\t[Purple Rain]\n\nFollowed playlists:\n\t[]"
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Prince" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

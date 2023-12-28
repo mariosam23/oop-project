@@ -2594,4 +2594,32 @@
   "user" : "grace25",
   "timestamp" : 20975,
   "message" : "Playback loaded successfully."
-}, null, null, null, null ]
+}, null, null, null, null, {
+  "command" : "endProgram",
+  "result" : {
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "James Brown" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Kendrick Lamar" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "Pink Floyd" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    }
+  }
+} ]

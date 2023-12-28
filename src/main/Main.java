@@ -1,6 +1,7 @@
 package main;
 
 import app.Admin;
+import app.analytics.Analytics;
 import app.commandHandle.CommandExecution;
 import checker.Checker;
 import checker.CheckerConstants;
@@ -17,6 +18,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
@@ -88,6 +91,8 @@ public final class Main {
             Admin.getInstance().updateTimestamp(command.getTimestamp());
             outputs.add(allCommands.executeCommand(command));
         }
+
+        outputs.add(Analytics.endProgram(Admin.getInstance().getUserInteractions()));
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePathOutput), outputs);
