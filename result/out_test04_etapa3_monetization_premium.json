@@ -2752,22 +2752,12 @@
   "command" : "wrapped",
   "user" : "The Rolling Stones",
   "timestamp" : 21076,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 4
-  }
+  "message" : "No data to show for artist The Rolling Stones."
 }, {
   "command" : "wrapped",
   "user" : "Frank Sinatra",
   "timestamp" : 21076,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 4
-  }
+  "message" : "No data to show for artist Frank Sinatra."
 }, {
   "command" : "wrapped",
   "user" : "grace25",

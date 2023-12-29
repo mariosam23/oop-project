@@ -158,6 +158,13 @@ public final class Analytics {
                         LinkedHashMap::new));
     }
 
+    /**
+     * Gets the statistics for an user for wrapped. It firsts updates the user's history
+     * and then it gets the top 5 artists, genres, songs, albums and episodes.
+     * @param user the user
+     * @param cmd the command
+     * @return the output in JSON format
+     */
     public static ObjectNode wrappedUser(final User user, final CommandInput cmd) {
         user.getPlayer().updateHistory();
         List<AudioFile> history = user.getPlayer().getHistory();
@@ -194,6 +201,15 @@ public final class Analytics {
         return new OutputBuilder<>(cmd).withMapResult(statsMap).build();
     }
 
+    /**
+     * Gets the stats for wrapped for an artist. It first updates every user's history.
+     * Then filter all songs that are not from the artist for every user. Then it gets
+     * the top 5 albums, songs, fans and the number of listeners.
+     * @param artist the artist
+     * @param users the list of users from the app
+     * @param cmd the command
+     * @return the output in JSON format
+     */
     public static ObjectNode wrappedArtist(final Artist artist, final List<User> users,
                                            final CommandInput cmd) {
         artist.getStats().reset();
@@ -201,15 +217,15 @@ public final class Analytics {
             user.getPlayer().updateHistory();
             List<AudioFile> history = user.getPlayer().getHistory();
 
-            if (history.isEmpty()) {
-                continue;
-            }
-
             List<AudioFile> historyCopy = new ArrayList<>(history);
 
             historyCopy.removeIf(audioFile -> !audioFile.getType().equals("song"));
             historyCopy.removeIf(audioFile -> !((Song) audioFile).getArtist()
                                           .equals(artist.getUsername()));
+
+            if (historyCopy.isEmpty()) {
+                continue;
+            }
 
             artist.getStats().addListener(user.getUsername());
 
@@ -242,6 +258,15 @@ public final class Analytics {
                 .build();
     }
 
+    /**
+     * Gets the stats for wrapped for a host. It first updates every user's history.
+     * Then filter all episodes that are not from the host for every user. Then
+     * it gets the top 5 episodes and the number of listeners.
+     * @param host the host
+     * @param users the list of users from the app
+     * @param cmd the command
+     * @return the output in JSON format
+     */
     public static ObjectNode wrappedHost(final Host host, final List<User> users,
                                          final CommandInput cmd) {
         host.getStats().reset();
@@ -249,13 +274,14 @@ public final class Analytics {
             user.getPlayer().updateHistory();
             List<AudioFile> history = user.getPlayer().getHistory();
 
-            if (history.isEmpty()) {
-                continue;
-            }
             List<AudioFile> copyHistory = new ArrayList<>(history);
             copyHistory.removeIf(audioFile -> !audioFile.getType().equals("episode"));
             copyHistory.removeIf(audioFile -> !(audioFile.getOwner()
                                           .equals(host.getUsername())));
+
+            if (copyHistory.isEmpty()) {
+                continue;
+            }
 
             host.getStats().addListener(user.getUsername());
 

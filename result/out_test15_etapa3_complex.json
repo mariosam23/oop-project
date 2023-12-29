@@ -23649,122 +23649,62 @@
   "command" : "wrapped",
   "user" : "Stevie Wonder",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Stevie Wonder."
 }, {
   "command" : "wrapped",
   "user" : "Bob Marley",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Bob Marley."
 }, {
   "command" : "wrapped",
   "user" : "Rihanna",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Rihanna."
 }, {
   "command" : "wrapped",
   "user" : "David Bowie",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist David Bowie."
 }, {
   "command" : "wrapped",
   "user" : "Ray Charles",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Ray Charles."
 }, {
   "command" : "wrapped",
   "user" : "Imagine Dragons",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Imagine Dragons."
 }, {
   "command" : "wrapped",
   "user" : "Whitney Houston",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Whitney Houston."
 }, {
   "command" : "wrapped",
   "user" : "The Doors",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist The Doors."
 }, {
   "command" : "wrapped",
   "user" : "Radiohead",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Radiohead."
 }, {
   "command" : "wrapped",
   "user" : "Aretha Franklin",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Aretha Franklin."
 }, {
   "command" : "wrapped",
   "user" : "The Beach Boys",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist The Beach Boys."
 }, {
   "command" : "wrapped",
   "user" : "The Police",
   "timestamp" : 38196,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist The Police."
 }, {
   "command" : "wrapped",
   "user" : "jack29",

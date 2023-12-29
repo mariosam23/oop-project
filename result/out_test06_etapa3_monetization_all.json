@@ -12258,22 +12258,12 @@
   "command" : "wrapped",
   "user" : "Elton John",
   "timestamp" : 26891,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Elton John."
 }, {
   "command" : "wrapped",
   "user" : "Nirvana",
   "timestamp" : 26891,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Nirvana."
 }, {
   "command" : "wrapped",
   "user" : "alice22",

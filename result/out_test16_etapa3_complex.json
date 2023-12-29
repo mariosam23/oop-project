@@ -25138,112 +25138,57 @@
   "command" : "wrapped",
   "user" : "Imagine Dragons",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Imagine Dragons."
 }, {
   "command" : "wrapped",
   "user" : "Bob Marley",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Bob Marley."
 }, {
   "command" : "wrapped",
   "user" : "The Police",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist The Police."
 }, {
   "command" : "wrapped",
   "user" : "James Brown",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist James Brown."
 }, {
   "command" : "wrapped",
   "user" : "Whitney Houston",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Whitney Houston."
 }, {
   "command" : "wrapped",
   "user" : "David Bowie",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist David Bowie."
 }, {
   "command" : "wrapped",
   "user" : "Michael Jackson",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Michael Jackson."
 }, {
   "command" : "wrapped",
   "user" : "Chuck Berry",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Chuck Berry."
 }, {
   "command" : "wrapped",
   "user" : "Frank Sinatra",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Frank Sinatra."
 }, {
   "command" : "wrapped",
   "user" : "Ray Charles",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Ray Charles."
 }, {
   "command" : "wrapped",
   "user" : "Eminem",
   "timestamp" : 43914,
-  "result" : {
-    "topAlbums" : { },
-    "topSongs" : { },
-    "topFans" : [ ],
-    "listeners" : 10
-  }
+  "message" : "No data to show for artist Eminem."
 }, {
   "command" : "wrapped",
   "user" : "alice22",
