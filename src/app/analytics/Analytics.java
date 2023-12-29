@@ -1,11 +1,15 @@
 package app.analytics;
 
 import app.analytics.monetization.ArtistRevenue;
+import app.analytics.statistics.UserStats;
 import app.audio.Collections.Album;
 import app.audio.Collections.Playlist;
+import app.audio.Files.AudioFile;
+import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.commandHandle.OutputBuilder;
 import app.user.Artist;
+import app.user.User;
 import app.utils.Constants;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
@@ -101,7 +105,7 @@ public final class Analytics {
      * @param artistRevenues the map of artist revenues
      * @return the output
      */
-    public static ObjectNode endProgram(Map<String, ArtistRevenue> artistRevenues) {
+    public static ObjectNode endProgram(final Map<String, ArtistRevenue> artistRevenues) {
         List<Map.Entry<String, ArtistRevenue>> sortedEntries = artistRevenues.entrySet().stream()
                 .sorted(Comparator.comparing(
                                 (Map.Entry<String, ArtistRevenue> entry) -> entry
@@ -122,7 +126,7 @@ public final class Analytics {
     }
 
     private static LinkedHashMap<String, Map<String, Object>> createSortedResults(
-            List<Map.Entry<String, ArtistRevenue>> sortedEntries) {
+            final List<Map.Entry<String, ArtistRevenue>> sortedEntries) {
         LinkedHashMap<String, Map<String, Object>> results = new LinkedHashMap<>();
         int rank = 1;
 
@@ -139,5 +143,63 @@ public final class Analytics {
         }
 
         return results;
+    }
+
+    private static Map<String, Integer> getTopFiveSortedByCount(Map<String, Integer> map) {
+        return map.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder())
+                        .thenComparing(Map.Entry::getKey))
+                .limit(Constants.LIMIT)
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new));
+    }
+
+    public static LinkedHashMap<String, Map<String, Integer>> wrappedUser(final User user) {
+//        if (user.getUsername().equals("irene33")) {
+//            System.out.println("ok\n");
+//            System.out.println(user.getPlayer().getSource().getAudioFile().getName());
+//        }
+        user.getPlayer().updateHistory();
+        List<AudioFile> history = user.getPlayer().getHistory();
+        UserStats stats = user.getUserStats();
+
+        for (AudioFile audioFile : history) {
+            if (audioFile.getType().equals("song")) {
+                Song song = (Song) audioFile;
+                stats.getTopArtists().putIfAbsent(song.getArtist(), 0);
+                stats.getTopArtists().put(song.getArtist(), stats.getTopArtists()
+                        .get(song.getArtist()) + 1);
+
+                stats.getTopGenres().putIfAbsent(song.getGenre(), 0);
+                stats.getTopGenres().put(song.getGenre(), stats.getTopGenres()
+                        .get(song.getGenre()) + 1);
+
+                stats.getTopSongs().putIfAbsent(song.getName(), 0);
+                stats.getTopSongs().put(song.getName(), stats.getTopSongs()
+                        .get(song.getName()) + 1);
+
+                stats.getTopAlbums().putIfAbsent(song.getAlbum(), 0);
+                stats.getTopAlbums().put(song.getAlbum(), stats.getTopAlbums()
+                        .get(song.getAlbum()) + 1);
+            } else {
+                Episode episode = (Episode) audioFile;
+                stats.getTopEpisodes().putIfAbsent(episode.getName(), 0);
+                stats.getTopEpisodes().put(episode.getName(), stats.getTopEpisodes()
+                        .get(episode.getName()) + 1);
+            }
+        }
+
+        LinkedHashMap<String, Map<String, Integer>> statsMap = new LinkedHashMap<>();
+
+        statsMap.put("topArtists", getTopFiveSortedByCount(stats.getTopArtists()));
+        statsMap.put("topGenres", getTopFiveSortedByCount(stats.getTopGenres()));
+        statsMap.put("topSongs", getTopFiveSortedByCount(stats.getTopSongs()));
+        statsMap.put("topAlbums", getTopFiveSortedByCount(stats.getTopAlbums()));
+        statsMap.put("topEpisodes", getTopFiveSortedByCount(stats.getTopEpisodes()));
+
+        return statsMap;
     }
 }

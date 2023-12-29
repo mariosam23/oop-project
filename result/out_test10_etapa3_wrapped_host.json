@@ -190,7 +190,12 @@
     "shuffle" : false,
     "paused" : true
   }
-}, null, null, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 4000,
+  "message" : "No data to show for user alice22."
+}, null, null, null, {
   "command" : "endProgram",
   "result" : { }
 } ]

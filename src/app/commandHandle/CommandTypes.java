@@ -277,6 +277,12 @@ public enum CommandTypes {
         public ObjectNode execute(final CommandInput command) {
             return CommandRunner.getNotifications(command);
         }
+    },
+    WRAPPED {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.wrapped(command);
+        }
     };
 
     /**

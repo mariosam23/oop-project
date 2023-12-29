@@ -7492,7 +7492,42 @@
   "user" : "frank21",
   "timestamp" : 11240,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "emily30",
+  "timestamp" : 11249,
+  "result" : {
+    "topArtists" : {
+      "Frank Sinatra" : 14,
+      "Marvin Gaye" : 9,
+      "Aretha Franklin" : 8,
+      "Bob Dylan" : 8,
+      "Bob Marley" : 8
+    },
+    "topGenres" : {
+      "soul" : 24,
+      "jazz" : 14,
+      "folk" : 10,
+      "reggae" : 8,
+      "classic rock" : 7
+    },
+    "topSongs" : {
+      "'Til Tomorrow" : 2,
+      "Adeste Fideles" : 2,
+      "Buffalo Soldier" : 2,
+      "Corrina, Corrina" : 2,
+      "He's Misstra Know It All" : 2
+    },
+    "topAlbums" : {
+      "Sinatra Reprise: The Very Good Years" : 10,
+      "Soul Queen" : 7,
+      "Midnight Love" : 5,
+      "The Freewheelin' Bob Dylan" : 5,
+      "Legend" : 4
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 11309,
@@ -7860,7 +7895,42 @@
   "user" : "grace25",
   "timestamp" : 12096,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "frank21",
+  "timestamp" : 12102,
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 19,
+      "Marvin Gaye" : 13,
+      "Fleetwood Mac" : 10,
+      "Aretha Franklin" : 9,
+      "Bruce Springsteen" : 7
+    },
+    "topGenres" : {
+      "classic rock" : 25,
+      "soul" : 23,
+      "rock" : 13,
+      "jazz" : 7,
+      "70s" : 6
+    },
+    "topSongs" : {
+      "Ain't No Mountain High Enough" : 2,
+      "Born in the U.S.A." : 2,
+      "Hey Joe" : 2,
+      "If I Could Build My Whole World Around You" : 2,
+      "Manic Depression" : 2
+    },
+    "topAlbums" : {
+      "Experience Hendrix: The Best of Jimi Hendrix" : 12,
+      "United" : 10,
+      "I Never Loved a Man the Way I Love You" : 7,
+      "Are You Experienced?" : 6,
+      "The Essential Bruce Springsteen" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12123,
@@ -9428,7 +9498,42 @@
   "user" : "carol19",
   "timestamp" : 15309,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 15317,
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 22,
+      "Bob Marley" : 17,
+      "Joni Mitchell" : 13,
+      "Bruce Springsteen" : 12,
+      "Fleetwood Mac" : 7
+    },
+    "topGenres" : {
+      "classic rock" : 23,
+      "rock" : 21,
+      "reggae" : 17,
+      "soul" : 14,
+      "1974" : 12
+    },
+    "topSongs" : {
+      "Angel" : 2,
+      "Darlington County" : 2,
+      "Foxy Lady" : 2,
+      "Free Man in Paris" : 2,
+      "Have You Ever Been (To Electric Ladyland)" : 2
+    },
+    "topAlbums" : {
+      "Electric Ladyland" : 17,
+      "Chant Down Babylon" : 15,
+      "Court and Spark" : 12,
+      "Born in the U.S.A." : 8,
+      "Greatest Hits" : 4
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 15327,
@@ -10116,7 +10221,42 @@
   "user" : "carol19",
   "timestamp" : 16382,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 16388,
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 23,
+      "Stevie Wonder" : 17,
+      "Led Zeppelin" : 9,
+      "Joni Mitchell" : 8,
+      "Aretha Franklin" : 7
+    },
+    "topGenres" : {
+      "rock" : 31,
+      "soul" : 31,
+      "classic rock" : 7,
+      "hard rock" : 7,
+      "folk" : 6
+    },
+    "topSongs" : {
+      "Paperback Writer - Remastered 2015" : 3,
+      "Respect" : 3,
+      "Heartbreaker" : 2,
+      "Joy" : 2,
+      "Jungleland" : 2
+    },
+    "topAlbums" : {
+      "1 (Remastered)" : 20,
+      "Songs in the Key of Life" : 14,
+      "Led Zeppelin II" : 7,
+      "Soul Queen" : 5,
+      "The Essential Bruce Springsteen" : 4
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 16415,
@@ -10708,7 +10848,42 @@
   "user" : "henry26",
   "timestamp" : 17665,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, null, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 17689,
+  "result" : {
+    "topArtists" : {
+      "Frank Sinatra" : 14,
+      "Madonna" : 14,
+      "Joni Mitchell" : 13,
+      "Bob Marley" : 12,
+      "Bruce Springsteen" : 10
+    },
+    "topGenres" : {
+      "rock" : 17,
+      "folk" : 16,
+      "soul" : 16,
+      "pop" : 14,
+      "classic rock" : 13
+    },
+    "topSongs" : {
+      "Silent Night" : 3,
+      "Blowin' in the Wind" : 2,
+      "Court and Spark" : 2,
+      "Dr. Feelgood (Love Is a Serious Business)" : 2,
+      "I Don't Live Today" : 2
+    },
+    "topAlbums" : {
+      "Blue" : 11,
+      "Christmas Songs by Sinatra" : 10,
+      "Legend" : 9,
+      "Ray of Light" : 9,
+      "Rumours" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 17701,
@@ -10756,7 +10931,42 @@
   "user" : "henry26",
   "timestamp" : 17815,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 17949,
+  "result" : {
+    "topArtists" : {
+      "Madonna" : 19,
+      "Frank Sinatra" : 15,
+      "Joni Mitchell" : 10,
+      "The Beatles" : 10,
+      "Marvin Gaye" : 7
+    },
+    "topGenres" : {
+      "pop" : 19,
+      "soul" : 19,
+      "jazz" : 15,
+      "rock" : 15,
+      "folk" : 13
+    },
+    "topSongs" : {
+      "You've Got What It Takes" : 3,
+      "I Wish" : 2,
+      "Luck Be A Lady - 2008 Remastered" : 2,
+      "Superstition - Single Version" : 2,
+      "4 Minutes - feat. Justin Timberlake and Timbaland" : 1
+    },
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 18,
+      "Nothing But the Best (Remastered)" : 14,
+      "Ladies of the Canyon" : 8,
+      "Abbey Road (Remastered)" : 6,
+      "The Definitive Collection" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 18082,
@@ -10868,7 +11078,42 @@
   "user" : "bob35",
   "timestamp" : 20534,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "bob35",
+  "timestamp" : 20668,
+  "result" : {
+    "topArtists" : {
+      "Aretha Franklin" : 40,
+      "Bob Marley" : 20,
+      "Bruce Springsteen" : 14,
+      "Frank Sinatra" : 10,
+      "Led Zeppelin" : 10
+    },
+    "topGenres" : {
+      "soul" : 47,
+      "rock" : 23,
+      "reggae" : 20,
+      "jazz" : 12,
+      "70s" : 8
+    },
+    "topSongs" : {
+      "African Herbsman" : 2,
+      "Black Dog - Basic Track With Guitar Overdubs" : 2,
+      "Going to California" : 2,
+      "I Take What I Want" : 2,
+      "Jingle Bells" : 2
+    },
+    "topAlbums" : {
+      "Soul Queen" : 39,
+      "Natural Mystic" : 15,
+      "Greatest Hits" : 11,
+      "Led Zeppelin IV (Deluxe Edition)" : 7,
+      "Both Sides Now" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 20851,
@@ -11172,7 +11417,42 @@
   "user" : "carol19",
   "timestamp" : 23598,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 23865,
+  "result" : {
+    "topArtists" : {
+      "Bob Dylan" : 25,
+      "Bob Marley" : 18,
+      "Marvin Gaye" : 17,
+      "Stevie Wonder" : 15,
+      "Led Zeppelin" : 13
+    },
+    "topGenres" : {
+      "soul" : 36,
+      "reggae" : 18,
+      "rock" : 18,
+      "classic rock" : 17,
+      "folk" : 16
+    },
+    "topSongs" : {
+      "400 Years" : 3,
+      "He's Misstra Know It All" : 3,
+      "Black Dog" : 2,
+      "Foxy Lady" : 2,
+      "Glory Days" : 2
+    },
+    "topAlbums" : {
+      "One Love Peace Concert" : 15,
+      "The Freewheelin' Bob Dylan" : 14,
+      "The Very Best of Marvin Gaye" : 13,
+      "Bringing It All Back Home" : 11,
+      "Innervisions" : 11
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 24580,
@@ -11572,7 +11852,42 @@
   "user" : "alice22",
   "timestamp" : 26175,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 26272,
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 34,
+      "Bruce Springsteen" : 26,
+      "Stevie Wonder" : 18,
+      "Bob Dylan" : 11,
+      "Fleetwood Mac" : 11
+    },
+    "topGenres" : {
+      "rock" : 61,
+      "soul" : 31,
+      "folk" : 12,
+      "pop" : 11,
+      "classic rock" : 9
+    },
+    "topSongs" : {
+      "Cherish" : 2,
+      "From a Buick 6" : 2,
+      "It's Alright, Ma (I'm Only Bleeding)" : 2,
+      "Love Song" : 2,
+      "Prove It All Night" : 2
+    },
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 31,
+      "The Essential Bruce Springsteen" : 21,
+      "The Definitive Collection" : 14,
+      "Fleetwood Mac" : 8,
+      "Like a Prayer" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 26302,
@@ -11668,7 +11983,42 @@
   "user" : "alice22",
   "timestamp" : 26857,
   "message" : "Playback loaded successfully."
-}, null, null, null, null, {
+}, null, null, null, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 26991,
+  "result" : {
+    "topArtists" : {
+      "Fleetwood Mac" : 33,
+      "Led Zeppelin" : 29,
+      "Frank Sinatra" : 16,
+      "Aretha Franklin" : 13,
+      "Madonna" : 11
+    },
+    "topGenres" : {
+      "justice for silver springs" : 29,
+      "70s" : 27,
+      "soul" : 25,
+      "christmas" : 14,
+      "rock" : 14
+    },
+    "topSongs" : {
+      "Black Dog" : 3,
+      "Four Sticks" : 3,
+      "Stairway to Heaven" : 3,
+      "The Battle of Evermore" : 3,
+      "Babe I'm Gonna Leave You" : 2
+    },
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 29,
+      "Led Zeppelin IV (Deluxe Edition)" : 24,
+      "A Jolly Christmas from Frank Sinatra" : 12,
+      "Soul Queen" : 8,
+      "Confessions on a Dance Floor" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "endProgram",
   "result" : {
     "Aretha Franklin" : {

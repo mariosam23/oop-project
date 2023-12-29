@@ -3,6 +3,7 @@ package app.user;
 import app.Admin;
 import app.analytics.monetization.ArtistRevenue;
 import app.analytics.statistics.ArtistStats;
+import app.analytics.statistics.UserStats;
 import app.audio.Collections.AudioCollection;
 import app.audio.Collections.Playlist;
 import app.audio.Collections.output.PlaylistOutput;
@@ -40,6 +41,7 @@ public final class User extends UserAbstract {
     private Deque<Page> backHistory = new ArrayDeque<>();
     private Deque<Page> forwardHistory = new ArrayDeque<>();
     private List<Notification> notifications = new ArrayList<>();
+    private UserStats userStats = new UserStats();
 
     /**
      * Instantiates a new User.

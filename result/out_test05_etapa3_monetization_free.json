@@ -2043,7 +2043,42 @@
   "user" : "david27",
   "timestamp" : 12571,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 12641,
+  "result" : {
+    "topArtists" : {
+      "Prince" : 31,
+      "Stevie Wonder" : 22,
+      "The Rolling Stones" : 15,
+      "Joni Mitchell" : 8,
+      "Pharrell Williams" : 1
+    },
+    "topGenres" : {
+      "80s" : 29,
+      "soul" : 22,
+      "classic rock" : 15,
+      "folk" : 8,
+      "rnb" : 2
+    },
+    "topSongs" : {
+      "Lady Jane" : 4,
+      "Purple Rain" : 3,
+      "1999 [Edit]" : 2,
+      "Blame It on the Sun" : 2,
+      "D.M.S.R." : 2
+    },
+    "topAlbums" : {
+      "The Very Best of Prince" : 24,
+      "Aftermath" : 8,
+      "Ladies of the Canyon" : 8,
+      "Talking Book" : 8,
+      "The Definitive Collection" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12663,
@@ -2539,7 +2574,41 @@
   "user" : "david27",
   "timestamp" : 14425,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 14442,
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 35,
+      "Stevie Wonder" : 26,
+      "Prince" : 20,
+      "Joni Mitchell" : 12
+    },
+    "topGenres" : {
+      "classic rock" : 34,
+      "soul" : 26,
+      "folk" : 12,
+      "rnb" : 11,
+      "80s" : 9
+    },
+    "topSongs" : {
+      "Morning Morgantown" : 3,
+      "Out of Time" : 3,
+      "The Arrangement" : 3,
+      "Big Yellow Taxi" : 2,
+      "Christopher Tracy's Parade" : 2
+    },
+    "topAlbums" : {
+      "Rolled Gold" : 19,
+      "The Definitive Collection" : 14,
+      "Ladies of the Canyon" : 12,
+      "Parade - Music From the Motion Picture Under the Cherry Moon" : 11,
+      "Let It Bleed" : 9
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 16465,
@@ -2795,7 +2864,41 @@
   "user" : "david27",
   "timestamp" : 17782,
   "message" : "Playback loaded successfully."
-}, null, null, null, {
+}, null, null, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 18042,
+  "result" : {
+    "topArtists" : {
+      "Joni Mitchell" : 28,
+      "Prince" : 22,
+      "Stevie Wonder" : 22,
+      "The Rolling Stones" : 21
+    },
+    "topGenres" : {
+      "folk" : 28,
+      "soul" : 22,
+      "80s" : 21,
+      "classic rock" : 20,
+      "rnb" : 1
+    },
+    "topSongs" : {
+      "All The Critics Love U In New York" : 3,
+      "Blue Boy" : 3,
+      "D.M.S.R." : 3,
+      "For Free" : 3,
+      "Ladies of the Canyon" : 3
+    },
+    "topAlbums" : {
+      "Ladies of the Canyon" : 28,
+      "1999" : 18,
+      "Songs in the Key of Life" : 12,
+      "Some Girls" : 9,
+      "Let It Bleed" : 5
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "endProgram",
   "result" : {
     "Joni Mitchell" : {

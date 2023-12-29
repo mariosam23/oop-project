@@ -25,6 +25,7 @@ public final class Player {
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
     @Getter @Setter
     private ArrayList<AudioFile> history = new ArrayList<>();
+    private int currentIdx = 0;
 
 
     /**
@@ -39,14 +40,45 @@ public final class Player {
      * Stop.
      */
     public void stop() {
+        if (source == null) {
+            return;
+        }
+
+        // !! Functioneaza pentru wrapped doar daca se ajunge sa se opreasca playerul. !! //
+
+        int idx = source.getIndex();
         if ("podcast".equals(this.type)) {
             bookmarkPodcast();
+        } else if (source.getAudioCollection() != null) {
+            while (currentIdx <= idx) {
+                history.add(source.getAudioCollection().getTrackByIndex(currentIdx));
+                currentIdx++;
+            }
+        } else {
+            history.add(source.getAudioFile());
         }
 
         repeatMode = Enums.RepeatMode.NO_REPEAT;
         paused = true;
         source = null;
         shuffle = false;
+        currentIdx = 0;
+    }
+
+    public void updateHistory() {
+        if (source == null) {
+            return;
+        }
+
+        if (source.getAudioCollection() != null) {
+            int idx = source.getIndex();
+            while (currentIdx <= idx) {
+                history.add(source.getAudioCollection().getTrackByIndex(currentIdx));
+                currentIdx++;
+            }
+        } else {
+            history.add(source.getAudioFile());
+        }
     }
 
     private void bookmarkPodcast() {
@@ -177,7 +209,7 @@ public final class Player {
 
         int elapsedTime = time;
         while (elapsedTime >= source.getDuration()) {
-            addCurrentAudioToHistory();
+//            addCurrentAudioToHistory();
             elapsedTime -= source.getDuration();
             next();
 
@@ -187,7 +219,7 @@ public final class Player {
         }
 
         source.skip(-elapsedTime);
-        addCurrentAudioToHistory();
+//        addCurrentAudioToHistory();
     }
 
     private void addCurrentAudioToHistory() {

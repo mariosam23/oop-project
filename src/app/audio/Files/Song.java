@@ -112,4 +112,9 @@ public final class Song extends AudioFile {
     public void dislike() {
         likes--;
     }
+
+    @Override
+    public String getType() {
+        return "song";
+    }
 }

@@ -8,10 +8,7 @@ import app.audio.Collections.output.PlaylistOutput;
 import app.audio.Collections.output.PodcastOutput;
 import app.player.PlayerStats;
 import app.searchBar.filters.Filters;
-import app.user.Artist;
-import app.user.Host;
-import app.user.Notification;
-import app.user.User;
+import app.user.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
@@ -22,10 +19,6 @@ import java.util.*;
  * The type Command runner.
  */
 public final class CommandRunner {
-    /**
-     * The Object mapper.
-     */
-    private static ObjectMapper objectMapper = new ObjectMapper();
     private static Admin admin = Admin.getInstance();
 
     private CommandRunner() {
@@ -573,4 +566,24 @@ public final class CommandRunner {
                 .withResult(notifications).build();
     }
 
+    public static ObjectNode wrapped(final CommandInput commandInput) {
+        UserAbstract user = admin.getAbstractUser(commandInput.getUsername());
+
+        if (user == null) {
+            return new OutputBuilder<>(commandInput).withMessage("No data available!").build();
+        }
+
+        if (user.userType().equals("user")) {
+            User currentUser = (User) user;
+            if (currentUser.getPlayer().getHistory().isEmpty() && currentUser.getPlayer().getSource() == null) {
+                return new OutputBuilder<>(commandInput).withMessage("No data to show for user "
+                        + user.getUsername() + ".").build();
+            }
+
+            LinkedHashMap<String, Map<String, Integer>> stats = Analytics.wrappedUser((User) user);
+            return new OutputBuilder<>(commandInput).withMapResult(stats).build();
+        }
+
+        return null;
+    }
 }

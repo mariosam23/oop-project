@@ -90,9 +90,9 @@ public final class Admin {
             List<Episode> episodes = new ArrayList<>();
             for (EpisodeInput episodeInput : podcastInput.getEpisodes()) {
                 episodes.add(new Episode(episodeInput.getName(),
-                                         episodeInput.getDuration(),
-                                         episodeInput.getDescription(),
-                                         podcastInput.getOwner()));
+                        episodeInput.getDuration(),
+                        episodeInput.getDescription(),
+                        podcastInput.getOwner()));
             }
             podcasts.add(new Podcast(podcastInput.getName(), podcastInput.getOwner(), episodes));
         }
@@ -123,8 +123,8 @@ public final class Admin {
      */
     public List<Playlist> getPlaylists() {
         return users.stream()
-                    .flatMap(user -> user.getPlaylists().stream())
-                    .collect(Collectors.toList());
+                .flatMap(user -> user.getPlaylists().stream())
+                .collect(Collectors.toList());
     }
 
     /**
@@ -134,8 +134,8 @@ public final class Admin {
      */
     public List<Album> getAlbums() {
         return artists.stream()
-                      .flatMap(artist -> artist.getAlbums().stream())
-                      .collect(Collectors.toList());
+                .flatMap(artist -> artist.getAlbums().stream())
+                .collect(Collectors.toList());
     }
 
     /**
@@ -161,9 +161,9 @@ public final class Admin {
      */
     public User getUser(final String username) {
         return users.stream()
-                    .filter(user -> user.getUsername().equals(username))
-                    .findFirst()
-                    .orElse(null);
+                .filter(user -> user.getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -210,7 +210,12 @@ public final class Admin {
         users.forEach(user -> user.simulateTime(elapsed));
     }
 
-    private UserAbstract getAbstractUser(final String username) {
+    /**
+     * Gets abstract user.
+     * @param username
+     * @return
+     */
+    public UserAbstract getAbstractUser(final String username) {
         ArrayList<UserAbstract> allUsers = new ArrayList<>();
 
         allUsers.addAll(users);
@@ -218,11 +223,11 @@ public final class Admin {
         allUsers.addAll(hosts);
 
         return allUsers.stream()
-                       .filter(userPlatform -> userPlatform.getUsername().equals(username))
-                       .findFirst()
-                       .orElse(null);
+                .filter(userPlatform -> userPlatform.getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
     }
-    
+
     private String validateArtistUser(final String username) {
         UserAbstract currentUser = getAbstractUser(username);
 
@@ -234,7 +239,7 @@ public final class Admin {
 
         return null;
     }
-    
+
     private String validateHostUser(final String username) {
         UserAbstract currentUser = getAbstractUser(username);
 
@@ -246,7 +251,7 @@ public final class Admin {
 
         return null;
     }
-    
+
     private String validateNormalUser(final String username) {
         UserAbstract currentUser = getAbstractUser(username);
 
@@ -324,8 +329,8 @@ public final class Admin {
         user.getFollowedPlaylists().forEach(Playlist::decreaseFollowers);
 
         users.stream().filter(otherUser -> otherUser != user)
-             .forEach(otherUser -> otherUser.getFollowedPlaylists()
-                                            .removeAll(user.getPlaylists()));
+                .forEach(otherUser -> otherUser.getFollowedPlaylists()
+                        .removeAll(user.getPlaylists()));
 
         users.remove(user);
         return "%s was successfully deleted.".formatted(user.getUsername());
@@ -346,9 +351,9 @@ public final class Admin {
 
     private String deleteArtist(final Artist artist) {
         if (artist.getAlbums().stream().anyMatch(album -> album.getSongs().stream()
-            .anyMatch(song -> getAudioFilesStream().anyMatch(audioFile -> audioFile == song))
-            || getAudioCollectionsStream().anyMatch(collection -> collection == album))
-            || users.stream().anyMatch(user -> user.getCurrentPage() == artist.getPage())) {
+                .anyMatch(song -> getAudioFilesStream().anyMatch(audioFile -> audioFile == song))
+                || getAudioCollectionsStream().anyMatch(collection -> collection == album))
+                || users.stream().anyMatch(user -> user.getCurrentPage() == artist.getPage())) {
             return "%s can't be deleted.".formatted(artist.getUsername());
         }
 
@@ -371,40 +376,40 @@ public final class Admin {
     public String addAlbum(final CommandInput command) {
         String username = command.getUsername();
         String albumName = command.getName();
-        
+
         if (validateArtistUser(username) != null) {
             return validateArtistUser(username);
         }
 
         Artist currentArtist = getArtist(username);
         if (currentArtist.getAlbums().stream()
-            .anyMatch(album -> album.getName().equals(albumName))) {
+                .anyMatch(album -> album.getName().equals(albumName))) {
             return "%s has another album with the same name.".formatted(username);
         }
 
         List<Song> newSongs = command.getSongs().stream()
-                                       .map(songInput -> new Song(songInput.getName(),
-                                                                  songInput.getDuration(),
-                                                                  albumName,
-                                                                  songInput.getTags(),
-                                                                  songInput.getLyrics(),
-                                                                  songInput.getGenre(),
-                                                                  songInput.getReleaseYear(),
-                                                                  currentArtist.getUsername()))
-                                       .toList();
+                .map(songInput -> new Song(songInput.getName(),
+                        songInput.getDuration(),
+                        albumName,
+                        songInput.getTags(),
+                        songInput.getLyrics(),
+                        songInput.getGenre(),
+                        songInput.getReleaseYear(),
+                        currentArtist.getUsername()))
+                .toList();
 
         Set<String> songNames = new HashSet<>();
         if (!newSongs.stream().filter(song -> !songNames.add(song.getName()))
-                  .collect(Collectors.toSet()).isEmpty()) {
+                .collect(Collectors.toSet()).isEmpty()) {
             return "%s has the same song at least twice in this album.".formatted(username);
         }
 
         songs.addAll(newSongs);
         currentArtist.getAlbums().add(new Album(albumName,
-                                                command.getDescription(),
-                                                username,
-                                                newSongs,
-                                                command.getReleaseYear()));
+                command.getDescription(),
+                username,
+                newSongs,
+                command.getReleaseYear()));
 
         notify(currentArtist, "New Album", "New Album from " + username + ".");
         return "%s has added new album successfully.".formatted(username);
@@ -419,7 +424,7 @@ public final class Admin {
     public String removeAlbum(final CommandInput command) {
         String username = command.getUsername();
         String albumName = command.getName();
-        
+
         if (validateArtistUser(username) != null) {
             return validateArtistUser(username);
         }
@@ -436,7 +441,7 @@ public final class Admin {
 
         for (Song song : searchedAlbum.getSongs()) {
             if (getAudioCollectionsStream().anyMatch(collection -> collection.containsTrack(song))
-                || getAudioFilesStream().anyMatch(audioFile -> audioFile == song)) {
+                    || getAudioFilesStream().anyMatch(audioFile -> audioFile == song)) {
                 return "%s can't delete this album.".formatted(username);
             }
         }
@@ -468,21 +473,21 @@ public final class Admin {
 
         Host currentHost = getHost(username);
         if (currentHost.getPodcasts().stream()
-            .anyMatch(podcast -> podcast.getName().equals(podcastName))) {
+                .anyMatch(podcast -> podcast.getName().equals(podcastName))) {
             return "%s has another podcast with the same name.".formatted(username);
         }
 
         List<Episode> episodes = command.getEpisodes().stream()
-                                             .map(episodeInput ->
-                                                     new Episode(episodeInput.getName(),
-                                                                 episodeInput.getDuration(),
-                                                                 episodeInput.getDescription(),
-                                                                 username))
-                                             .collect(Collectors.toList());
+                .map(episodeInput ->
+                        new Episode(episodeInput.getName(),
+                                episodeInput.getDuration(),
+                                episodeInput.getDescription(),
+                                username))
+                .collect(Collectors.toList());
 
         Set<String> episodeNames = new HashSet<>();
         if (!episodes.stream().filter(episode -> !episodeNames.add(episode.getName()))
-                     .collect(Collectors.toSet()).isEmpty()) {
+                .collect(Collectors.toSet()).isEmpty()) {
             return "%s has the same episode in this podcast.".formatted(username);
         }
 
@@ -504,7 +509,7 @@ public final class Admin {
     public String removePodcast(final CommandInput command) {
         String username = command.getUsername();
         String podcastName = command.getName();
-        
+
         if (validateHostUser(username) != null) {
             return validateHostUser(username);
         }
@@ -534,7 +539,7 @@ public final class Admin {
     public String addEvent(final CommandInput command) {
         String username = command.getUsername();
         String eventName = command.getName();
-        
+
         if (validateArtistUser(username) != null) {
             return validateArtistUser(username);
         }
@@ -551,8 +556,8 @@ public final class Admin {
         }
 
         currentArtist.getEvents().add(new Event(eventName,
-                                                command.getDescription(),
-                                                command.getDate()));
+                command.getDescription(),
+                command.getDate()));
 
         notify(currentArtist, "New Event", "New Event from " + username + ".");
         return "%s has added new event successfully.".formatted(username);
@@ -567,7 +572,7 @@ public final class Admin {
     public String removeEvent(final CommandInput command) {
         String username = command.getUsername();
         String eventName = command.getName();
-        
+
         if (validateArtistUser(username) != null) {
             return validateArtistUser(username);
         }
@@ -599,10 +604,10 @@ public final class Admin {
         int year = Integer.parseInt(dateElements.get(2));
 
         if (day < Constants.DATE_DAY_LOW_LIMIT
-            || (month == 2 && day > Constants.FEB_MAX_DAY)
-            || day > Constants.DATE_DAY_HIGH_LIMIT
-            || month < Constants.DATE_MOTH_LOW_LIMIT || month > Constants.DATE_MOTH_HIGH_LIMIT
-            || year < Constants.DATE_YEAR_LOW_LIMIT || year > Constants.DATE_YEAR_HIGH_LIMIT) {
+                || (month == 2 && day > Constants.FEB_MAX_DAY)
+                || day > Constants.DATE_DAY_HIGH_LIMIT
+                || month < Constants.DATE_MOTH_LOW_LIMIT || month > Constants.DATE_MOTH_HIGH_LIMIT
+                || year < Constants.DATE_YEAR_LOW_LIMIT || year > Constants.DATE_YEAR_HIGH_LIMIT) {
             return false;
         }
 
@@ -624,15 +629,15 @@ public final class Admin {
 
         Artist currentArtist = getArtist(username);
         if (currentArtist.getMerch().stream()
-                         .anyMatch(merch -> merch.getName().equals(command.getName()))) {
+                .anyMatch(merch -> merch.getName().equals(command.getName()))) {
             return "%s has merchandise with the same name.".formatted(currentArtist.getUsername());
         } else if (command.getPrice() < 0) {
             return "Price for merchandise can not be negative.";
         }
 
         currentArtist.getMerch().add(new Merchandise(command.getName(),
-                                                     command.getDescription(),
-                                                     command.getPrice()));
+                command.getDescription(),
+                command.getPrice()));
 
         notify(currentArtist, "New Merchandise", "New Merchandise from " + username + ".");
         return "%s has added new merchandise successfully.".formatted(username);
@@ -670,7 +675,7 @@ public final class Admin {
         String username = command.getUsername();
         String announcementName = command.getName();
         String announcementDescription = command.getDescription();
-        
+
         if (validateHostUser(username) != null) {
             return validateHostUser(username);
         }
@@ -682,7 +687,7 @@ public final class Admin {
         }
 
         currentHost.getAnnouncements().add(new Announcement(announcementName,
-                                                            announcementDescription));
+                announcementDescription));
 
         notify(currentHost, "New Announcement", "New Announcement from " + username + ".");
         return "%s has successfully added new announcement.".formatted(username);
@@ -697,7 +702,7 @@ public final class Admin {
     public String removeAnnouncement(final CommandInput command) {
         String username = command.getUsername();
         String announcementName = command.getName();
-        
+
         if (validateHostUser(username) != null) {
             return validateHostUser(username);
         }
@@ -721,7 +726,7 @@ public final class Admin {
     public String changePage(final CommandInput command) {
         String username = command.getUsername();
         String nextPage = command.getNextPage();
-        
+
         if (validateNormalUser(username) != null) {
             return validateNormalUser(username);
         }
@@ -761,7 +766,7 @@ public final class Admin {
      */
     public String printCurrentPage(final CommandInput command) {
         String username = command.getUsername();
-        
+
         if (validateNormalUser(username) != null) {
             return validateNormalUser(username);
         }
@@ -814,12 +819,12 @@ public final class Admin {
 
     private Stream<AudioCollection> getAudioCollectionsStream() {
         return users.stream().map(User::getPlayer)
-                    .map(Player::getCurrentAudioCollection).filter(Objects::nonNull);
+                .map(Player::getCurrentAudioCollection).filter(Objects::nonNull);
     }
 
     private Stream<AudioFile> getAudioFilesStream() {
         return users.stream().map(User::getPlayer)
-                    .map(Player::getCurrentAudioFile).filter(Objects::nonNull);
+                .map(Player::getCurrentAudioFile).filter(Objects::nonNull);
     }
 
     public String subscribe(final CommandInput command) {

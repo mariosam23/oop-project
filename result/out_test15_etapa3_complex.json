@@ -18996,7 +18996,42 @@
   "user" : "david27",
   "timestamp" : 22119,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 22130,
+  "result" : {
+    "topArtists" : {
+      "ABBA" : 24,
+      "Johnny Cash" : 15,
+      "Led Zeppelin" : 12,
+      "Madonna" : 12,
+      "Chuck Berry" : 11
+    },
+    "topGenres" : {
+      "pop" : 47,
+      "country" : 18,
+      "rock" : 14,
+      "soul" : 11,
+      "rap" : 10
+    },
+    "topSongs" : {
+      "Knowing Me, Knowing You" : 3,
+      "Stairway to Heaven" : 3,
+      "3rd Stone From the Sun" : 2,
+      "Blank Space" : 2,
+      "Dancing Queen" : 2
+    },
+    "topAlbums" : {
+      "ABBA Gold" : 12,
+      "Led Zeppelin IV" : 8,
+      "Chuck Berry Is On Top" : 7,
+      "Arrival" : 6,
+      "1989" : 5
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 22166,
@@ -19204,7 +19239,42 @@
   "user" : "frank21",
   "timestamp" : 22578,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "bob35",
+  "timestamp" : 22598,
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 22,
+      "Chuck Berry" : 18,
+      "Jimi Hendrix" : 18,
+      "Led Zeppelin" : 18,
+      "Taylor Swift" : 13
+    },
+    "topGenres" : {
+      "pop" : 28,
+      "country" : 26,
+      "classic rock" : 20,
+      "rock" : 17,
+      "rock and roll" : 13
+    },
+    "topSongs" : {
+      "Dancing With Our Hands Tied" : 3,
+      "You Belong with Me" : 3,
+      "All Along the Watchtower" : 2,
+      "Clean" : 2,
+      "Dazed and Confused" : 2
+    },
+    "topAlbums" : {
+      "The Legend of Johnny Cash" : 13,
+      "Chuck Berry Is On Top" : 10,
+      "Electric Ladyland" : 9,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 6,
+      "Led Zeppelin" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 22653,
@@ -19348,7 +19418,42 @@
   "user" : "david27",
   "timestamp" : 22901,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, null, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 22932,
+  "result" : {
+    "topArtists" : {
+      "U2" : 25,
+      "ABBA" : 17,
+      "Nothing But Thieves" : 15,
+      "Marvin Gaye" : 12,
+      "Fleetwood Mac" : 11
+    },
+    "topGenres" : {
+      "rock" : 33,
+      "pop" : 21,
+      "soul" : 12,
+      "country" : 11,
+      "1979" : 8
+    },
+    "topSongs" : {
+      "I Have a Dream" : 3,
+      "Love and Peace or Else" : 3,
+      "Broken Machine" : 2,
+      "Burn This Disco Out" : 2,
+      "Business" : 2
+    },
+    "topAlbums" : {
+      "All That You Can't Leave Behind" : 9,
+      "How to Dismantle an Atomic Bomb" : 9,
+      "Broken Machine (Deluxe)" : 8,
+      "Voulez-Vous" : 8,
+      "Greatest Hits" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 22941,
@@ -20548,7 +20653,42 @@
   "user" : "frank21",
   "timestamp" : 25743,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "emily30",
+  "timestamp" : 25802,
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 19,
+      "Led Zeppelin" : 17,
+      "U2" : 16,
+      "Fleetwood Mac" : 14,
+      "ABBA" : 12
+    },
+    "topGenres" : {
+      "rock" : 35,
+      "pop" : 32,
+      "country" : 14,
+      "justice for silver springs" : 11,
+      "hard rock" : 10
+    },
+    "topSongs" : {
+      "Stairway to Heaven" : 3,
+      "Amsterdam - NBT" : 2,
+      "Angeleyes" : 2,
+      "Bring It on Home" : 2,
+      "Can You See Me" : 2
+    },
+    "topAlbums" : {
+      "Are You Experienced" : 13,
+      "The Joshua Tree" : 12,
+      "Rumours (Super Deluxe)" : 11,
+      "Led Zeppelin II" : 9,
+      "Celebration (Double Disc Version)" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 25808,
@@ -20724,7 +20864,42 @@
   "user" : "frank21",
   "timestamp" : 26391,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 26457,
+  "result" : {
+    "topArtists" : {
+      "Eminem" : 21,
+      "Madonna" : 20,
+      "Taylor Swift" : 19,
+      "Nothing But Thieves" : 18,
+      "Fleetwood Mac" : 17
+    },
+    "topGenres" : {
+      "pop" : 38,
+      "rap" : 21,
+      "rock" : 21,
+      "country" : 20,
+      "classic rock" : 11
+    },
+    "topSongs" : {
+      "Express Yourself" : 3,
+      "Love Story" : 3,
+      "Blues for Hawaiians" : 2,
+      "Forbidden Love" : 2,
+      "Have You Ever Been (To Electric Ladyland)" : 2
+    },
+    "topAlbums" : {
+      "Recovery" : 11,
+      "Fearless" : 10,
+      "Broken Machine (Deluxe)" : 9,
+      "Celebration (Double Disc Version)" : 8,
+      "Fleetwood Mac" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 26595,
@@ -21316,7 +21491,42 @@
   "user" : "grace25",
   "timestamp" : 28439,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "frank21",
+  "timestamp" : 28471,
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 27,
+      "Chuck Berry" : 20,
+      "ABBA" : 15,
+      "Led Zeppelin" : 15,
+      "Johnny Cash" : 14
+    },
+    "topGenres" : {
+      "pop" : 32,
+      "classic rock" : 27,
+      "country" : 17,
+      "rock and roll" : 17,
+      "soul" : 13
+    },
+    "topSongs" : {
+      "Going to California" : 4,
+      "Dum Dum Diddle" : 3,
+      "Graveyard Whistling" : 3,
+      "Bold As Love" : 2,
+      "Can You Afford to Be An Individual?" : 2
+    },
+    "topAlbums" : {
+      "Experience Hendrix: The Best of Jimi Hendrix" : 21,
+      "The Great Twenty-Eight" : 14,
+      "reputation" : 9,
+      "Arrival" : 8,
+      "Led Zeppelin IV (Deluxe Edition)" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 28496,
@@ -22404,7 +22614,42 @@
   "user" : "jack29",
   "timestamp" : 32503,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 32557,
+  "result" : {
+    "topArtists" : {
+      "Michael Jackson" : 28,
+      "Madonna" : 22,
+      "Eminem" : 20,
+      "Johnny Cash" : 20,
+      "Nothing But Thieves" : 16
+    },
+    "topGenres" : {
+      "pop" : 69,
+      "country" : 20,
+      "rap" : 20,
+      "rock" : 16,
+      "soul" : 10
+    },
+    "topSongs" : {
+      "Don't Stop 'Til You Get Enough" : 3,
+      "Our Little Rendezvous" : 3,
+      "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix" : 3,
+      "'Till I Collapse (feat. Nate Dogg)" : 2,
+      "Billie Jean" : 2
+    },
+    "topAlbums" : {
+      "Thriller 25 Super Deluxe Edition" : 17,
+      "American III: Solitary Man" : 15,
+      "Like a Prayer" : 12,
+      "The Slim Shady LP" : 12,
+      "St. Louis to Liverpool" : 9
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 32577,
@@ -22452,7 +22697,42 @@
   "user" : "jack29",
   "timestamp" : 32702,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 32802,
+  "result" : {
+    "topArtists" : {
+      "Taylor Swift" : 32,
+      "Michael Jackson" : 22,
+      "Eminem" : 21,
+      "Chuck Berry" : 20,
+      "Marvin Gaye" : 17
+    },
+    "topGenres" : {
+      "pop" : 66,
+      "rock" : 22,
+      "rap" : 21,
+      "rock and roll" : 19,
+      "soul" : 17
+    },
+    "topSongs" : {
+      "Hey Pedro" : 3,
+      "Jam" : 3,
+      "Beat It - Single Version" : 2,
+      "Blues for Hawaiians" : 2,
+      "Can't Let Her Get Away" : 2
+    },
+    "topAlbums" : {
+      "Lover" : 22,
+      "Dangerous" : 14,
+      "The Marshall Mathers LP" : 14,
+      "Berry Is On Top" : 7,
+      "United" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 32821,
@@ -22628,7 +22908,42 @@
   "user" : "jack29",
   "timestamp" : 33613,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 33646,
+  "result" : {
+    "topArtists" : {
+      "Fleetwood Mac" : 48,
+      "Madonna" : 32,
+      "Nothing But Thieves" : 19,
+      "Eminem" : 15,
+      "Jimi Hendrix" : 15
+    },
+    "topGenres" : {
+      "pop" : 48,
+      "justice for silver springs" : 40,
+      "rock" : 21,
+      "rap" : 15,
+      "alternative rock" : 11
+    },
+    "topSongs" : {
+      "Songbird - 2004 Remastered Edition" : 4,
+      "Misty Mountain Hop" : 3,
+      "4 Minutes - feat. Justin Timberlake and Timbaland" : 2,
+      "Dreams - 2004 Remastered Edition" : 2,
+      "Even Better Than the Real Thing" : 2
+    },
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 40,
+      "Celebration (Double Disc Version)" : 26,
+      "Broken Machine (Deluxe)" : 11,
+      "Electric Ladyland" : 10,
+      "Achtung Baby" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 33697,
@@ -23060,7 +23375,42 @@
   "user" : "jack29",
   "timestamp" : 38055,
   "message" : "Playback loaded successfully."
-}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+}, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 38296,
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 93,
+      "Eminem" : 21,
+      "Chuck Berry" : 20,
+      "Fleetwood Mac" : 18,
+      "Jimi Hendrix" : 13
+    },
+    "topGenres" : {
+      "country" : 93,
+      "rock" : 39,
+      "pop" : 29,
+      "rap" : 21,
+      "rock and roll" : 18
+    },
+    "topSongs" : {
+      "Around and Around" : 4,
+      "Manic Depression" : 3,
+      "1983...(A Merman I Should Turn to Be)" : 2,
+      "Are You Experienced" : 2,
+      "Carol" : 2
+    },
+    "topAlbums" : {
+      "Unearthed" : 83,
+      "Chuck Berry Is On Top" : 18,
+      "Greatest Hits" : 14,
+      "The Eminem Show" : 12,
+      "Are You Experienced" : 9
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "endProgram",
   "result" : {
     "ABBA" : {

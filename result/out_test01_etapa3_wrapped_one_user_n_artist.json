@@ -79371,7 +79371,42 @@
   "user" : "david27",
   "timestamp" : 833349,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, null, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 833559,
+  "result" : {
+    "topArtists" : {
+      "Eminem" : 255,
+      "Queen" : 251,
+      "Rihanna" : 248,
+      "The Beatles" : 247,
+      "Johnny Cash" : 246
+    },
+    "topGenres" : {
+      "rock" : 883,
+      "pop" : 732,
+      "classic rock" : 726,
+      "soul" : 559,
+      "80s" : 297
+    },
+    "topSongs" : {
+      "Get It Back" : 31,
+      "Pet Sounds" : 26,
+      "God - Love Theme From Purple Rain 12\" Instrumental Version" : 23,
+      "God - Vocal Version" : 20,
+      "You'll Never Stand Alone" : 20
+    },
+    "topAlbums" : {
+      "Greatest Hits" : 157,
+      "Pet Sounds" : 122,
+      "Celebration (Double Disc Version)" : 112,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 112,
+      "Berry Is On Top" : 111
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "endProgram",
   "result" : {
     "Adele" : {

@@ -18291,7 +18291,42 @@
   "user" : "alice22",
   "timestamp" : 20591,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "emily30",
+  "timestamp" : 20591,
+  "result" : {
+    "topArtists" : {
+      "Rihanna" : 21,
+      "Nirvana" : 17,
+      "The Rolling Stones" : 14,
+      "ABBA" : 13,
+      "Johnny Cash" : 12
+    },
+    "topGenres" : {
+      "pop" : 22,
+      "soul" : 19,
+      "grunge" : 17,
+      "classic rock" : 15,
+      "rock" : 13
+    },
+    "topSongs" : {
+      "Push Up on Me" : 3,
+      "Before They Make Me Run" : 2,
+      "Come On" : 2,
+      "Consideration" : 2,
+      "Does Your Mother Know" : 2
+    },
+    "topAlbums" : {
+      "Good Girl Gone Bad" : 16,
+      "Voulez-Vous" : 7,
+      "Nevermind" : 6,
+      "Nirvana" : 6,
+      "Summer Dreams" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 20595,
@@ -19299,7 +19334,42 @@
   "user" : "frank21",
   "timestamp" : 21831,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 21848,
+  "result" : {
+    "topArtists" : {
+      "ABBA" : 17,
+      "The Beach Boys" : 15,
+      "Bob Dylan" : 14,
+      "Rihanna" : 14,
+      "Johnny Cash" : 11
+    },
+    "topGenres" : {
+      "pop" : 29,
+      "rock" : 19,
+      "soul" : 17,
+      "folk" : 12,
+      "classic rock" : 11
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 3,
+      "Melt My Heart to Stone" : 3,
+      "Pet Sounds" : 3,
+      "You Never Give Me Your Money - Remastered 2009" : 3,
+      "Dancing Queen" : 2
+    },
+    "topAlbums" : {
+      "Arrival" : 11,
+      "Summer Dreams" : 8,
+      "American IV: The Man Comes Around" : 7,
+      "Pet Sounds" : 7,
+      "Good Girl Gone Bad" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 21889,
@@ -19347,7 +19417,42 @@
   "user" : "bob35",
   "timestamp" : 21991,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "frank21",
+  "timestamp" : 22029,
+  "result" : {
+    "topArtists" : {
+      "Joni Mitchell" : 19,
+      "Bruce Springsteen" : 16,
+      "The Beatles" : 15,
+      "Elton John" : 14,
+      "Stevie Wonder" : 14
+    },
+    "topGenres" : {
+      "rock" : 31,
+      "soul" : 27,
+      "pop" : 18,
+      "folk" : 16,
+      "classic rock" : 12
+    },
+    "topSongs" : {
+      "Woman Like Me" : 3,
+      "Backstreets" : 2,
+      "Big Yellow Taxi" : 2,
+      "Born to Run" : 2,
+      "Come Together - Remastered 2009" : 2
+    },
+    "topAlbums" : {
+      "Court and Spark" : 9,
+      "1 (Remastered)" : 7,
+      "19" : 7,
+      "Pet Sounds" : 7,
+      "30" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 22046,
@@ -21827,7 +21932,42 @@
   "user" : "david27",
   "timestamp" : 26445,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 26453,
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 46,
+      "Stevie Wonder" : 21,
+      "ABBA" : 17,
+      "Joni Mitchell" : 17,
+      "Nirvana" : 14
+    },
+    "topGenres" : {
+      "country" : 46,
+      "soul" : 29,
+      "rock" : 18,
+      "classic rock" : 14,
+      "folk" : 14
+    },
+    "topSongs" : {
+      "Here Today" : 3,
+      "All the Nasties" : 2,
+      "Bones" : 2,
+      "Born to Run" : 2,
+      "Come as You Are" : 2
+    },
+    "topAlbums" : {
+      "Unearthed" : 42,
+      "The Definitive Collection" : 15,
+      "Blue" : 10,
+      "Super Trouper" : 8,
+      "The Bends" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 26482,
@@ -22307,7 +22447,42 @@
   "user" : "david27",
   "timestamp" : 27192,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 27217,
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 20,
+      "Adele" : 18,
+      "Johnny Cash" : 18,
+      "Bob Dylan" : 16,
+      "ABBA" : 14
+    },
+    "topGenres" : {
+      "soul" : 33,
+      "classic rock" : 28,
+      "folk" : 22,
+      "rock" : 22,
+      "country" : 18
+    },
+    "topSongs" : {
+      "Chasing Pavements" : 4,
+      "A Case of You" : 3,
+      "Arrival" : 3,
+      "Goodbye Yellow Brick Road" : 3,
+      "All Day Sucker" : 2
+    },
+    "topAlbums" : {
+      "Aftermath" : 16,
+      "The Freewheelin' Bob Dylan" : 11,
+      "Talking Book" : 10,
+      "19" : 9,
+      "30" : 9
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 27245,
@@ -22531,7 +22706,42 @@
   "user" : "grace25",
   "timestamp" : 27518,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "bob35",
+  "timestamp" : 27523,
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 28,
+      "Bruce Springsteen" : 20,
+      "Nirvana" : 15,
+      "The Beach Boys" : 12,
+      "The Rolling Stones" : 12
+    },
+    "topGenres" : {
+      "rock" : 29,
+      "soul" : 20,
+      "alternative" : 19,
+      "classic rock" : 15,
+      "grunge" : 15
+    },
+    "topSongs" : {
+      "Born in the U.S.A." : 3,
+      "Bob Dylan's Blues" : 2,
+      "Born to Run" : 2,
+      "Climbing Up the Walls" : 2,
+      "Daydreamer" : 2
+    },
+    "topAlbums" : {
+      "OK Computer" : 14,
+      "Nevermind" : 9,
+      "Pablo Honey" : 9,
+      "The Essential Bruce Springsteen" : 9,
+      "19" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, null, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 27614,
@@ -22835,7 +23045,42 @@
   "user" : "alice22",
   "timestamp" : 28039,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 28078,
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 37,
+      "Bob Dylan" : 17,
+      "Rihanna" : 17,
+      "Joni Mitchell" : 14,
+      "Adele" : 13
+    },
+    "topGenres" : {
+      "rock" : 48,
+      "soul" : 26,
+      "folk rock" : 14,
+      "pop" : 14,
+      "classic rock" : 13
+    },
+    "topSongs" : {
+      "Live With Me" : 3,
+      "At Last" : 2,
+      "Bob Dylan's 115th Dream" : 2,
+      "Cold Shoulder" : 2,
+      "Come as You Are" : 2
+    },
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 30,
+      "Bringing It All Back Home" : 14,
+      "ANTI (Deluxe)" : 11,
+      "19" : 8,
+      "Summer Dreams" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 28131,
@@ -23155,7 +23400,42 @@
   "user" : "irene33",
   "timestamp" : 28753,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 28805,
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 44,
+      "Bob Dylan" : 22,
+      "Radiohead" : 16,
+      "Adele" : 14,
+      "Johnny Cash" : 13
+    },
+    "topGenres" : {
+      "classic rock" : 44,
+      "soul" : 25,
+      "folk" : 21,
+      "pop" : 19,
+      "rock" : 14
+    },
+    "topSongs" : {
+      "Desolation Row" : 3,
+      "It Takes a Lot to Laugh, It Takes a Train to Cry" : 3,
+      "Lurgee" : 3,
+      "Melt My Heart to Stone" : 3,
+      "Midnight Rambler" : 3
+    },
+    "topAlbums" : {
+      "Rolled Gold" : 29,
+      "Highway 61 Revisited" : 15,
+      "30" : 9,
+      "Good Girl Gone Bad" : 8,
+      "Let It Bleed" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 28840,
@@ -23491,7 +23771,42 @@
   "user" : "irene33",
   "timestamp" : 30981,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 31186,
+  "result" : {
+    "topArtists" : {
+      "Stevie Wonder" : 37,
+      "The Beatles" : 25,
+      "Bob Dylan" : 21,
+      "Elton John" : 13,
+      "Nirvana" : 12
+    },
+    "topGenres" : {
+      "soul" : 46,
+      "rock" : 36,
+      "folk" : 14,
+      "pop" : 14,
+      "grunge" : 12
+    },
+    "topSongs" : {
+      "All in Love Is Fair" : 3,
+      "Subterranean Homesick Blues" : 3,
+      "Wayfaring Stranger" : 3,
+      "Bob Dylan's 115th Dream" : 2,
+      "Born to Run" : 2
+    },
+    "topAlbums" : {
+      "Songs in the Key of Life" : 23,
+      "1 (Remastered)" : 21,
+      "Bringing It All Back Home" : 11,
+      "Innervisions" : 11,
+      "In Rainbows" : 8
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 31281,
@@ -24531,7 +24846,42 @@
   "user" : "alice22",
   "timestamp" : 43808,
   "message" : "Playback loaded successfully."
-}, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+}, null, null, null, null, null, null, null, null, null, null, null, null, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 44014,
+  "result" : {
+    "topArtists" : {
+      "Rihanna" : 33,
+      "Bruce Springsteen" : 28,
+      "Johnny Cash" : 27,
+      "Elton John" : 24,
+      "The Beatles" : 21
+    },
+    "topGenres" : {
+      "rock" : 49,
+      "pop" : 35,
+      "country" : 27,
+      "soul" : 22,
+      "classic rock" : 20
+    },
+    "topSongs" : {
+      "Octopus's Garden - Remastered 2009" : 3,
+      "Shut Up and Drive" : 3,
+      "Big Brother" : 2,
+      "Born to Run" : 2,
+      "Desperado" : 2
+    },
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 24,
+      "Good Girl Gone Bad: Reloaded" : 15,
+      "Pet Sounds" : 15,
+      "Abbey Road (Remastered)" : 14,
+      "The Legend of Johnny Cash" : 14
+    },
+    "topEpisodes" : { }
+  }
+}, {
   "command" : "endProgram",
   "result" : {
     "ABBA" : {

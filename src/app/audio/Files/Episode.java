@@ -18,4 +18,9 @@ public final class Episode extends AudioFile {
     public String getOwner() {
         return owner;
     }
+
+    @Override
+    public String getType() {
+        return "episode";
+    }
 }

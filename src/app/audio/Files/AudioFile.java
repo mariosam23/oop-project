@@ -11,4 +11,10 @@ public abstract class AudioFile extends LibraryEntry {
         super(name);
         this.duration = duration;
     }
+
+    /**
+     * Gets the type of the audio file.
+     * @return the type of the audio file
+     */
+    public abstract String getType();
 }
