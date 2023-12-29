@@ -33,6 +33,7 @@ import java.util.stream.Stream;
  * The type Admin.
  */
 public final class Admin {
+    @Getter
     private List<User> users = new ArrayList<>();
     @Getter
     private List<Artist> artists = new ArrayList<>();

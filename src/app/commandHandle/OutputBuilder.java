@@ -24,7 +24,9 @@ public class OutputBuilder<T> {
     private ObjectNode objectNode;
     private Boolean swap;
     private String resultFieldName = "result";
+    private String fieldName = "";
     private Map<String, ?> mapResult;
+    private Integer valueField = 0;
 
     public OutputBuilder(final CommandInput commandInput) {
         objectMapper = new ObjectMapper();
@@ -70,6 +72,18 @@ public class OutputBuilder<T> {
      */
     public OutputBuilder<T> withResult(final List<T> res) {
         this.result = res;
+        return this;
+    }
+
+    /**
+     * Sets the custom field name for the result.
+     * @param fieldName the custom field name
+     * @param valueField the custom field value
+     * @return
+     */
+    public OutputBuilder<T> withFieldName(final String fieldName, final Integer valueField) {
+        this.fieldName = fieldName;
+        this.valueField = valueField;
         return this;
     }
 
@@ -148,6 +162,10 @@ public class OutputBuilder<T> {
 
         if (stats != null) {
             objectNode.put("stats", objectMapper.valueToTree(stats));
+        }
+
+        if (!fieldName.isEmpty()) {
+            objectNode.put(fieldName, valueField);
         }
 
         return objectNode;

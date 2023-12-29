@@ -27,6 +27,8 @@ public class PlayerSource {
     @Getter
     private int remainedDuration;
     private final List<Integer> indices = new ArrayList<>();
+    @Getter @Setter
+    private ArrayList<AudioFile> history = new ArrayList<>();
 
     /**
      * Instantiates a new Player source.
@@ -38,6 +40,7 @@ public class PlayerSource {
         this.type = type;
         this.audioFile = audioFile;
         this.remainedDuration = audioFile.getDuration();
+        history.add(audioFile);
     }
 
     /**
@@ -53,6 +56,7 @@ public class PlayerSource {
         this.index = 0;
         this.indexShuffled = 0;
         this.remainedDuration = audioFile.getDuration();
+        history.add(audioFile);
     }
 
     /**
@@ -70,6 +74,7 @@ public class PlayerSource {
         this.index = bookmark.getId();
         this.remainedDuration = bookmark.getTimestamp();
         this.audioFile = audioCollection.getTrackByIndex(index);
+        history.add(audioFile);
     }
 
     /**
@@ -114,6 +119,7 @@ public class PlayerSource {
 
                         index = indices.get(indexShuffled);
                         updateAudioFile();
+                        history.add(audioFile);
                         remainedDuration = audioFile.getDuration();
                     }
                 } else {
@@ -123,6 +129,7 @@ public class PlayerSource {
                     } else {
                         index++;
                         updateAudioFile();
+                        history.add(audioFile);
                         remainedDuration = audioFile.getDuration();
                     }
                 }
@@ -134,6 +141,7 @@ public class PlayerSource {
                     index = (index + 1) % audioCollection.getNumberOfTracks();
                 }
                 updateAudioFile();
+                history.add(audioFile);
                 remainedDuration = audioFile.getDuration();
             }
         }
@@ -159,12 +167,14 @@ public class PlayerSource {
                     }
                     index = indices.get(indexShuffled);
                     updateAudioFile();
+                    history.add(audioFile);
                     remainedDuration = audioFile.getDuration();
                 } else {
                     if (index > 0) {
                         index--;
                     }
                     updateAudioFile();
+                    history.add(audioFile);
                     remainedDuration = audioFile.getDuration();
                 }
             }

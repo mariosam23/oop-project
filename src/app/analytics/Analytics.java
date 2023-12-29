@@ -9,6 +9,7 @@ import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.commandHandle.OutputBuilder;
 import app.user.Artist;
+import app.user.Host;
 import app.user.User;
 import app.utils.Constants;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -145,7 +146,7 @@ public final class Analytics {
         return results;
     }
 
-    private static Map<String, Integer> getTopFiveSortedByCount(Map<String, Integer> map) {
+    private static Map<String, Integer> getTopFiveSortedByCount(final Map<String, Integer> map) {
         return map.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder())
                         .thenComparing(Map.Entry::getKey))
@@ -157,38 +158,28 @@ public final class Analytics {
                         LinkedHashMap::new));
     }
 
-    public static LinkedHashMap<String, Map<String, Integer>> wrappedUser(final User user) {
-//        if (user.getUsername().equals("irene33")) {
-//            System.out.println("ok\n");
-//            System.out.println(user.getPlayer().getSource().getAudioFile().getName());
-//        }
+    public static ObjectNode wrappedUser(final User user, final CommandInput cmd) {
         user.getPlayer().updateHistory();
         List<AudioFile> history = user.getPlayer().getHistory();
         UserStats stats = user.getUserStats();
+        stats.reset();
+
+        if (history.isEmpty()) {
+            return new OutputBuilder<>(cmd).withMessage("No data to show for user "
+                    + user.getUsername() + ".").build();
+        }
 
         for (AudioFile audioFile : history) {
             if (audioFile.getType().equals("song")) {
                 Song song = (Song) audioFile;
-                stats.getTopArtists().putIfAbsent(song.getArtist(), 0);
-                stats.getTopArtists().put(song.getArtist(), stats.getTopArtists()
-                        .get(song.getArtist()) + 1);
 
-                stats.getTopGenres().putIfAbsent(song.getGenre(), 0);
-                stats.getTopGenres().put(song.getGenre(), stats.getTopGenres()
-                        .get(song.getGenre()) + 1);
-
-                stats.getTopSongs().putIfAbsent(song.getName(), 0);
-                stats.getTopSongs().put(song.getName(), stats.getTopSongs()
-                        .get(song.getName()) + 1);
-
-                stats.getTopAlbums().putIfAbsent(song.getAlbum(), 0);
-                stats.getTopAlbums().put(song.getAlbum(), stats.getTopAlbums()
-                        .get(song.getAlbum()) + 1);
+                stats.addTopArtist(song.getArtist());
+                stats.addTopAlbum(song.getAlbum());
+                stats.addTopGenre(song.getGenre());
+                stats.addTopSong(song.getName());
             } else {
                 Episode episode = (Episode) audioFile;
-                stats.getTopEpisodes().putIfAbsent(episode.getName(), 0);
-                stats.getTopEpisodes().put(episode.getName(), stats.getTopEpisodes()
-                        .get(episode.getName()) + 1);
+                stats.addTopEpisode(episode.getName());
             }
         }
 
@@ -200,6 +191,94 @@ public final class Analytics {
         statsMap.put("topAlbums", getTopFiveSortedByCount(stats.getTopAlbums()));
         statsMap.put("topEpisodes", getTopFiveSortedByCount(stats.getTopEpisodes()));
 
-        return statsMap;
+        return new OutputBuilder<>(cmd).withMapResult(statsMap).build();
+    }
+
+    public static ObjectNode wrappedArtist(final Artist artist, final List<User> users,
+                                           final CommandInput cmd) {
+        artist.getStats().reset();
+        for (User user : users) {
+            user.getPlayer().updateHistory();
+            List<AudioFile> history = user.getPlayer().getHistory();
+
+            if (history.isEmpty()) {
+                continue;
+            }
+
+            List<AudioFile> historyCopy = new ArrayList<>(history);
+
+            historyCopy.removeIf(audioFile -> !audioFile.getType().equals("song"));
+            historyCopy.removeIf(audioFile -> !((Song) audioFile).getArtist()
+                                          .equals(artist.getUsername()));
+
+            artist.getStats().addListener(user.getUsername());
+
+            for (AudioFile audioFile : historyCopy) {
+                Song song = (Song) audioFile;
+                artist.getStats().addTopAlbum(song.getAlbum());
+                artist.getStats().addTopSong(song.getName());
+                artist.getStats().addTopFan(user.getUsername());
+            }
+        }
+
+        if (artist.getStats().getListenersNumber() == 0) {
+            return new OutputBuilder<>(cmd).withMessage("No data to show for artist "
+                    + artist.getUsername() + ".").build();
+        }
+
+        LinkedHashMap<String, Object> result = new LinkedHashMap<>();
+
+        result.put("topAlbums", getTopFiveSortedByCount(artist.getStats().getTopAlbums()));
+        result.put("topSongs", getTopFiveSortedByCount(artist.getStats().getTopSongs()));
+
+        result.put("topFans", new ArrayList<>(getTopFiveSortedByCount(artist.getStats().getTopFans())
+                .keySet()));
+
+        result.put("listeners", artist.getStats().getListenersNumber());
+
+        return new OutputBuilder<>(cmd)
+                .withResultFieldName("result")
+                .withMapResult(result)
+                .build();
+    }
+
+    public static ObjectNode wrappedHost(final Host host, final List<User> users,
+                                         final CommandInput cmd) {
+        host.getStats().reset();
+        for (User user : users) {
+            user.getPlayer().updateHistory();
+            List<AudioFile> history = user.getPlayer().getHistory();
+
+            if (history.isEmpty()) {
+                continue;
+            }
+            List<AudioFile> copyHistory = new ArrayList<>(history);
+            copyHistory.removeIf(audioFile -> !audioFile.getType().equals("episode"));
+            copyHistory.removeIf(audioFile -> !(audioFile.getOwner()
+                                          .equals(host.getUsername())));
+
+            host.getStats().addListener(user.getUsername());
+
+            for (AudioFile audioFile : copyHistory) {
+                Episode episode = (Episode) audioFile;
+                host.getStats().addTopEpisode(episode.getName());
+            }
+        }
+
+        if (host.getStats().getListenersNumber() == 0) {
+            return new OutputBuilder<>(new CommandInput())
+                    .withMessage("No data to show for host " + host.getUsername() + ".")
+                    .build();
+        }
+
+        LinkedHashMap<String, Object> result = new LinkedHashMap<>();
+
+        result.put("topEpisodes", getTopFiveSortedByCount(host.getStats().getTopEpisodes()));
+        result.put("listeners", host.getStats().getListenersNumber());
+
+        return new OutputBuilder<>(cmd)
+                .withResultFieldName("result")
+                .withMapResult(result)
+                .build();
     }
 }

@@ -1,5 +1,6 @@
 package app.user;
 
+import app.analytics.statistics.HostStats;
 import app.audio.Collections.Podcast;
 import app.pages.HostPage;
 import app.pages.pageContent.Announcement;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 public final class Host extends ContentCreator {
     private ArrayList<Podcast> podcasts;
     private ArrayList<Announcement> announcements;
+    private HostStats stats;
 
     /**
      * Instantiates a new Host.
@@ -27,6 +29,7 @@ public final class Host extends ContentCreator {
         super(username, age, city);
         podcasts = new ArrayList<>();
         announcements = new ArrayList<>();
+        stats = new HostStats();
 
         super.setPage(new HostPage(this));
     }

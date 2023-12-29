@@ -955,7 +955,28 @@
   "user" : "grace25",
   "timestamp" : 4825,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 4927,
+  "result" : {
+    "topAlbums" : {
+      "The Definitive Collection" : 24,
+      "Songs in the Key of Life" : 18,
+      "Innervisions" : 14,
+      "Talking Book" : 14
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 3,
+      "Hey Love" : 3,
+      "Higher Ground - Single Version" : 3,
+      "Living for the City" : 3,
+      "Maybe Your Baby" : 3
+    },
+    "topFans" : [ "grace25", "david27", "irene33" ],
+    "listeners" : 3
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 4927,
@@ -1595,7 +1616,28 @@
   "user" : "david27",
   "timestamp" : 10099,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Prince",
+  "timestamp" : 10355,
+  "result" : {
+    "topAlbums" : {
+      "The Very Best of Prince" : 30,
+      "1999" : 23,
+      "Parade - Music From the Motion Picture Under the Cherry Moon" : 14,
+      "Purple Rain" : 6
+    },
+    "topSongs" : {
+      "D.M.S.R." : 5,
+      "All The Critics Love U In New York" : 4,
+      "God - Love Theme From Purple Rain 12\" Instrumental Version" : 4,
+      "Little Red Corvette [Explicit]" : 4,
+      "Purple Rain" : 4
+    },
+    "topFans" : [ "irene33", "david27", "grace25" ],
+    "listeners" : 3
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 10355,
@@ -2558,7 +2600,28 @@
   "user" : "grace25",
   "timestamp" : 14308,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 14425,
+  "result" : {
+    "topAlbums" : {
+      "Rolled Gold" : 28,
+      "Aftermath" : 15,
+      "Let It Bleed" : 15,
+      "Some Girls" : 13
+    },
+    "topSongs" : {
+      "Lady Jane" : 6,
+      "Out of Time" : 4,
+      "Flight 505" : 3,
+      "Gimme Shelter" : 3,
+      "Live With Me" : 3
+    },
+    "topFans" : [ "grace25", "david27", "irene33" ],
+    "listeners" : 3
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 14425,
@@ -2864,7 +2927,35 @@
   "user" : "david27",
   "timestamp" : 17782,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 17942,
+  "result" : {
+    "topAlbums" : {
+      "Ladies of the Canyon" : 48
+    },
+    "topSongs" : {
+      "The Arrangement" : 8,
+      "Morning Morgantown" : 6,
+      "Big Yellow Taxi" : 4,
+      "Blue Boy" : 4,
+      "Ladies of the Canyon" : 4
+    },
+    "topFans" : [ "david27", "grace25", "irene33" ],
+    "listeners" : 3
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 17942,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 3
+  }
+}, {
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 18042,

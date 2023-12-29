@@ -1619,7 +1619,27 @@
   "user" : "carol19",
   "timestamp" : 6895,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "James Brown",
+  "timestamp" : 7034,
+  "result" : {
+    "topAlbums" : {
+      "The 50th Anniversary Collection" : 54,
+      "Out of Sight" : 21,
+      "20 All-Time Greatest Hits!" : 17
+    },
+    "topSongs" : {
+      "I Got You (I Feel Good)" : 5,
+      "Come Rain Or Come Shine" : 4,
+      "I Got You (I Feel Good) (Original 1964 Album)" : 4,
+      "It's A Man's, Man's, Man's World - Single Version / Mono" : 4,
+      "Out Of Sight - Single Version" : 4
+    },
+    "topFans" : [ "carol19", "grace25", "jack29", "henry26" ],
+    "listeners" : 4
+  }
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7034,
@@ -2449,7 +2469,28 @@
   "user" : "grace25",
   "timestamp" : 14523,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 14712,
+  "result" : {
+    "topAlbums" : {
+      "The Wall" : 25,
+      "The Dark Side of the Moon" : 23,
+      "The Division Bell" : 19,
+      "Wish You Were Here" : 19
+    },
+    "topSongs" : {
+      "Have a Cigar" : 7,
+      "Brain Damage" : 4,
+      "Speak to Me" : 4,
+      "Welcome to the Machine" : 4,
+      "Cluster One" : 3
+    },
+    "topFans" : [ "henry26", "grace25", "jack29", "carol19" ],
+    "listeners" : 4
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 14712,
@@ -2689,7 +2730,45 @@
   "user" : "grace25",
   "timestamp" : 20975,
   "message" : "Playback loaded successfully."
-}, null, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Aretha Franklin",
+  "timestamp" : 21076,
+  "result" : {
+    "topAlbums" : {
+      "Soul Queen" : 81
+    },
+    "topSongs" : {
+      "Baby, Baby, Baby" : 3,
+      "Dr. Feelgood (Love Is a Serious Business)" : 3,
+      "I Say a Little Prayer" : 3,
+      "My Song" : 3,
+      "Night Life" : 3
+    },
+    "topFans" : [ "grace25", "henry26", "jack29", "carol19" ],
+    "listeners" : 4
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 21076,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 4
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Frank Sinatra",
+  "timestamp" : 21076,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 4
+  }
+}, {
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 21176,

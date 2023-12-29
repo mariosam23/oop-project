@@ -2612,7 +2612,28 @@
   "user" : "frank21",
   "timestamp" : 2693,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Marvin Gaye",
+  "timestamp" : 2775,
+  "result" : {
+    "topAlbums" : {
+      "United" : 28,
+      "The Very Best of Marvin Gaye" : 19,
+      "What's Going On" : 18,
+      "Midnight Love" : 13
+    },
+    "topSongs" : {
+      "You've Got What It Takes" : 6,
+      "Ain't No Mountain High Enough" : 4,
+      "What's Happening Brother" : 4,
+      "God Is Love" : 3,
+      "Hold Me Oh My Darling" : 3
+    },
+    "topFans" : [ "carol19", "frank21", "emily30", "irene33", "david27" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 2775,
@@ -4084,7 +4105,28 @@
   "user" : "jack29",
   "timestamp" : 5905,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Madonna",
+  "timestamp" : 5918,
+  "result" : {
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 38,
+      "Confessions on a Dance Floor" : 19,
+      "Ray of Light" : 16,
+      "Like a Prayer" : 13
+    },
+    "topSongs" : {
+      "Express Yourself" : 6,
+      "Hung Up" : 5,
+      "Like a Prayer" : 5,
+      "Cherish" : 4,
+      "Future Lovers" : 4
+    },
+    "topFans" : [ "henry26", "jack29", "alice22", "irene33", "bob35" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 5918,
@@ -4836,7 +4878,28 @@
   "user" : "irene33",
   "timestamp" : 6707,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 6741,
+  "result" : {
+    "topAlbums" : {
+      "The Definitive Collection" : 34,
+      "Songs in the Key of Life" : 23,
+      "Innervisions" : 19,
+      "Talking Book" : 13
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 5,
+      "Signed, Sealed, Delivered (I'm Yours)" : 5,
+      "Don't You Worry 'Bout a Thing" : 4,
+      "I Wish" : 4,
+      "Superstition - Single Version" : 4
+    },
+    "topFans" : [ "irene33", "david27", "carol19", "alice22", "emily30" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 6741,
@@ -6244,7 +6307,28 @@
   "user" : "alice22",
   "timestamp" : 9217,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Frank Sinatra",
+  "timestamp" : 9221,
+  "result" : {
+    "topAlbums" : {
+      "Nothing But the Best (Remastered)" : 32,
+      "Christmas Songs by Sinatra" : 26,
+      "A Jolly Christmas from Frank Sinatra" : 19,
+      "Sinatra Reprise: The Very Good Years" : 14
+    },
+    "topSongs" : {
+      "Adeste Fideles" : 7,
+      "My Kind Of Town - Remastered 2008" : 7,
+      "Jingle Bells" : 6,
+      "Silent Night" : 6,
+      "I'll Be Home for Christmas" : 5
+    },
+    "topFans" : [ "alice22", "henry26", "emily30", "jack29", "bob35" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 9221,
@@ -6484,7 +6568,28 @@
   "user" : "emily30",
   "timestamp" : 9624,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Aretha Franklin",
+  "timestamp" : 9635,
+  "result" : {
+    "topAlbums" : {
+      "Soul Queen" : 77,
+      "I Never Loved a Man the Way I Love You" : 12,
+      "Aretha Now" : 6,
+      "Respect" : 2
+    },
+    "topSongs" : {
+      "Dr. Feelgood (Love Is a Serious Business)" : 10,
+      "Respect" : 8,
+      "I Can't See Myself Leaving You" : 4,
+      "Night Time Is The Right Time" : 4,
+      "See Saw" : 4
+    },
+    "topFans" : [ "bob35", "alice22", "frank21", "emily30", "david27" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 9635,
@@ -8570,7 +8675,28 @@
   "user" : "grace25",
   "timestamp" : 13675,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Bruce Springsteen",
+  "timestamp" : 13709,
+  "result" : {
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 45,
+      "Greatest Hits" : 20,
+      "Born to Run" : 16,
+      "Born in the U.S.A." : 14
+    },
+    "topSongs" : {
+      "Thunder Road" : 6,
+      "Born in the U.S.A." : 5,
+      "Born to Run" : 5,
+      "Dancing in the Dark" : 5,
+      "Badlands" : 4
+    },
+    "topFans" : [ "irene33", "bob35", "carol19", "grace25", "jack29" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 13709,
@@ -8954,7 +9080,28 @@
   "user" : "henry26",
   "timestamp" : 14390,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 14439,
+  "result" : {
+    "topAlbums" : {
+      "Blue" : 22,
+      "Both Sides Now" : 22,
+      "Ladies of the Canyon" : 21,
+      "Court and Spark" : 19
+    },
+    "topSongs" : {
+      "A Case of You" : 5,
+      "This Flight Tonight" : 4,
+      "At Last" : 3,
+      "Blue Boy" : 3,
+      "California" : 3
+    },
+    "topFans" : [ "grace25", "jack29", "henry26", "alice22", "bob35" ],
+    "listeners" : 10
+  }
+}, null, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 14439,
@@ -10672,7 +10819,28 @@
   "user" : "bob35",
   "timestamp" : 17266,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Led Zeppelin",
+  "timestamp" : 17287,
+  "result" : {
+    "topAlbums" : {
+      "Led Zeppelin IV (Deluxe Edition)" : 48,
+      "Led Zeppelin" : 17,
+      "Led Zeppelin II" : 15,
+      "Led Zeppelin IV" : 6
+    },
+    "topSongs" : {
+      "Black Dog" : 6,
+      "Four Sticks" : 6,
+      "Going to California" : 6,
+      "Stairway to Heaven" : 6,
+      "Misty Mountain Hop" : 5
+    },
+    "topFans" : [ "alice22", "carol19", "bob35", "david27", "emily30" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 17287,
@@ -10899,7 +11067,28 @@
   "user" : "alice22",
   "timestamp" : 17701,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, null, {
+  "command" : "wrapped",
+  "user" : "Jimi Hendrix",
+  "timestamp" : 17799,
+  "result" : {
+    "topAlbums" : {
+      "Are You Experienced?" : 33,
+      "Electric Ladyland" : 31,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 20,
+      "Are You Experienced" : 3
+    },
+    "topSongs" : {
+      "Foxy Lady" : 8,
+      "I Don't Live Today" : 6,
+      "Hey Joe" : 4,
+      "Love Or Confusion" : 4,
+      "Purple Haze" : 4
+    },
+    "topFans" : [ "grace25", "frank21", "carol19", "david27", "henry26" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 17799,
@@ -11548,7 +11737,28 @@
   "user" : "irene33",
   "timestamp" : 25097,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Fleetwood Mac",
+  "timestamp" : 25104,
+  "result" : {
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 42,
+      "Fleetwood Mac" : 21,
+      "Rumours" : 21,
+      "Greatest Hits" : 9
+    },
+    "topSongs" : {
+      "Gold Dust Woman" : 5,
+      "Never Going Back" : 5,
+      "Landslide" : 4,
+      "Crystal" : 3,
+      "Dreams" : 3
+    },
+    "topFans" : [ "alice22", "irene33", "frank21", "jack29", "grace25" ],
+    "listeners" : 10
+  }
+}, null, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 25104,
@@ -11772,7 +11982,27 @@
   "user" : "irene33",
   "timestamp" : 25936,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "The Beatles",
+  "timestamp" : 25999,
+  "result" : {
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 46,
+      "1 (Remastered)" : 35,
+      "Abbey Road (Remastered)" : 22
+    },
+    "topSongs" : {
+      "Paperback Writer - Remastered 2015" : 4,
+      "Yer Blues - Remastered 2009" : 4,
+      "Because - Remastered 2009" : 3,
+      "Come Together - Remastered 2009" : 3,
+      "Cry Baby Cry - Remastered 2009" : 3
+    },
+    "topFans" : [ "irene33", "david27", "henry26", "alice22", "bob35" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 25999,
@@ -11887,7 +12117,27 @@
     },
     "topEpisodes" : { }
   }
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Dylan",
+  "timestamp" : 26302,
+  "result" : {
+    "topAlbums" : {
+      "The Freewheelin' Bob Dylan" : 34,
+      "Bringing It All Back Home" : 26,
+      "Highway 61 Revisited" : 16
+    },
+    "topSongs" : {
+      "Honey, Just Allow Me One More Chance" : 5,
+      "It's Alright, Ma (I'm Only Bleeding)" : 5,
+      "Ballad of a Thin Man" : 4,
+      "Corrina, Corrina" : 4,
+      "Maggie's Farm" : 4
+    },
+    "topFans" : [ "carol19", "irene33", "emily30", "jack29", "henry26" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 26302,
@@ -11983,7 +12233,48 @@
   "user" : "alice22",
   "timestamp" : 26857,
   "message" : "Playback loaded successfully."
-}, null, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Marley",
+  "timestamp" : 26891,
+  "result" : {
+    "topAlbums" : {
+      "One Love Peace Concert" : 26,
+      "Chant Down Babylon" : 24,
+      "Natural Mystic" : 24,
+      "Legend" : 18
+    },
+    "topSongs" : {
+      "400 Years" : 4,
+      "Buffalo Soldier" : 4,
+      "Johnny Was [feat. Guru]" : 4,
+      "Peace Treaty" : 4,
+      "African Herbsman" : 3
+    },
+    "topFans" : [ "bob35", "carol19", "grace25", "jack29", "emily30" ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Elton John",
+  "timestamp" : 26891,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Nirvana",
+  "timestamp" : 26891,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 26991,

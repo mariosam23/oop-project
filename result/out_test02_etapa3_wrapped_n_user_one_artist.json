@@ -555,7 +555,28 @@
   "user" : "jack29",
   "timestamp" : 2995,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Radiohead",
+  "timestamp" : 3111,
+  "result" : {
+    "topAlbums" : {
+      "The Bends" : 14,
+      "OK Computer" : 9,
+      "In Rainbows" : 7,
+      "Pablo Honey" : 6
+    },
+    "topSongs" : {
+      "Exit Music (for a Film)" : 3,
+      "(Nice Dream)" : 2,
+      "Just" : 2,
+      "Subterranean Homesick Alien" : 2,
+      "Weird Fishes/Arpeggi" : 2
+    },
+    "topFans" : [ "alice22", "jack29", "david27", "henry26", "emily30" ],
+    "listeners" : 7
+  }
+}, {
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 3211,

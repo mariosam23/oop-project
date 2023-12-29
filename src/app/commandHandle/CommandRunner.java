@@ -574,14 +574,12 @@ public final class CommandRunner {
         }
 
         if (user.userType().equals("user")) {
-            User currentUser = (User) user;
-            if (currentUser.getPlayer().getHistory().isEmpty() && currentUser.getPlayer().getSource() == null) {
-                return new OutputBuilder<>(commandInput).withMessage("No data to show for user "
-                        + user.getUsername() + ".").build();
-            }
-
-            LinkedHashMap<String, Map<String, Integer>> stats = Analytics.wrappedUser((User) user);
-            return new OutputBuilder<>(commandInput).withMapResult(stats).build();
+            return Analytics.wrappedUser((User) user, commandInput);
+        }
+        else if (user.userType().equals("artist")) {
+            return Analytics.wrappedArtist((Artist) user, admin.getUsers(), commandInput);
+        } else if (user.userType().equals("host")) {
+            return Analytics.wrappedHost((Host) user, admin.getUsers(), commandInput);
         }
 
         return null;

@@ -3,6 +3,7 @@ package app.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.analytics.statistics.ArtistStats;
 import app.audio.Collections.Album;
 import app.audio.Collections.output.AlbumOutput;
 import app.audio.Files.Song;
@@ -19,6 +20,7 @@ public final class Artist extends ContentCreator {
     private ArrayList<Album> albums;
     private ArrayList<Merchandise> merch;
     private ArrayList<Event> events;
+    private ArtistStats stats;
 
     /**
      * Instantiates a new Artist.
@@ -32,6 +34,7 @@ public final class Artist extends ContentCreator {
         albums = new ArrayList<>();
         merch = new ArrayList<>();
         events = new ArrayList<>();
+        stats = new ArtistStats();
 
         super.setPage(new ArtistPage(this));
     }

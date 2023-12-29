@@ -4090,7 +4090,28 @@
   "user" : "jack29",
   "timestamp" : 4023,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Marvin Gaye",
+  "timestamp" : 4051,
+  "result" : {
+    "topAlbums" : {
+      "United" : 34,
+      "What's Going On" : 32,
+      "Midnight Love" : 26,
+      "The Very Best of Marvin Gaye" : 19
+    },
+    "topSongs" : {
+      "Joy" : 7,
+      "If I Could Build My Whole World Around You" : 6,
+      "Mercy Mercy Me (The Ecology)" : 6,
+      "What's Going On" : 6,
+      "Right On" : 5
+    },
+    "topFans" : [ "david27", "frank21", "jack29", "alice22", "carol19" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 4051,
@@ -5923,7 +5944,28 @@
   "user" : "jack29",
   "timestamp" : 6617,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Led Zeppelin",
+  "timestamp" : 6641,
+  "result" : {
+    "topAlbums" : {
+      "Led Zeppelin IV" : 46,
+      "Led Zeppelin II" : 28,
+      "Led Zeppelin" : 23,
+      "Led Zeppelin IV (Deluxe Edition)" : 20
+    },
+    "topSongs" : {
+      "Misty Mountain Hop" : 9,
+      "Stairway to Heaven" : 9,
+      "When the Levee Breaks" : 9,
+      "Black Dog" : 6,
+      "Rock and Roll" : 6
+    },
+    "topFans" : [ "bob35", "emily30", "frank21", "david27", "carol19" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 6641,
@@ -9828,7 +9870,27 @@
   "user" : "grace25",
   "timestamp" : 10435,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Michael Jackson",
+  "timestamp" : 10441,
+  "result" : {
+    "topAlbums" : {
+      "Thriller 25 Super Deluxe Edition" : 50,
+      "Dangerous" : 45,
+      "Off the Wall" : 30
+    },
+    "topSongs" : {
+      "Jam" : 7,
+      "Heal the World" : 6,
+      "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix" : 6,
+      "Beat It - Single Version" : 5,
+      "Can't Let Her Get Away" : 5
+    },
+    "topFans" : [ "henry26", "david27", "frank21", "carol19", "jack29" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 10441,
@@ -11428,7 +11490,28 @@
   "user" : "grace25",
   "timestamp" : 12528,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Chuck Berry",
+  "timestamp" : 12537,
+  "result" : {
+    "topAlbums" : {
+      "Chuck Berry Is On Top" : 60,
+      "The Great Twenty-Eight" : 37,
+      "St. Louis to Liverpool" : 30,
+      "Berry Is On Top" : 7
+    },
+    "topSongs" : {
+      "Johnny B. Goode" : 10,
+      "Carol" : 8,
+      "Sweet Little Rock And Roller" : 8,
+      "Hey Pedro" : 7,
+      "Maybellene" : 7
+    },
+    "topFans" : [ "david27", "frank21", "jack29", "bob35", "henry26" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12537,
@@ -13300,7 +13383,28 @@
   "user" : "jack29",
   "timestamp" : 14895,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Madonna",
+  "timestamp" : 14948,
+  "result" : {
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 59,
+      "Confessions on a Dance Floor" : 28,
+      "Ray of Light" : 26,
+      "Like a Prayer" : 23
+    },
+    "topSongs" : {
+      "Express Yourself" : 8,
+      "Forbidden Love" : 6,
+      "Like a Prayer" : 5,
+      "The Power of Good-Bye" : 5,
+      "Dear Jessie" : 4
+    },
+    "topFans" : [ "grace25", "henry26", "irene33", "carol19", "emily30" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 14948,
@@ -15076,7 +15180,28 @@
   "user" : "carol19",
   "timestamp" : 17444,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "ABBA",
+  "timestamp" : 17448,
+  "result" : {
+    "topAlbums" : {
+      "Arrival" : 40,
+      "ABBA Gold" : 34,
+      "Super Trouper" : 26,
+      "Voulez-Vous" : 26
+    },
+    "topSongs" : {
+      "The Winner Takes It All" : 10,
+      "Knowing Me, Knowing You" : 8,
+      "Dum Dum Diddle" : 6,
+      "Money, Money, Money" : 6,
+      "Dancing Queen" : 5
+    },
+    "topFans" : [ "carol19", "alice22", "frank21", "henry26", "david27" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 17448,
@@ -18548,7 +18673,28 @@
   "user" : "alice22",
   "timestamp" : 21529,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Taylor Swift",
+  "timestamp" : 21532,
+  "result" : {
+    "topAlbums" : {
+      "Lover" : 36,
+      "Fearless" : 34,
+      "1989" : 33,
+      "reputation" : 33
+    },
+    "topSongs" : {
+      "Fifteen" : 6,
+      "So It Goes… 就这样吧" : 6,
+      "Blank Space" : 5,
+      "Delicate 易碎" : 5,
+      "Gorgeous 完美情人" : 5
+    },
+    "topFans" : [ "david27", "irene33", "henry26", "frank21", "bob35" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 21532,
@@ -19853,7 +19999,28 @@
   "user" : "emily30",
   "timestamp" : 23861,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "U2",
+  "timestamp" : 23920,
+  "result" : {
+    "topAlbums" : {
+      "All That You Can't Leave Behind" : 36,
+      "Achtung Baby" : 35,
+      "The Joshua Tree" : 33,
+      "How to Dismantle an Atomic Bomb" : 24
+    },
+    "topSongs" : {
+      "Stuck in a Moment You Can't Get Out Of" : 9,
+      "So Cruel" : 6,
+      "With or Without You" : 6,
+      "In a Little While" : 5,
+      "One" : 5
+    },
+    "topFans" : [ "alice22", "emily30", "david27", "bob35", "grace25" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 23920,
@@ -20720,7 +20887,28 @@
   "user" : "frank21",
   "timestamp" : 25825,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Jimi Hendrix",
+  "timestamp" : 25893,
+  "result" : {
+    "topAlbums" : {
+      "Are You Experienced" : 48,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 44,
+      "Electric Ladyland" : 39,
+      "Are You Experienced?" : 8
+    },
+    "topSongs" : {
+      "Foxy Lady" : 11,
+      "Manic Depression" : 10,
+      "Fire" : 7,
+      "Hey Joe" : 7,
+      "Love Or Confusion" : 6
+    },
+    "topFans" : [ "frank21", "emily30", "bob35", "grace25", "irene33" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 25893,
@@ -21846,7 +22034,28 @@
   "user" : "grace25",
   "timestamp" : 29525,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Eminem",
+  "timestamp" : 29652,
+  "result" : {
+    "topAlbums" : {
+      "The Eminem Show" : 38,
+      "The Marshall Mathers LP" : 38,
+      "The Slim Shady LP" : 34,
+      "Recovery" : 28
+    },
+    "topSongs" : {
+      "Public Service Announcement 2000" : 6,
+      "Business" : 4,
+      "Cleanin' Out My Closet" : 4,
+      "Role Model" : 4,
+      "Space Bound" : 4
+    },
+    "topFans" : [ "david27", "irene33", "jack29", "henry26", "grace25" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 29652,
@@ -23023,7 +23232,28 @@
   "user" : "jack29",
   "timestamp" : 34002,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Johnny Cash",
+  "timestamp" : 34057,
+  "result" : {
+    "topAlbums" : {
+      "Unearthed" : 108,
+      "American III: Solitary Man" : 38,
+      "The Legend of Johnny Cash" : 32,
+      "American IV: The Man Comes Around" : 27
+    },
+    "topSongs" : {
+      "Wayfaring Stranger" : 7,
+      "The Man Comes Around (Early Take)" : 6,
+      "Country Trash" : 4,
+      "I Hung My Head" : 4,
+      "I Won't Back Down" : 4
+    },
+    "topFans" : [ "jack29", "bob35", "henry26", "carol19", "frank21" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 34057,
@@ -23215,7 +23445,27 @@
   "user" : "jack29",
   "timestamp" : 36813,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Fleetwood Mac",
+  "timestamp" : 36958,
+  "result" : {
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 88,
+      "Greatest Hits" : 36,
+      "Fleetwood Mac" : 25
+    },
+    "topSongs" : {
+      "I'm So Afraid" : 7,
+      "Shake Your Moneymaker" : 7,
+      "Songbird - 2004 Remastered Edition" : 7,
+      "Go Your Own Way - 2004 Remastered Edition" : 6,
+      "Never Going Back Again - 2004 Remastered Edition" : 6
+    },
+    "topFans" : [ "grace25", "jack29", "irene33", "emily30", "henry26" ],
+    "listeners" : 10
+  }
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 36958,
@@ -23375,7 +23625,147 @@
   "user" : "jack29",
   "timestamp" : 38055,
   "message" : "Playback loaded successfully."
-}, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+}, {
+  "command" : "wrapped",
+  "user" : "Nothing But Thieves",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : {
+      "Broken Machine (Deluxe)" : 48,
+      "Moral Panic" : 36,
+      "Nothing But Thieves (Deluxe)" : 34
+    },
+    "topSongs" : {
+      "Moral Panic" : 9,
+      "If I Get High" : 8,
+      "Broken Machine" : 6,
+      "Graveyard Whistling" : 6,
+      "I'm Not Made by Design" : 6
+    },
+    "topFans" : [ "grace25", "irene33", "henry26", "alice22", "emily30" ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Marley",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Rihanna",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "David Bowie",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Ray Charles",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Imagine Dragons",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Whitney Houston",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Doors",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Radiohead",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Aretha Franklin",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Beach Boys",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Police",
+  "timestamp" : 38196,
+  "result" : {
+    "topAlbums" : { },
+    "topSongs" : { },
+    "topFans" : [ ],
+    "listeners" : 10
+  }
+}, {
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 38296,

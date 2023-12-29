@@ -25,8 +25,6 @@ public final class Player {
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
     @Getter @Setter
     private ArrayList<AudioFile> history = new ArrayList<>();
-    private int currentIdx = 0;
-
 
     /**
      * Instantiates a new Player.
@@ -37,48 +35,34 @@ public final class Player {
     }
 
     /**
-     * Stop.
+     * Stops the player and updates the history.
      */
     public void stop() {
         if (source == null) {
             return;
         }
 
-        // !! Functioneaza pentru wrapped doar daca se ajunge sa se opreasca playerul. !! //
-
-        int idx = source.getIndex();
         if ("podcast".equals(this.type)) {
             bookmarkPodcast();
-        } else if (source.getAudioCollection() != null) {
-            while (currentIdx <= idx) {
-                history.add(source.getAudioCollection().getTrackByIndex(currentIdx));
-                currentIdx++;
-            }
-        } else {
-            history.add(source.getAudioFile());
         }
 
+        history.addAll(source.getHistory());
         repeatMode = Enums.RepeatMode.NO_REPEAT;
         paused = true;
         source = null;
         shuffle = false;
-        currentIdx = 0;
     }
 
+    /**
+     * Updates the history if the player is not stopped.
+     */
     public void updateHistory() {
         if (source == null) {
             return;
         }
 
-        if (source.getAudioCollection() != null) {
-            int idx = source.getIndex();
-            while (currentIdx <= idx) {
-                history.add(source.getAudioCollection().getTrackByIndex(currentIdx));
-                currentIdx++;
-            }
-        } else {
-            history.add(source.getAudioFile());
-        }
+        history.addAll(source.getHistory());
+        source.getHistory().clear();
     }
 
     private void bookmarkPodcast() {
@@ -209,7 +193,6 @@ public final class Player {
 
         int elapsedTime = time;
         while (elapsedTime >= source.getDuration()) {
-//            addCurrentAudioToHistory();
             elapsedTime -= source.getDuration();
             next();
 
@@ -219,17 +202,6 @@ public final class Player {
         }
 
         source.skip(-elapsedTime);
-//        addCurrentAudioToHistory();
-    }
-
-    private void addCurrentAudioToHistory() {
-        if (history.isEmpty() || !isCurrentAudioInHistory()) {
-            history.add(source.getAudioFile());
-        }
-    }
-
-    private boolean isCurrentAudioInHistory() {
-        return history.get(history.size() - 1).equals(source.getAudioFile());
     }
 
     /**
