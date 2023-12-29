@@ -2078,8 +2078,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1348,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -2350,8 +2350,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 1671,
-  "message" : "Search returned 4 results",
-  "results" : [ "Black Dog", "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -2731,8 +2731,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 2194,
-  "message" : "Search returned 2 results",
-  "results" : [ "Whole Lotta Love", "Whole Lotta Love" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Whole Lotta Love" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -2784,8 +2784,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 2224,
-  "message" : "Search returned 4 results",
-  "results" : [ "Black Dog", "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -3301,8 +3301,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 2991,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -3466,8 +3466,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 3200,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -3706,8 +3706,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 3528,
-  "message" : "Search returned 2 results",
-  "results" : [ "Whole Lotta Love", "Whole Lotta Love" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Whole Lotta Love" ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -4009,8 +4009,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 3942,
-  "message" : "Search returned 2 results",
-  "results" : [ "Good Times Bad Times", "Good Times Bad Times" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Good Times Bad Times" ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -4078,8 +4078,8 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4023,
-  "message" : "Search returned 2 results",
-  "results" : [ "Good Times Bad Times", "Good Times Bad Times" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Good Times Bad Times" ]
 }, {
   "command" : "select",
   "user" : "jack29",
@@ -4295,8 +4295,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 4257,
-  "message" : "Search returned 4 results",
-  "results" : [ "Black Dog", "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -4367,8 +4367,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 4394,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -4415,8 +4415,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 4406,
-  "message" : "Search returned 2 results",
-  "results" : [ "Good Times Bad Times", "Good Times Bad Times" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Good Times Bad Times" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -4542,8 +4542,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 4628,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -4611,8 +4611,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 4719,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -4917,8 +4917,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 5271,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -5326,8 +5326,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 5854,
-  "message" : "Search returned 4 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -5533,8 +5533,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 6185,
-  "message" : "Search returned 4 results",
-  "results" : [ "Black Dog", "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Black Dog", "Black Dog", "Black Dog - Basic Track With Guitar Overdubs" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -9251,8 +9251,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 9942,
-  "message" : "Search returned 2 results",
-  "results" : [ "Shake It Off", "Shake It Off" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Shake It Off" ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -10774,8 +10774,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 11837,
-  "message" : "Search returned 2 results",
-  "results" : [ "Shake It Off", "Shake It Off" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Shake It Off" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -11110,8 +11110,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12156,
-  "message" : "Search returned 2 results",
-  "results" : [ "Blank Space", "Blank Space" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -11174,8 +11174,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12226,
-  "message" : "Search returned 2 results",
-  "results" : [ "Love Story", "Love Story" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Love Story" ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -11398,8 +11398,8 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12459,
-  "message" : "Search returned 2 results",
-  "results" : [ "Love Story", "Love Story" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Love Story" ]
 }, {
   "command" : "select",
   "user" : "irene33",
@@ -11803,8 +11803,8 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12865,
-  "message" : "Search returned 2 results",
-  "results" : [ "Blank Space", "Blank Space" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -12827,8 +12827,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 14334,
-  "message" : "Search returned 2 results",
-  "results" : [ "Blank Space", "Blank Space" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -13003,8 +13003,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 14517,
-  "message" : "Search returned 2 results",
-  "results" : [ "Blank Space", "Blank Space" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -13504,8 +13504,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 15004,
-  "message" : "Search returned 2 results",
-  "results" : [ "Shake It Off", "Shake It Off" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Shake It Off" ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -14848,8 +14848,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 16844,
-  "message" : "Search returned 3 results",
-  "results" : [ "Freedom", "Freedom", "Freedom" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Freedom" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -16485,8 +16485,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 19082,
-  "message" : "Search returned 2 results",
-  "results" : [ "Love Story", "Love Story" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Love Story" ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -17557,8 +17557,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 20327,
-  "message" : "Search returned 2 results",
-  "results" : [ "Love Story", "Love Story" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Love Story" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -19155,10 +19155,10 @@
       "Chuck Berry" : 11
     },
     "topGenres" : {
-      "pop" : 47,
+      "pop" : 46,
       "country" : 18,
-      "rock" : 14,
       "soul" : 11,
+      "hard rock" : 10,
       "rap" : 10
     },
     "topSongs" : {
@@ -19400,8 +19400,8 @@
     "topGenres" : {
       "pop" : 28,
       "country" : 26,
-      "classic rock" : 20,
-      "rock" : 17,
+      "classic rock" : 21,
+      "rock" : 15,
       "rock and roll" : 13
     },
     "topSongs" : {
@@ -19577,7 +19577,7 @@
       "Fleetwood Mac" : 11
     },
     "topGenres" : {
-      "rock" : 33,
+      "rock" : 32,
       "pop" : 21,
       "soul" : 12,
       "country" : 11,
@@ -20833,11 +20833,11 @@
       "ABBA" : 12
     },
     "topGenres" : {
-      "rock" : 35,
       "pop" : 32,
+      "rock" : 31,
       "country" : 14,
-      "justice for silver springs" : 11,
-      "hard rock" : 10
+      "hard rock" : 14,
+      "justice for silver springs" : 11
     },
     "topSongs" : {
       "Stairway to Heaven" : 3,
@@ -20894,7 +20894,7 @@
   "result" : {
     "topAlbums" : {
       "Are You Experienced" : 48,
-      "Experience Hendrix: The Best of Jimi Hendrix" : 44,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 45,
       "Electric Ladyland" : 39,
       "Are You Experienced?" : 8
     },
@@ -21065,10 +21065,10 @@
       "Fleetwood Mac" : 17
     },
     "topGenres" : {
-      "pop" : 38,
+      "pop" : 36,
+      "country" : 22,
       "rap" : 21,
-      "rock" : 21,
-      "country" : 20,
+      "rock" : 20,
       "classic rock" : 11
     },
     "topSongs" : {
@@ -22836,8 +22836,8 @@
       "Nothing But Thieves" : 16
     },
     "topGenres" : {
-      "pop" : 69,
-      "country" : 20,
+      "pop" : 68,
+      "country" : 21,
       "rap" : 20,
       "rock" : 16,
       "soul" : 10
@@ -22919,9 +22919,9 @@
       "Marvin Gaye" : 17
     },
     "topGenres" : {
-      "pop" : 66,
-      "rock" : 22,
+      "pop" : 65,
       "rap" : 21,
+      "rock" : 21,
       "rock and roll" : 19,
       "soul" : 17
     },
@@ -23719,7 +23719,7 @@
     },
     "topGenres" : {
       "country" : 93,
-      "rock" : 39,
+      "rock" : 35,
       "pop" : 29,
       "rap" : 21,
       "rock and roll" : 18
@@ -23809,22 +23809,16 @@
       "ranking" : 11,
       "mostProfitableSong" : "N/A"
     },
-    "Pharrell Williams" : {
+    "Taylor Swift" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 12,
       "mostProfitableSong" : "N/A"
     },
-    "Taylor Swift" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 13,
-      "mostProfitableSong" : "N/A"
-    },
     "U2" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
-      "ranking" : 14,
+      "ranking" : 13,
       "mostProfitableSong" : "N/A"
     }
   }

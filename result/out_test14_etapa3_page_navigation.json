@@ -79,8 +79,8 @@
   "command" : "search",
   "user" : "ghiu",
   "timestamp" : 90,
-  "message" : "Search returned 2 results",
-  "results" : [ "Bohemian Rhapsody", "Bohemian Rhapsody" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Bohemian Rhapsody" ]
 }, {
   "command" : "select",
   "user" : "ghiu",
@@ -97,7 +97,7 @@
   "timestamp" : 115,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 345,
+    "remainedTime" : 340,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -113,7 +113,7 @@
   "timestamp" : 165,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 295,
+    "remainedTime" : 290,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

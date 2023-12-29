@@ -1140,13 +1140,13 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7239,
-  "message" : "Search returned 3 results",
-  "results" : [ "Freedom", "Freedom", "Free" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Free" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7239,
-  "message" : "Successfully selected Freedom."
+  "message" : "Successfully selected Free."
 }, {
   "command" : "load",
   "user" : "irene33",
@@ -1623,7 +1623,7 @@
   "result" : {
     "topAlbums" : {
       "The Very Best of Prince" : 30,
-      "1999" : 23,
+      "1999" : 24,
       "Parade - Music From the Motion Picture Under the Cherry Moon" : 14,
       "Purple Rain" : 6
     },
@@ -1929,8 +1929,8 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12157,
-  "message" : "Search returned 3 results",
-  "results" : [ "Gimme Shelter", "Gimme Shelter", "Gimme Shelter" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Gimme Shelter", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "grace25",
@@ -2091,14 +2091,13 @@
   "timestamp" : 12641,
   "result" : {
     "topArtists" : {
-      "Prince" : 31,
+      "Prince" : 32,
       "Stevie Wonder" : 22,
       "The Rolling Stones" : 15,
-      "Joni Mitchell" : 8,
-      "Pharrell Williams" : 1
+      "Joni Mitchell" : 8
     },
     "topGenres" : {
-      "80s" : 29,
+      "80s" : 30,
       "soul" : 22,
       "classic rock" : 15,
       "folk" : 8,
@@ -2236,8 +2235,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 13115,
-  "message" : "Search returned 3 results",
-  "results" : [ "Gimme Shelter", "Gimme Shelter", "Gimme Shelter" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Gimme Shelter", "Gimme Shelter" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2606,9 +2605,9 @@
   "timestamp" : 14425,
   "result" : {
     "topAlbums" : {
-      "Rolled Gold" : 28,
+      "Rolled Gold" : 30,
       "Aftermath" : 15,
-      "Let It Bleed" : 15,
+      "Let It Bleed" : 13,
       "Some Girls" : 13
     },
     "topSongs" : {
@@ -2649,7 +2648,7 @@
       "Joni Mitchell" : 12
     },
     "topGenres" : {
-      "classic rock" : 34,
+      "classic rock" : 35,
       "soul" : 26,
       "folk" : 12,
       "rnb" : 11,
@@ -2663,11 +2662,11 @@
       "Christopher Tracy's Parade" : 2
     },
     "topAlbums" : {
-      "Rolled Gold" : 19,
+      "Rolled Gold" : 20,
       "The Definitive Collection" : 14,
       "Ladies of the Canyon" : 12,
       "Parade - Music From the Motion Picture Under the Cherry Moon" : 11,
-      "Let It Bleed" : 9
+      "Let It Bleed" : 8
     },
     "topEpisodes" : { }
   }
@@ -2965,7 +2964,7 @@
       "folk" : 28,
       "soul" : 22,
       "80s" : 21,
-      "classic rock" : 20,
+      "classic rock" : 21,
       "rnb" : 1
     },
     "topSongs" : {
@@ -2980,7 +2979,7 @@
       "1999" : 18,
       "Songs in the Key of Life" : 12,
       "Some Girls" : 9,
-      "Let It Bleed" : 5
+      "Rolled Gold" : 6
     },
     "topEpisodes" : { }
   }
@@ -2993,28 +2992,22 @@
       "ranking" : 1,
       "mostProfitableSong" : "N/A"
     },
-    "Pharrell Williams" : {
+    "Prince" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 2,
       "mostProfitableSong" : "N/A"
     },
-    "Prince" : {
+    "Stevie Wonder" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 3,
       "mostProfitableSong" : "N/A"
     },
-    "Stevie Wonder" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 4,
-      "mostProfitableSong" : "N/A"
-    },
     "The Rolling Stones" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
-      "ranking" : 5,
+      "ranking" : 4,
       "mostProfitableSong" : "N/A"
     }
   }

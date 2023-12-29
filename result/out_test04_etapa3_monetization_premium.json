@@ -854,13 +854,13 @@
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 3225,
-  "message" : "Search returned 2 results",
-  "results" : [ "Money Trees", "Money" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Money" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 3225,
-  "message" : "Successfully selected Money Trees."
+  "message" : "Successfully selected Money."
 }, {
   "command" : "load",
   "user" : "jack29",
@@ -1465,15 +1465,13 @@
   "result" : {
     "topArtists" : {
       "James Brown" : 21,
-      "Pink Floyd" : 14,
-      "Aretha Franklin" : 12,
-      "Kendrick Lamar" : 1
+      "Pink Floyd" : 15,
+      "Aretha Franklin" : 12
     },
     "topGenres" : {
       "funk" : 21,
-      "progressive rock" : 14,
-      "soul" : 12,
-      "rap" : 1
+      "progressive rock" : 15,
+      "soul" : 12
     },
     "topSongs" : {
       "Come Rain Or Come Shine" : 2,
@@ -1486,7 +1484,7 @@
       "Soul Queen" : 12,
       "Out of Sight" : 11,
       "The 50th Anniversary Collection" : 9,
-      "The Dark Side of the Moon" : 5,
+      "The Dark Side of the Moon" : 6,
       "The Wall" : 5
     },
     "topEpisodes" : { }
@@ -2476,7 +2474,7 @@
   "result" : {
     "topAlbums" : {
       "The Wall" : 25,
-      "The Dark Side of the Moon" : 23,
+      "The Dark Side of the Moon" : 24,
       "The Division Bell" : 19,
       "Wish You Were Here" : 19
     },
@@ -2804,16 +2802,10 @@
       "ranking" : 2,
       "mostProfitableSong" : "N/A"
     },
-    "Kendrick Lamar" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 3,
-      "mostProfitableSong" : "N/A"
-    },
     "Pink Floyd" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
-      "ranking" : 4,
+      "ranking" : 3,
       "mostProfitableSong" : "N/A"
     }
   }
