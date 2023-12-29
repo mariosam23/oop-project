@@ -89,7 +89,7 @@
   "user" : "carmenzz",
   "command" : "printCurrentPage",
   "timestamp" : 155,
-  "message" : "Liked songs:\n\t[Rocket Man, Your Song]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Rocket Man, Your Song]\n\nFollowed playlists:\n\t[]\n\nSong recommendations:\n\t[]\n\nPlaylists recommendations:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carmenzz",

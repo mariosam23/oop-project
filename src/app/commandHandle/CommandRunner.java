@@ -653,4 +653,10 @@ public final class CommandRunner {
 
         return new OutputBuilder<>(cmd).withMessage(message).build();
     }
+
+    public static ObjectNode loadRecommendations(final CommandInput cmd) {
+        String message = admin.loadRecommendations(cmd);
+
+        return new OutputBuilder<>(cmd).withMessage(message).build();
+    }
 }

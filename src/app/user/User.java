@@ -43,6 +43,8 @@ public final class User extends UserAbstract {
     private List<Notification> notifications = new ArrayList<>();
     private UserStats userStats = new UserStats();
     private List<String> merchBought = new ArrayList<>();
+    private ArrayList<Song> songRecommendations;
+    private ArrayList<Playlist> playlistRecommendations;
     private boolean premium = false;
 
     /**
@@ -57,6 +59,8 @@ public final class User extends UserAbstract {
         playlists = new ArrayList<>();
         likedSongs = new ArrayList<>();
         followedPlaylists = new ArrayList<>();
+        songRecommendations = new ArrayList<>();
+        playlistRecommendations = new ArrayList<>();
         player = new Player();
         searchBar = null;
         lastSearched = false;

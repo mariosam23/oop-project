@@ -8,12 +8,14 @@ import app.audio.Collections.Podcast;
 import app.audio.Files.AudioFile;
 import app.audio.Files.Episode;
 import app.audio.Files.Song;
+import app.audio.LibraryEntry;
 import app.pages.ArtistPage;
 import app.pages.HomePage;
 import app.pages.LikedContentPage;
 import app.player.Player;
 import app.pages.pageContent.Announcement;
 import app.recommendations.RandomSongStrategy;
+import app.recommendations.RecommendationStrategy;
 import app.user.*;
 import app.pages.pageContent.Event;
 import app.pages.pageContent.Merchandise;
@@ -43,6 +45,7 @@ public final class Admin {
     private List<Host> hosts = new ArrayList<>();
     private List<Song> songs = new ArrayList<>();
     private List<Podcast> podcasts = new ArrayList<>();
+    private RecommendationStrategy<?> recommendationStrategy;
     private int timestamp = 0;
     private static Admin instance;
     @Getter @Setter
@@ -936,15 +939,42 @@ public final class Admin {
         }
 
         User user = getUser(cmd.getUsername());
+        Song recommendation;
+
         if (type.equals("random_song")) {
-            RandomSongStrategy strategy = new RandomSongStrategy(user);
-            Song recommendation = strategy.getRecommendation();
+            recommendationStrategy = new RandomSongStrategy(user);
+            recommendation = (Song) recommendationStrategy.getRecommendation();
             if (recommendation == null) {
                 return "No new recommendations were found.";
             }
+
+            user.getSongRecommendations().add(recommendation);
+            return "The recommendations for user %s have been updated successfully."
+                    .formatted(cmd.getUsername());
         }
 
         return null;
+    }
+
+    public String loadRecommendations(final CommandInput cmd) {
+        String username = cmd.getUsername();
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
+        }
+
+        User user = getUser(username);
+        if (!user.isOnline()) {
+            return "%s is offline.".formatted(user.getUsername());
+        }
+
+        Player userPlayer = user.getPlayer();
+        if (recommendationStrategy.getLastRecommendation() != null) {
+            userPlayer.setSource((LibraryEntry) recommendationStrategy.getLastRecommendation(), "song");
+            userPlayer.pause();
+            return "Playback loaded successfully.";
+        }
+
+        return "No recommendations were found.";
     }
 
     /**

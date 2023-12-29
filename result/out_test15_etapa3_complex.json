@@ -2591,7 +2591,12 @@
   "user" : "Bob Marley",
   "timestamp" : 1915,
   "message" : "Bob Marley has added new merchandise successfully."
-}, null, null, {
+}, null, {
+  "command" : "loadRecommendations",
+  "user" : "frank21",
+  "timestamp" : 1931,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1938,
@@ -4211,19 +4216,19 @@
   "timestamp" : 4051,
   "result" : {
     "topAlbums" : {
-      "United" : 34,
+      "United" : 33,
       "What's Going On" : 32,
       "Midnight Love" : 26,
       "The Very Best of Marvin Gaye" : 19
     },
     "topSongs" : {
       "Joy" : 7,
-      "If I Could Build My Whole World Around You" : 6,
       "Mercy Mercy Me (The Ecology)" : 6,
       "What's Going On" : 6,
+      "If I Could Build My Whole World Around You" : 5,
       "Right On" : 5
     },
-    "topFans" : [ "david27", "frank21", "jack29", "alice22", "carol19" ],
+    "topFans" : [ "david27", "jack29", "alice22", "frank21", "carol19" ],
     "listeners" : 10
   }
 }, {
@@ -7482,7 +7487,12 @@
   "user" : "jack29",
   "timestamp" : 8141,
   "message" : "Playback loaded successfully."
-}, null, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "emily30",
+  "timestamp" : 8153,
+  "message" : "Playback loaded successfully."
+}, null, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 8174,
@@ -8779,7 +8789,12 @@
   "user" : "emily30",
   "timestamp" : 9343,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "bob35",
+  "timestamp" : 9366,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 9407,
@@ -9389,7 +9404,12 @@
   "user" : "irene33",
   "timestamp" : 9914,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "jack29",
+  "timestamp" : 9921,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 9927,
@@ -10798,7 +10818,12 @@
   "user" : "emily30",
   "timestamp" : 11637,
   "message" : "emily30 bought the subscription successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "emily30",
+  "timestamp" : 11637,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 11642,
@@ -11709,7 +11734,7 @@
   "timestamp" : 12537,
   "result" : {
     "topAlbums" : {
-      "Chuck Berry Is On Top" : 60,
+      "Chuck Berry Is On Top" : 59,
       "The Great Twenty-Eight" : 37,
       "St. Louis to Liverpool" : 30,
       "Berry Is On Top" : 7
@@ -12572,7 +12597,12 @@
   "user" : "jack29",
   "timestamp" : 13487,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "henry26",
+  "timestamp" : 13511,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 13570,
@@ -13619,15 +13649,15 @@
     "topAlbums" : {
       "Celebration (Double Disc Version)" : 59,
       "Confessions on a Dance Floor" : 28,
-      "Ray of Light" : 26,
+      "Ray of Light" : 24,
       "Like a Prayer" : 23
     },
     "topSongs" : {
       "Express Yourself" : 8,
       "Forbidden Love" : 6,
       "Like a Prayer" : 5,
-      "The Power of Good-Bye" : 5,
-      "Dear Jessie" : 4
+      "Dear Jessie" : 4,
+      "Dress You Up" : 4
     },
     "topFans" : [ "grace25", "henry26", "irene33", "carol19", "emily30" ],
     "listeners" : 10
@@ -15444,7 +15474,7 @@
   "timestamp" : 17448,
   "result" : {
     "topAlbums" : {
-      "Arrival" : 40,
+      "Arrival" : 39,
       "ABBA Gold" : 34,
       "Super Trouper" : 26,
       "Voulez-Vous" : 26
@@ -16092,7 +16122,12 @@
   "user" : "grace25",
   "timestamp" : 18347,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "bob35",
+  "timestamp" : 18347,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 18362,
@@ -16353,7 +16388,12 @@
   "user" : "emily30",
   "timestamp" : 18658,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "alice22",
+  "timestamp" : 18667,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 18674,
@@ -17804,7 +17844,8 @@
 }, {
   "command" : "updateRecommendations",
   "user" : "grace25",
-  "timestamp" : 20180
+  "timestamp" : 20180,
+  "message" : "The recommendations for user grace25 have been updated successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -18871,7 +18912,12 @@
   "user" : "carol19",
   "timestamp" : 21380,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "emily30",
+  "timestamp" : 21382,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 21390,
@@ -19718,17 +19764,17 @@
   "result" : {
     "topArtists" : {
       "Johnny Cash" : 22,
-      "Chuck Berry" : 18,
       "Jimi Hendrix" : 18,
       "Led Zeppelin" : 18,
+      "Chuck Berry" : 17,
       "Taylor Swift" : 13
     },
     "topGenres" : {
       "pop" : 28,
       "country" : 26,
-      "classic rock" : 21,
+      "classic rock" : 23,
       "rock" : 15,
-      "rock and roll" : 13
+      "rock and roll" : 12
     },
     "topSongs" : {
       "Dancing With Our Hands Tied" : 3,
@@ -19739,7 +19785,7 @@
     },
     "topAlbums" : {
       "The Legend of Johnny Cash" : 13,
-      "Chuck Berry Is On Top" : 10,
+      "Chuck Berry Is On Top" : 9,
       "Electric Ladyland" : 9,
       "Experience Hendrix: The Best of Jimi Hendrix" : 6,
       "Led Zeppelin" : 6
@@ -19916,7 +19962,7 @@
       "rock" : 32,
       "pop" : 21,
       "soul" : 12,
-      "country" : 11,
+      "country" : 10,
       "1979" : 8
     },
     "topSongs" : {
@@ -19931,7 +19977,7 @@
       "How to Dismantle an Atomic Bomb" : 9,
       "Broken Machine (Deluxe)" : 8,
       "Voulez-Vous" : 8,
-      "Greatest Hits" : 6
+      "Greatest Hits" : 7
     },
     "topEpisodes" : { }
   }
@@ -21199,7 +21245,7 @@
       "ABBA" : 12
     },
     "topGenres" : {
-      "pop" : 32,
+      "pop" : 31,
       "rock" : 31,
       "country" : 14,
       "hard rock" : 14,
@@ -22068,10 +22114,10 @@
     },
     "topGenres" : {
       "pop" : 32,
-      "classic rock" : 27,
+      "classic rock" : 28,
       "country" : 17,
       "rock and roll" : 17,
-      "soul" : 13
+      "soul" : 12
     },
     "topSongs" : {
       "Going to California" : 4,
@@ -22426,7 +22472,7 @@
   "result" : {
     "topAlbums" : {
       "The Eminem Show" : 38,
-      "The Marshall Mathers LP" : 38,
+      "The Marshall Mathers LP" : 37,
       "The Slim Shady LP" : 34,
       "Recovery" : 28
     },
@@ -22488,7 +22534,12 @@
   "user" : "henry26",
   "timestamp" : 29708,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "loadRecommendations",
+  "user" : "david27",
+  "timestamp" : 29741,
+  "message" : "Playback loaded successfully."
+}, {
   "command" : "cancelPremium",
   "user" : "grace25",
   "timestamp" : 29755,
@@ -23234,13 +23285,13 @@
   "result" : {
     "topArtists" : {
       "Michael Jackson" : 28,
-      "Madonna" : 22,
+      "Madonna" : 21,
       "Eminem" : 20,
       "Johnny Cash" : 20,
       "Nothing But Thieves" : 16
     },
     "topGenres" : {
-      "pop" : 68,
+      "pop" : 67,
       "country" : 21,
       "rap" : 20,
       "rock" : 16,
@@ -23645,7 +23696,7 @@
       "Unearthed" : 108,
       "American III: Solitary Man" : 38,
       "The Legend of Johnny Cash" : 32,
-      "American IV: The Man Comes Around" : 27
+      "American IV: The Man Comes Around" : 26
     },
     "topSongs" : {
       "Wayfaring Stranger" : 7,
@@ -24124,7 +24175,7 @@
     "topGenres" : {
       "country" : 93,
       "rock" : 35,
-      "pop" : 29,
+      "pop" : 28,
       "rap" : 21,
       "rock and roll" : 18
     },
@@ -24138,7 +24189,7 @@
     "topAlbums" : {
       "Unearthed" : 83,
       "Chuck Berry Is On Top" : 18,
-      "Greatest Hits" : 14,
+      "Greatest Hits" : 15,
       "The Eminem Show" : 12,
       "Are You Experienced" : 9
     },

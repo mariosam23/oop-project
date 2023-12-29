@@ -313,6 +313,12 @@ public enum CommandTypes {
         public ObjectNode execute(final CommandInput command) {
             return CommandRunner.updateRecommendations(command);
         }
+    },
+    LOAD_RECOMMENDATIONS {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.loadRecommendations(command);
+        }
     };
 
     /**
