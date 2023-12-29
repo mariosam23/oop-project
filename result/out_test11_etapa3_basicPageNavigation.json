@@ -81,7 +81,11 @@
   "user" : "carmenzz",
   "timestamp" : 135,
   "message" : "Like registered successfully."
-}, null, {
+}, {
+  "command" : "updateRecommendations",
+  "user" : "carmenzz",
+  "timestamp" : 145
+}, {
   "user" : "carmenzz",
   "command" : "printCurrentPage",
   "timestamp" : 155,

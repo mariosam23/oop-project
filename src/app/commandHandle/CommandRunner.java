@@ -536,6 +536,11 @@ public final class CommandRunner {
         return new OutputBuilder<String>(commandInput).withResult(playlists).build();
     }
 
+    /**
+     * Changes page to the previous one.
+     * @param commandInput
+     * @return
+     */
     public static ObjectNode previousPage(final CommandInput commandInput) {
         User user = admin.getUser(commandInput.getUsername());
         String message = user.previousPage();
@@ -543,6 +548,11 @@ public final class CommandRunner {
         return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 
+    /**
+     * Changes page to the next one.
+     * @param commandInput
+     * @return
+     */
     public static ObjectNode nextPage(final CommandInput commandInput) {
         User user = admin.getUser(commandInput.getUsername());
         String message = user.nextPage();
@@ -550,12 +560,22 @@ public final class CommandRunner {
         return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 
+    /**
+     * Subscribes to a host or an artist.
+     * @param commandInput
+     * @return
+     */
     public static ObjectNode subscribe(final CommandInput commandInput) {
         String message = admin.subscribe(commandInput);
 
         return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 
+    /**
+     * Gets the notifications of a user.
+     * @param commandInput
+     * @return
+     */
     public static ObjectNode getNotifications(final CommandInput commandInput) {
         User user = admin.getUser(commandInput.getUsername());
         List<Notification> notifications = new ArrayList<>(user.getNotifications());
@@ -566,6 +586,11 @@ public final class CommandRunner {
                 .withResult(notifications).build();
     }
 
+    /**
+     * Wraps the data of a user, artist or host.
+     * @param commandInput
+     * @return
+     */
     public static ObjectNode wrapped(final CommandInput commandInput) {
         UserAbstract user = admin.getAbstractUser(commandInput.getUsername());
 
@@ -583,5 +608,49 @@ public final class CommandRunner {
         }
 
         return null;
+    }
+
+    /**
+     * Buys merch for user.
+     * @param cmd
+     * @return
+     */
+    public static ObjectNode buyMerch(final CommandInput cmd) {
+        String message = admin.buyMerch(cmd);
+
+        return new OutputBuilder<>(cmd).withMessage(message).build();
+    }
+
+    /**
+     * See merch bought by user.
+     * @param cmd
+     * @return
+     */
+    public static ObjectNode seeMerch(final CommandInput cmd) {
+        User user = admin.getUser(cmd.getUsername());
+        if (user == null) {
+            return new OutputBuilder<>(cmd)
+                    .withMessage("The username " + cmd.getUsername() + " doesn't exist.").build();
+        }
+
+        return new OutputBuilder<String>(cmd).withResult(user.getMerchBought()).build();
+    }
+
+    public static ObjectNode buyPremium(final CommandInput cmd) {
+        String message = admin.buyPremium(cmd);
+
+        return new OutputBuilder<>(cmd).withMessage(message).build();
+    }
+
+    public static ObjectNode cancelPremium(final CommandInput cmd) {
+        String message = admin.cancelPremium(cmd);
+
+        return new OutputBuilder<>(cmd).withMessage(message).build();
+    }
+
+    public static ObjectNode updateRecommendations(final CommandInput cmd) {
+        String message = admin.updateRecommendations(cmd);
+
+        return new OutputBuilder<>(cmd).withMessage(message).build();
     }
 }

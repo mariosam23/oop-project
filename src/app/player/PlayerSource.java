@@ -192,6 +192,7 @@ public class PlayerSource {
         for (int i = 0; i < audioCollection.getNumberOfTracks(); i++) {
             indices.add(i);
         }
+
         Collections.shuffle(indices, random);
     }
 

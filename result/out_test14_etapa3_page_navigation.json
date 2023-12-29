@@ -107,7 +107,11 @@
   "user" : "ghiu",
   "timestamp" : 130,
   "message" : "Like registered successfully."
-}, null, null, {
+}, {
+  "command" : "updateRecommendations",
+  "user" : "ghiu",
+  "timestamp" : 152
+}, null, {
   "command" : "status",
   "user" : "ghiu",
   "timestamp" : 165,

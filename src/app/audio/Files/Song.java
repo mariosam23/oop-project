@@ -85,6 +85,11 @@ public final class Song extends AudioFile {
     }
 
     @Override
+    public boolean matchesOwner(final String ownerFilter) {
+        return matchesArtist(ownerFilter);
+    }
+
+    @Override
     public boolean matchesReleaseYear(final String releaseYearFilter) {
         return filterByYear(this.getReleaseYear(), releaseYearFilter);
     }

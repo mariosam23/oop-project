@@ -42,6 +42,8 @@ public final class User extends UserAbstract {
     private Deque<Page> forwardHistory = new ArrayDeque<>();
     private List<Notification> notifications = new ArrayList<>();
     private UserStats userStats = new UserStats();
+    private List<String> merchBought = new ArrayList<>();
+    private boolean premium = false;
 
     /**
      * Instantiates a new User.

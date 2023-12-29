@@ -8,10 +8,12 @@ import app.audio.Collections.Podcast;
 import app.audio.Files.AudioFile;
 import app.audio.Files.Episode;
 import app.audio.Files.Song;
+import app.pages.ArtistPage;
 import app.pages.HomePage;
 import app.pages.LikedContentPage;
 import app.player.Player;
 import app.pages.pageContent.Announcement;
+import app.recommendations.RandomSongStrategy;
 import app.user.*;
 import app.pages.pageContent.Event;
 import app.pages.pageContent.Merchandise;
@@ -860,6 +862,89 @@ public final class Admin {
                 user.getNotifications().add(new Notification(name, descript));
             }
         }
+    }
+
+    public String buyMerch(final CommandInput cmd) {
+        String username = cmd.getUsername();
+        String merchName = cmd.getName();
+
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
+        }
+
+        User user = getUser(username);
+        if (user.getCurrentPage() == null || !user.getCurrentPage().pageType().equals("Artist")) {
+            return "Cannot buy merch from this page.";
+        }
+
+        Merchandise searchedMerch = ((ArtistPage) user.getCurrentPage())
+                .getMerch().stream()
+                .filter(merch -> merch.getName().equals(merchName))
+                .findFirst()
+                .orElse(null);
+
+        if (searchedMerch == null) {
+            return "The merch %s doesn't exist.".formatted(merchName);
+        }
+
+        Artist artist = getArtist(user.getCurrentPage().pageOwner());
+        artist.getRevenue().setMerchRevenue(artist.getRevenue().getMerchRevenue()
+                + searchedMerch.getPrice());
+
+        user.getMerchBought().add(merchName);
+        userInteractions.putIfAbsent(artist.getUsername(), artist.getRevenue());
+        return "%s has added new merch successfully.".formatted(username);
+    }
+
+    public String buyPremium(final CommandInput cmd) {
+        String username = cmd.getUsername();
+
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
+        }
+
+        User user = getUser(username);
+        if (user.isPremium()) {
+            return "%s is already a premium user.".formatted(username);
+        }
+
+        user.setPremium(true);
+        return "%s bought the subscription successfully.".formatted(username);
+    }
+
+    public String cancelPremium(final CommandInput cmd) {
+        String username = cmd.getUsername();
+
+        if (validateNormalUser(username) != null) {
+            return validateNormalUser(username);
+        }
+
+        User user = getUser(username);
+        if (!user.isPremium()) {
+            return "%s is not a premium user.".formatted(username);
+        }
+
+        user.setPremium(false);
+        return "%s cancelled the subscription successfully.".formatted(username);
+    }
+
+    public String updateRecommendations(final CommandInput cmd) {
+        String type = cmd.getRecommendationType();
+
+        if (validateNormalUser(cmd.getUsername()) != null) {
+            return validateNormalUser(cmd.getUsername());
+        }
+
+        User user = getUser(cmd.getUsername());
+        if (type.equals("random_song")) {
+            RandomSongStrategy strategy = new RandomSongStrategy(user);
+            Song recommendation = strategy.getRecommendation();
+            if (recommendation == null) {
+                return "No new recommendations were found.";
+            }
+        }
+
+        return null;
     }
 
     /**

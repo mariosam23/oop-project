@@ -283,6 +283,36 @@ public enum CommandTypes {
         public ObjectNode execute(final CommandInput command) {
             return CommandRunner.wrapped(command);
         }
+    },
+    BUY_MERCH {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.buyMerch(command);
+        }
+    },
+    SEE_MERCH {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.seeMerch(command);
+        }
+    },
+    BUY_PREMIUM {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.buyPremium(command);
+        }
+    },
+    CANCEL_PREMIUM {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.cancelPremium(command);
+        }
+    },
+    UPDATE_RECOMMENDATIONS {
+        @Override
+        public ObjectNode execute(final CommandInput command) {
+            return CommandRunner.updateRecommendations(command);
+        }
     };
 
     /**

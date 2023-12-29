@@ -258,7 +258,17 @@
   "user" : "Aretha Franklin",
   "timestamp" : 1,
   "message" : "Aretha Franklin has added new album successfully."
-}, null, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "henry26",
+  "timestamp" : 5,
+  "message" : "henry26 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 5,
+  "message" : "grace25 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 10,
@@ -338,7 +348,12 @@
   "user" : "henry26",
   "timestamp" : 191,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 482,
+  "message" : "henry26 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 482,
@@ -386,7 +401,12 @@
   "user" : "henry26",
   "timestamp" : 734,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 823,
+  "message" : "henry26 is not a premium user."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 823,
@@ -450,7 +470,12 @@
   "user" : "jack29",
   "timestamp" : 1059,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 1132,
+  "message" : "jack29 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 1132,
@@ -466,7 +491,12 @@
   "user" : "jack29",
   "timestamp" : 1132,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 1203,
+  "message" : "jack29 is already a premium user."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 1203,
@@ -674,7 +704,12 @@
   "user" : "jack29",
   "timestamp" : 2226,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 2320,
+  "message" : "jack29 is already a premium user."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 2320,
@@ -1250,7 +1285,12 @@
   "user" : "jack29",
   "timestamp" : 5508,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "carol19",
+  "timestamp" : 5509,
+  "message" : "carol19 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 5509,
@@ -1314,7 +1354,12 @@
   "user" : "jack29",
   "timestamp" : 5649,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 5683,
+  "message" : "jack29 is already a premium user."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 5683,
@@ -1957,7 +2002,12 @@
   "user" : "carol19",
   "timestamp" : 8797,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 8797,
+  "message" : "henry26 is not a premium user."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 8797,
@@ -2005,7 +2055,12 @@
   "user" : "henry26",
   "timestamp" : 8866,
   "message" : "Playback loaded successfully."
-}, null, {
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 8900,
+  "message" : "henry26 is not a premium user."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 8900,
