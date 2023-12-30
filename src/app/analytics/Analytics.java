@@ -247,8 +247,10 @@ public final class Analytics {
         result.put("topAlbums", getTopFiveSortedByCount(artist.getStats().getTopAlbums()));
         result.put("topSongs", getTopFiveSortedByCount(artist.getStats().getTopSongs()));
 
-        result.put("topFans", new ArrayList<>(getTopFiveSortedByCount(artist.getStats().getTopFans())
-                .keySet()));
+        artist.getStats().setListTopFans(new ArrayList<>(getTopFiveSortedByCount(artist
+                .getStats().getTopFans()).keySet()));
+
+        result.put("topFans", artist.getStats().getListTopFans());
 
         result.put("listeners", artist.getStats().getListenersNumber());
 
@@ -257,6 +259,27 @@ public final class Analytics {
                 .withMapResult(result)
                 .build();
     }
+
+    public static List<String> updateFans(final Artist artist, final List<User> users) {
+        artist.getStats().reset();
+        for (User user : users) {
+            user.getPlayer().updateHistory();
+            List<AudioFile> history = user.getPlayer().getHistory();
+
+            for (AudioFile audioFile : history) {
+                if (audioFile.getType().equals("song") && ((Song) audioFile).getArtist()
+                        .equals(artist.getUsername())) {
+                    artist.getStats().addTopFan(user.getUsername());
+                }
+            }
+        }
+
+        artist.getStats().setListTopFans(new ArrayList<>(getTopFiveSortedByCount(artist.getStats()
+                .getTopFans()).keySet()));
+
+        return artist.getStats().getListTopFans();
+    }
+
 
     /**
      * Gets the stats for wrapped for a host. It first updates every user's history.

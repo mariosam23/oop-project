@@ -14,6 +14,7 @@ import app.pages.HomePage;
 import app.pages.Page;
 import app.player.Player;
 import app.player.PlayerStats;
+import app.recommendations.RecommendationStrategy;
 import app.searchBar.SearchStrategyFactory;
 import app.searchBar.filters.Filters;
 import app.searchBar.strategies.SearchStrategy;
@@ -45,6 +46,7 @@ public final class User extends UserAbstract {
     private List<String> merchBought = new ArrayList<>();
     private ArrayList<Song> songRecommendations;
     private ArrayList<Playlist> playlistRecommendations;
+    private RecommendationStrategy recommendation;
     private boolean premium = false;
 
     /**
@@ -66,6 +68,7 @@ public final class User extends UserAbstract {
         lastSearched = false;
         online = true;
         backHistory.push(new HomePage(this));
+        recommendation = null;
     }
 
     @Override

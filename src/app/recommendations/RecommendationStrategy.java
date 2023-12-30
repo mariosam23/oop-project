@@ -1,18 +1,23 @@
 package app.recommendations;
 
-import app.user.User;
+import app.audio.LibraryEntry;
+import app.user.UserAbstract;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public abstract class RecommendationStrategy<T> {
-    private User user;
-    protected T lastRecommendation;
+public abstract class RecommendationStrategy {
+    protected LibraryEntry lastRecommendation = null;
+    protected String lastRecommendationType = null;
+    private UserAbstract userAbstract;
 
-    public RecommendationStrategy(final User currentUser) {
-        user = currentUser;
-        lastRecommendation = null;
+    public RecommendationStrategy(final UserAbstract currentUser) {
+        this.userAbstract = currentUser;
     }
 
-    public abstract T getRecommendation();
+    /**
+     * Calculates the recommendation asked by the user.
+     * @return
+     */
+    public abstract LibraryEntry getRecommendation();
 }

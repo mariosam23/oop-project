@@ -47,7 +47,8 @@ public abstract class SearchBase<T> implements SearchStrategy<T> {
             results.clear();
             return null;
         }
-        this.lastSelected = this.results.get(index - 1);
+
+        this.lastSelected = results.get(index - 1);
         results.clear();
         return this.lastSelected;
     }

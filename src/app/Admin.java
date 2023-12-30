@@ -14,8 +14,7 @@ import app.pages.HomePage;
 import app.pages.LikedContentPage;
 import app.player.Player;
 import app.pages.pageContent.Announcement;
-import app.recommendations.RandomSongStrategy;
-import app.recommendations.RecommendationStrategy;
+import app.recommendations.*;
 import app.user.*;
 import app.pages.pageContent.Event;
 import app.pages.pageContent.Merchandise;
@@ -45,7 +44,6 @@ public final class Admin {
     private List<Host> hosts = new ArrayList<>();
     private List<Song> songs = new ArrayList<>();
     private List<Podcast> podcasts = new ArrayList<>();
-    private RecommendationStrategy<?> recommendationStrategy;
     private int timestamp = 0;
     private static Admin instance;
     @Getter @Setter
@@ -933,27 +931,56 @@ public final class Admin {
 
     public String updateRecommendations(final CommandInput cmd) {
         String type = cmd.getRecommendationType();
+        String username = cmd.getUsername();
 
-        if (validateNormalUser(cmd.getUsername()) != null) {
-            return validateNormalUser(cmd.getUsername());
+        String validationMessage = validateNormalUser(username);
+        if (validationMessage != null) {
+            return validationMessage;
         }
 
-        User user = getUser(cmd.getUsername());
-        Song recommendation;
+        User user = getUser(username);
+        RecommendationStrategy recommendationStrategy = getRecommendationStrategy(user, type);
 
+        if (recommendationStrategy == null) {
+            return "No new recommendations were found";
+        }
+
+        user.setRecommendation(recommendationStrategy);
+        LibraryEntry recommendation = recommendationStrategy.getRecommendation();
+
+        if (recommendation == null) {
+            return "No new recommendations were found";
+        }
+
+        addRecommendationToUser(user, recommendation, type);
+        return "The recommendations for user %s have been updated successfully."
+                .formatted(username);
+    }
+
+    private RecommendationStrategy getRecommendationStrategy(final User user, final String type) {
+        switch (type) {
+            case "random_song":
+                return new RandomSongStrategy(user);
+            case "random_playlist":
+                return new RandomPlaylistStrategy(user);
+            case "fans_playlist":
+                if (user.getPlayer().getSource() == null) {
+                    return null;
+                }
+                Artist artist = getArtist(user.getPlayer().getSource().getAudioFile().getOwner());
+                return new FansPlaylistStrategy(artist);
+            default:
+                return null;
+        }
+    }
+
+    private void addRecommendationToUser(final User user, final LibraryEntry recommendation,
+                                         final String type) {
         if (type.equals("random_song")) {
-            recommendationStrategy = new RandomSongStrategy(user);
-            recommendation = (Song) recommendationStrategy.getRecommendation();
-            if (recommendation == null) {
-                return "No new recommendations were found.";
-            }
-
-            user.getSongRecommendations().add(recommendation);
-            return "The recommendations for user %s have been updated successfully."
-                    .formatted(cmd.getUsername());
+            user.getSongRecommendations().add((Song) recommendation);
+        } else {
+            user.getPlaylistRecommendations().add((Playlist) recommendation);
         }
-
-        return null;
     }
 
     public String loadRecommendations(final CommandInput cmd) {
@@ -968,14 +995,18 @@ public final class Admin {
         }
 
         Player userPlayer = user.getPlayer();
-        if (recommendationStrategy.getLastRecommendation() != null) {
-            userPlayer.setSource((LibraryEntry) recommendationStrategy.getLastRecommendation(), "song");
+        RecommendationStrategy recommendation = user.getRecommendation();
+        if (recommendation != null && recommendation.getLastRecommendation() != null) {
+            userPlayer.setSource(recommendation.getLastRecommendation(),
+                    recommendation.getLastRecommendationType());
+
             userPlayer.pause();
             return "Playback loaded successfully.";
         }
 
-        return "No recommendations were found.";
+        return "No recommendations available.";
     }
+
 
     /**
      * Resets all database.

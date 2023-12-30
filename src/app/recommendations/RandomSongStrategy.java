@@ -3,34 +3,35 @@ package app.recommendations;
 import app.Admin;
 import app.audio.Files.AudioFile;
 import app.audio.Files.Song;
+import app.audio.LibraryEntry;
 import app.user.User;
+import app.user.UserAbstract;
 
 import java.util.ArrayList;
 
 import java.util.List;
 import java.util.Random;
 
-public class RandomSongStrategy extends RecommendationStrategy<Song> {
+public class RandomSongStrategy extends RecommendationStrategy {
     private final Integer minElapsedTime = 30;
 
-    public RandomSongStrategy(final User currentUser) {
+    public RandomSongStrategy(final UserAbstract currentUser) {
         super(currentUser);
-        lastRecommendation = null;
     }
 
     @Override
-    public Song getRecommendation() {
-        User currentUser = super.getUser();
-        if (currentUser.getPlayer().getSource() == null) {
+    public LibraryEntry getRecommendation() {
+        UserAbstract user = super.getUserAbstract();
+        if (((User) user).getPlayer().getSource() == null) {
             return null;
         }
 
-        AudioFile currentAudio = currentUser.getPlayer().getSource().getAudioFile();
+        AudioFile currentAudio = ((User) user).getPlayer().getSource().getAudioFile();
         if (!currentAudio.getType().equals("song")) {
             throw new IllegalArgumentException("Current audio is not a song");
         }
 
-        int elapsedDuration = currentAudio.getDuration() - currentUser.getPlayer()
+        int elapsedDuration = currentAudio.getDuration() - ((User) user).getPlayer()
                 .getSource().getRemainedDuration();
         if (elapsedDuration < minElapsedTime) {
             return null;
@@ -53,7 +54,10 @@ public class RandomSongStrategy extends RecommendationStrategy<Song> {
         Random random = new Random(elapsedDuration);
         int randomIndex = random.nextInt(sameGenreSongs.size());
         Song recommendedSong = sameGenreSongs.get(randomIndex);
+
         super.setLastRecommendation(recommendedSong);
+        super.setLastRecommendationType("song");
+
         return recommendedSong;
     }
 }

@@ -3,10 +3,7 @@ package app.analytics.statistics;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class for storing artist statistics
@@ -17,12 +14,14 @@ public class ArtistStats {
     private Map<String, Integer> topSongs;
     private Map<String, Integer> topFans;
     private Set<String> listeners;
+    private List<String> listTopFans;
 
     public ArtistStats() {
         topAlbums = new HashMap<>();
         topSongs = new HashMap<>();
         topFans = new HashMap<>();
         listeners = new HashSet<>();
+        listTopFans = new ArrayList<>();
     }
 
     /**
@@ -76,5 +75,6 @@ public class ArtistStats {
         topSongs.clear();
         topFans.clear();
         listeners.clear();
+        listTopFans.clear();
     }
 }
