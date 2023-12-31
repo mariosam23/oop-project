@@ -647,28 +647,6 @@ public final class Admin {
         return "%s has added new merchandise successfully.".formatted(username);
     }
 
-    public String removeMerch(final CommandInput command) {
-        String username = command.getUsername();
-        String merchName = command.getName();
-
-        if (validateArtistUser(username) != null) {
-            return validateArtistUser(username);
-        }
-
-        Artist currentArtist = getArtist(username);
-        Merchandise searchedMerch = currentArtist.getMerch().stream()
-                .filter(merch -> merch.getName().equals(merchName))
-                .findFirst()
-                .orElse(null);
-
-        if (searchedMerch == null) {
-            return "%s doesn't have merchandise with the given name.".formatted(username);
-        }
-
-        currentArtist.getMerch().remove(searchedMerch);
-        return "%s deleted the merchandise successfully.".formatted(username);
-    }
-
     /**
      * Add announcement string.
      *
@@ -831,6 +809,12 @@ public final class Admin {
                 .map(Player::getCurrentAudioFile).filter(Objects::nonNull);
     }
 
+    /**
+     * Method that allows a user to subscribe/unsubscribe to an artist or host.
+     * To do that the user should be on the page of the artist or host.
+     * @param command
+     * @return a message that informs the user if the subscription was successful or not
+     */
     public String subscribe(final CommandInput command) {
         UserAbstract currentUser = getAbstractUser(command.getUsername());
         if (currentUser == null) {
@@ -838,7 +822,7 @@ public final class Admin {
         }
 
         String pageType = ((User) currentUser).getCurrentPage().pageType();
-        String pageOwnerName = ((User)currentUser).getCurrentPage().pageOwner();
+        String pageOwnerName = ((User) currentUser).getCurrentPage().pageOwner();
 
         if (!pageType.equals("Artist") && !pageType.equals("Host")) {
             return "To subscribe you need to be on the page of an artist or host.";
@@ -865,6 +849,11 @@ public final class Admin {
         }
     }
 
+    /**
+     * Buys merch for user that is currently on an artist page.
+     * @param cmd
+     * @return
+     */
     public String buyMerch(final CommandInput cmd) {
         String username = cmd.getUsername();
         String merchName = cmd.getName();
@@ -897,6 +886,11 @@ public final class Admin {
         return "%s has added new merch successfully.".formatted(username);
     }
 
+    /**
+     * Upgrades a basic user to a premium user.
+     * @param cmd
+     * @return
+     */
     public String buyPremium(final CommandInput cmd) {
         String username = cmd.getUsername();
 
@@ -910,14 +904,25 @@ public final class Admin {
         }
 
         user.setPremium(true);
+        Player userPlayer = user.getPlayer();
+        userPlayer.updateHistory();
+
+        userPlayer.getPremiumStarts().add(userPlayer.getHistory().size());
+
         return "%s bought the subscription successfully.".formatted(username);
     }
 
+    /**
+     * Cancel premium subscription for user and distribute the revenue to the artists.
+     * @param cmd
+     * @return
+     */
     public String cancelPremium(final CommandInput cmd) {
         String username = cmd.getUsername();
 
-        if (validateNormalUser(username) != null) {
-            return validateNormalUser(username);
+        String validationMessage = validateNormalUser(username);
+        if (validationMessage != null) {
+            return validationMessage;
         }
 
         User user = getUser(username);
@@ -926,9 +931,59 @@ public final class Admin {
         }
 
         user.setPremium(false);
+        Player userPlayer = user.getPlayer();
+        userPlayer.updateHistory();
+
+        int startIdx = userPlayer.getPremiumStarts().get(userPlayer.getPremiumStarts().size() - 1);
+        int endIdx = userPlayer.getHistory().size();
+
+        userPlayer.getPremiumEnds().add(endIdx);
+        distributePremiumRevenue(user, startIdx, endIdx);
+
         return "%s cancelled the subscription successfully.".formatted(username);
     }
 
+    /**
+     * Distributes the revenue to an artist based on the period the user was premium.
+     * @param user
+     * @param startIdx
+     * @param endIdx
+     */
+    public void distributePremiumRevenue(final User user, final int startIdx, final int endIdx) {
+        Player userPlayer = user.getPlayer();
+
+        List<AudioFile> premiumSongs = new ArrayList<>(userPlayer.getHistory()
+                .subList(startIdx, endIdx));
+
+        if (premiumSongs.isEmpty()) {
+            return;
+        }
+
+        final double budget = 1000000;
+        final int nrSongs = premiumSongs.size();
+
+        for (AudioFile song : premiumSongs) {
+            ArtistRevenue revenue = userInteractions.get(song.getOwner());
+
+            if (revenue == null) {
+                continue;
+            }
+
+            final double amountForArtist = budget / nrSongs;
+
+            revenue.getProfitSongs().putIfAbsent(song.getName(), 0.0);
+            revenue.getProfitSongs().put(song.getName(), revenue.getProfitSongs()
+                    .get(song.getName()) + amountForArtist);
+            revenue.setSongRevenue(revenue.getSongRevenue() + amountForArtist);
+        }
+    }
+
+    /**
+     * Updates the suggestions for user based on three strategies: random song, random playlist,
+     * fans playlist.
+     * @param cmd
+     * @return
+     */
     public String updateRecommendations(final CommandInput cmd) {
         String type = cmd.getRecommendationType();
         String username = cmd.getUsername();
@@ -983,6 +1038,11 @@ public final class Admin {
         }
     }
 
+    /**
+     * Loads the last suggestion for user.
+     * @param cmd
+     * @return
+     */
     public String loadRecommendations(final CommandInput cmd) {
         String username = cmd.getUsername();
         if (validateNormalUser(username) != null) {

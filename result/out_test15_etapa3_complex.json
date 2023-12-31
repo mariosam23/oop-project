@@ -24203,86 +24203,86 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Imagine Dragons" : {
-      "merchRevenue" : 7700.0,
-      "songRevenue" : 0.0,
-      "ranking" : 1,
-      "mostProfitableSong" : "N/A"
-    },
-    "ABBA" : {
-      "merchRevenue" : 1500.0,
-      "songRevenue" : 0.0,
-      "ranking" : 2,
-      "mostProfitableSong" : "N/A"
-    },
-    "Chuck Berry" : {
+    "Fleetwood Mac" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 3,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 3982973.56,
+      "ranking" : 1,
+      "mostProfitableSong" : "Songbird - 2004 Remastered Edition"
     },
     "Eminem" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 4,
-      "mostProfitableSong" : "N/A"
-    },
-    "Fleetwood Mac" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 5,
-      "mostProfitableSong" : "N/A"
-    },
-    "Jimi Hendrix" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 6,
-      "mostProfitableSong" : "N/A"
-    },
-    "Johnny Cash" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 7,
-      "mostProfitableSong" : "N/A"
-    },
-    "Led Zeppelin" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 8,
-      "mostProfitableSong" : "N/A"
-    },
-    "Madonna" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 9,
-      "mostProfitableSong" : "N/A"
-    },
-    "Marvin Gaye" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 10,
-      "mostProfitableSong" : "N/A"
-    },
-    "Michael Jackson" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 11,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 3476241.49,
+      "ranking" : 2,
+      "mostProfitableSong" : "Under The Influence"
     },
     "Nothing But Thieves" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 12,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 3208548.9,
+      "ranking" : 3,
+      "mostProfitableSong" : "Afterlife"
     },
-    "Taylor Swift" : {
+    "Marvin Gaye" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 13,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 2998205.9,
+      "ranking" : 4,
+      "mostProfitableSong" : "Joy"
     },
     "U2" : {
       "merchRevenue" : 0.0,
+      "songRevenue" : 2712353.43,
+      "ranking" : 5,
+      "mostProfitableSong" : "Running to Stand Still"
+    },
+    "Jimi Hendrix" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2315615.31,
+      "ranking" : 6,
+      "mostProfitableSong" : "Can You See Me"
+    },
+    "Johnny Cash" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2182329.94,
+      "ranking" : 7,
+      "mostProfitableSong" : "I'm A Drifter - Version 1"
+    },
+    "Taylor Swift" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2026551.55,
+      "ranking" : 8,
+      "mostProfitableSong" : "Delicate 易碎"
+    },
+    "Michael Jackson" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2010443.29,
+      "ranking" : 9,
+      "mostProfitableSong" : "Jam"
+    },
+    "Led Zeppelin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1955059.18,
+      "ranking" : 10,
+      "mostProfitableSong" : "Misty Mountain Hop"
+    },
+    "ABBA" : {
+      "merchRevenue" : 1500.0,
+      "songRevenue" : 1555670.05,
+      "ranking" : 11,
+      "mostProfitableSong" : "Why Did It Have to Be Me"
+    },
+    "Madonna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 956731.38,
+      "ranking" : 12,
+      "mostProfitableSong" : "Frozen"
+    },
+    "Chuck Berry" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 619276.02,
+      "ranking" : 13,
+      "mostProfitableSong" : "Reelin' And Rockin' - Single Version"
+    },
+    "Imagine Dragons" : {
+      "merchRevenue" : 7700.0,
       "songRevenue" : 0.0,
       "ranking" : 14,
       "mostProfitableSong" : "N/A"

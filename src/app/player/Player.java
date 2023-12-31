@@ -25,6 +25,10 @@ public final class Player {
     private ArrayList<PodcastBookmark> bookmarks = new ArrayList<>();
     @Getter @Setter
     private ArrayList<AudioFile> history = new ArrayList<>();
+    @Getter @Setter
+    private ArrayList<Integer> premiumStarts = new ArrayList<>();
+    @Getter @Setter
+    private ArrayList<Integer> premiumEnds = new ArrayList<>();
 
     /**
      * Instantiates a new Player.

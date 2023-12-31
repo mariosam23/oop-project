@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class that implements the strategy for the random song recommendation.
+ */
 public class RandomSongStrategy extends RecommendationStrategy {
     private final Integer minElapsedTime = 30;
 
@@ -19,6 +22,10 @@ public class RandomSongStrategy extends RecommendationStrategy {
         super(currentUser);
     }
 
+    /**
+     * Calculates the random song recommendation for the current user.
+     * @return
+     */
     @Override
     public LibraryEntry getRecommendation() {
         UserAbstract user = super.getUserAbstract();

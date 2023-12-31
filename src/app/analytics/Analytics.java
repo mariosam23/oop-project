@@ -1,5 +1,6 @@
 package app.analytics;
 
+import app.Admin;
 import app.analytics.monetization.ArtistRevenue;
 import app.analytics.statistics.UserStats;
 import app.audio.Collections.Album;
@@ -8,6 +9,7 @@ import app.audio.Files.AudioFile;
 import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.commandHandle.OutputBuilder;
+import app.player.Player;
 import app.user.Artist;
 import app.user.Host;
 import app.user.User;
@@ -107,6 +109,17 @@ public final class Analytics {
      * @return the output
      */
     public static ObjectNode endProgram(final Map<String, ArtistRevenue> artistRevenues) {
+        for (User user : Admin.getInstance().getUsers()) {
+            user.getPlayer().updateHistory();
+
+            if (user.isPremium()) {
+                Player player = user.getPlayer();
+                int startIdx = player.getPremiumStarts().get(player.getPremiumStarts().size() - 1);
+                int endIdx = player.getHistory().size();
+                Admin.getInstance().distributePremiumRevenue(user, startIdx, endIdx);
+            }
+        }
+
         List<Map.Entry<String, ArtistRevenue>> sortedEntries = artistRevenues.entrySet().stream()
                 .sorted(Comparator.comparing(
                                 (Map.Entry<String, ArtistRevenue> entry) -> entry
@@ -130,14 +143,17 @@ public final class Analytics {
             final List<Map.Entry<String, ArtistRevenue>> sortedEntries) {
         LinkedHashMap<String, Map<String, Object>> results = new LinkedHashMap<>();
         int rank = 1;
+        final double oneHundred = 100.00;
 
         for (Map.Entry<String, ArtistRevenue> entry : sortedEntries) {
             ArtistRevenue revenue = entry.getValue();
             Map<String, Object> details = new LinkedHashMap<>();
 
             details.put("merchRevenue", revenue.getMerchRevenue());
-            details.put("songRevenue", revenue.getSongRevenue());
+            details.put("songRevenue", Math.round(revenue.getSongRevenue()
+                    * oneHundred) / oneHundred);
             details.put("ranking", rank++);
+            revenue.findMostProfitableSong();
             details.put("mostProfitableSong", revenue.getMostProfitableSong());
 
             results.put(entry.getKey(), details);
@@ -260,7 +276,13 @@ public final class Analytics {
                 .build();
     }
 
-    public static List<String> updateFans(final Artist artist, final List<User> users) {
+    /**
+     * Updates the fans for an artist. It first updates every user's history.
+     * Then filter all songs that are not from the artist for every user.
+     * @param artist
+     * @param users
+     */
+    public static void updateFans(final Artist artist, final List<User> users) {
         artist.getStats().reset();
         for (User user : users) {
             user.getPlayer().updateHistory();
@@ -276,8 +298,6 @@ public final class Analytics {
 
         artist.getStats().setListTopFans(new ArrayList<>(getTopFiveSortedByCount(artist.getStats()
                 .getTopFans()).keySet()));
-
-        return artist.getStats().getListTopFans();
     }
 
 

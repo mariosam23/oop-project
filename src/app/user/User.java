@@ -1,8 +1,6 @@
 package app.user;
 
 import app.Admin;
-import app.analytics.monetization.ArtistRevenue;
-import app.analytics.statistics.ArtistStats;
 import app.analytics.statistics.UserStats;
 import app.audio.Collections.AudioCollection;
 import app.audio.Collections.Playlist;
@@ -167,9 +165,10 @@ public final class User extends UserAbstract {
         if (!searchBar.getLastSearchType().equals("song")
             && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
-        } else if (searchBar.getLastSearchType().equals("song")){
+        } else if (searchBar.getLastSearchType().equals("song")) {
             String artistName = ((Song) searchBar.getLastSelected()).getArtist();
-            Admin.getInstance().getUserInteractions().putIfAbsent(artistName, new ArtistRevenue());
+            Artist artist = Admin.getInstance().getArtist(artistName);
+            Admin.getInstance().getUserInteractions().putIfAbsent(artistName, artist.getRevenue());
         }
 
         player.setSource((LibraryEntry) searchBar.getLastSelected(),
@@ -617,15 +616,24 @@ public final class User extends UserAbstract {
         backHistory.push(page);
     }
 
+    /**
+     * Navigates to the previous page.
+     * @return
+     */
     public String previousPage() {
         if (backHistory.size() > 1) {
             forwardHistory.push(backHistory.pop());
-            return "The user " + getUsername() + " has navigated successfully to the previous page.";
+            return "The user " + getUsername() + " has navigated successfully to"
+                    + " the previous page.";
         } else {
             return "There are no pages left to go back.";
         }
     }
 
+    /**
+     * Navigates to the next page.
+     * @return
+     */
     public String nextPage() {
         if (!forwardHistory.isEmpty()) {
             backHistory.push(forwardHistory.pop());

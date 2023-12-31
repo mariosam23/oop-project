@@ -5,11 +5,8 @@ import app.audio.Files.Song;
 import app.user.User;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * The type Home page.
@@ -47,7 +44,8 @@ public final class HomePage extends Page {
                         followedPlaylists.stream().sorted((o1, o2) ->
                                         o2.getSongs().stream().map(Song::getLikes)
                                                 .reduce(Integer::sum).orElse(0)
-                                                - o1.getSongs().stream().map(Song::getLikes).reduce(Integer::sum)
+                                                - o1.getSongs().stream().map(Song::getLikes)
+                                                .reduce(Integer::sum)
                                                 .orElse(0)).limit(limit).map(Playlist::getName)
                                 .toList(),
                         songRecommendations.stream()

@@ -10,11 +10,18 @@ import app.user.User;
 import app.user.UserAbstract;
 import java.util.*;
 
+/**
+ * Class that implements the strategy for the fans playlist recommendation.
+ */
 public class FansPlaylistStrategy extends RecommendationStrategy {
     public FansPlaylistStrategy(final UserAbstract currentArtist) {
         super(currentArtist);
     }
 
+    /**
+     * Calculates the fans playlist recommendation for the current artist.
+     * @return
+     */
     @Override
     public LibraryEntry getRecommendation() {
         Artist artist = (Artist) super.getUserAbstract();

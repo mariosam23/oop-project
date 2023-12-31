@@ -2,14 +2,12 @@ package app.commandHandle;
 
 import app.Admin;
 import app.analytics.Analytics;
-import app.analytics.monetization.ArtistRevenue;
 import app.audio.Collections.output.AlbumOutput;
 import app.audio.Collections.output.PlaylistOutput;
 import app.audio.Collections.output.PodcastOutput;
 import app.player.PlayerStats;
 import app.searchBar.filters.Filters;
 import app.user.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.CommandInput;
 
@@ -419,11 +417,6 @@ public final class CommandRunner {
         return new OutputBuilder<>(commandInput).withMessage(message).build();
     }
 
-    public static ObjectNode removeMerch(final CommandInput commandInput) {
-        String message = admin.removeMerch(commandInput);
-        return new OutputBuilder<>(commandInput).withMessage(message).build();
-    }
-
     /**
      * Add announcement object node.
      *
@@ -600,14 +593,13 @@ public final class CommandRunner {
 
         if (user.userType().equals("user")) {
             return Analytics.wrappedUser((User) user, commandInput);
-        }
-        else if (user.userType().equals("artist")) {
+        } else if (user.userType().equals("artist")) {
             return Analytics.wrappedArtist((Artist) user, admin.getUsers(), commandInput);
         } else if (user.userType().equals("host")) {
             return Analytics.wrappedHost((Host) user, admin.getUsers(), commandInput);
         }
 
-        return null;
+        throw new IllegalArgumentException("Invalid user type!");
     }
 
     /**
@@ -636,24 +628,44 @@ public final class CommandRunner {
         return new OutputBuilder<String>(cmd).withResult(user.getMerchBought()).build();
     }
 
+    /**
+     * Buys premium for user.
+     * @param cmd
+     * @return
+     */
     public static ObjectNode buyPremium(final CommandInput cmd) {
         String message = admin.buyPremium(cmd);
 
         return new OutputBuilder<>(cmd).withMessage(message).build();
     }
 
+    /**
+     * Cancels premium for user.
+     * @param cmd
+     * @return
+     */
     public static ObjectNode cancelPremium(final CommandInput cmd) {
         String message = admin.cancelPremium(cmd);
 
         return new OutputBuilder<>(cmd).withMessage(message).build();
     }
 
+    /**
+     * Updates recommendations for user.
+     * @param cmd
+     * @return
+     */
     public static ObjectNode updateRecommendations(final CommandInput cmd) {
         String message = admin.updateRecommendations(cmd);
 
         return new OutputBuilder<>(cmd).withMessage(message).build();
     }
 
+    /**
+     * Loads recommendations for user.
+     * @param cmd
+     * @return
+     */
     public static ObjectNode loadRecommendations(final CommandInput cmd) {
         String message = admin.loadRecommendations(cmd);
 

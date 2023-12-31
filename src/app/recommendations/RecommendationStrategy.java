@@ -5,6 +5,10 @@ import app.user.UserAbstract;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Abstract class that contains the common fields and methods for all
+ * the recommendation strategies.
+ */
 @Getter @Setter
 public abstract class RecommendationStrategy {
     protected LibraryEntry lastRecommendation = null;

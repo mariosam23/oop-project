@@ -194,12 +194,6 @@ public enum CommandTypes {
             return CommandRunner.addMerch(command);
         }
     },
-    REMOVE_MERCH {
-        @Override
-        public ObjectNode execute(final CommandInput command) {
-            return CommandRunner.removeMerch(command);
-        }
-    },
     ADD_PODCAST {
         @Override
         public ObjectNode execute(final CommandInput command) {

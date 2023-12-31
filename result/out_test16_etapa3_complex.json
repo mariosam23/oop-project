@@ -25782,95 +25782,95 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "ABBA" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 1,
-      "mostProfitableSong" : "N/A"
-    },
     "Adele" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 2,
-      "mostProfitableSong" : "N/A"
-    },
-    "Aretha Franklin" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 3,
-      "mostProfitableSong" : "N/A"
-    },
-    "Bob Dylan" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 4,
-      "mostProfitableSong" : "N/A"
-    },
-    "Bruce Springsteen" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 5,
-      "mostProfitableSong" : "N/A"
-    },
-    "Elton John" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 6,
-      "mostProfitableSong" : "N/A"
-    },
-    "Johnny Cash" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 7,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 6120609.78,
+      "ranking" : 1,
+      "mostProfitableSong" : "Melt My Heart to Stone"
     },
     "Joni Mitchell" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 8,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 4820546.42,
+      "ranking" : 2,
+      "mostProfitableSong" : "You're My Thrill"
     },
     "Nirvana" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 9,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 4206699.67,
+      "ranking" : 3,
+      "mostProfitableSong" : "Come as You Are"
     },
-    "Radiohead" : {
+    "Bob Dylan" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 10,
-      "mostProfitableSong" : "N/A"
-    },
-    "Rihanna" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 11,
-      "mostProfitableSong" : "N/A"
-    },
-    "Stevie Wonder" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 12,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 4066209.28,
+      "ranking" : 4,
+      "mostProfitableSong" : "Subterranean Homesick Blues"
     },
     "The Beach Boys" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 13,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 3664860.14,
+      "ranking" : 5,
+      "mostProfitableSong" : "Girl Don't Tell Me"
+    },
+    "Stevie Wonder" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2896930.52,
+      "ranking" : 6,
+      "mostProfitableSong" : "You Are The Sunshine Of My Life - Single Version With Horns"
     },
     "The Beatles" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 14,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 2532131.87,
+      "ranking" : 7,
+      "mostProfitableSong" : "You Never Give Me Your Money - Remastered 2009"
+    },
+    "Rihanna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2225139.46,
+      "ranking" : 8,
+      "mostProfitableSong" : "Consideration"
+    },
+    "Elton John" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 2083043.41,
+      "ranking" : 9,
+      "mostProfitableSong" : "Hercules"
+    },
+    "ABBA" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1936629.55,
+      "ranking" : 10,
+      "mostProfitableSong" : "Dancing Queen"
     },
     "The Rolling Stones" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 1932059.66,
+      "ranking" : 11,
+      "mostProfitableSong" : "I Am Waiting"
+    },
+    "Bruce Springsteen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1785410.24,
+      "ranking" : 12,
+      "mostProfitableSong" : "Born to Run"
+    },
+    "Johnny Cash" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1669387.05,
+      "ranking" : 13,
+      "mostProfitableSong" : "Personal Jesus"
+    },
+    "Radiohead" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 791831.78,
+      "ranking" : 14,
+      "mostProfitableSong" : "Weird Fishes/Arpeggi"
+    },
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 98699.86,
       "ranking" : 15,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "Night Life"
     }
   }
 } ]

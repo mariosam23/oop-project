@@ -8,6 +8,9 @@ import app.user.UserAbstract;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Class that implements the strategy for the random playlist recommendation.
+ */
 public class RandomPlaylistStrategy extends RecommendationStrategy {
     public RandomPlaylistStrategy(final UserAbstract currentUser) {
         super(currentUser);
@@ -20,6 +23,10 @@ public class RandomPlaylistStrategy extends RecommendationStrategy {
         }
     }
 
+    /**
+     * Calculates the random playlist recommendation for the current user.
+     * @return
+     */
     @Override
     public Playlist getRecommendation() {
         UserAbstract user = super.getUserAbstract();

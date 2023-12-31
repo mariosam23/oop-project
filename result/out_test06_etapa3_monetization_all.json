@@ -12526,83 +12526,83 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Aretha Franklin" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 1,
-      "mostProfitableSong" : "N/A"
-    },
-    "Bob Dylan" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 2,
-      "mostProfitableSong" : "N/A"
-    },
     "Bob Marley" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 3,
-      "mostProfitableSong" : "N/A"
-    },
-    "Bruce Springsteen" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 4,
-      "mostProfitableSong" : "N/A"
-    },
-    "Fleetwood Mac" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 5,
-      "mostProfitableSong" : "N/A"
-    },
-    "Frank Sinatra" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 6,
-      "mostProfitableSong" : "N/A"
-    },
-    "Jimi Hendrix" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 7,
-      "mostProfitableSong" : "N/A"
-    },
-    "Joni Mitchell" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 8,
-      "mostProfitableSong" : "N/A"
-    },
-    "Led Zeppelin" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 9,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 4026503.42,
+      "ranking" : 1,
+      "mostProfitableSong" : "400 Years"
     },
     "Madonna" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 10,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 2732648.82,
+      "ranking" : 2,
+      "mostProfitableSong" : "Hung Up"
     },
-    "Marvin Gaye" : {
+    "Joni Mitchell" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 11,
-      "mostProfitableSong" : "N/A"
-    },
-    "Stevie Wonder" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 12,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 1930437.02,
+      "ranking" : 3,
+      "mostProfitableSong" : "For Free"
     },
     "The Beatles" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 1870726.47,
+      "ranking" : 4,
+      "mostProfitableSong" : "Because - Remastered 2009"
+    },
+    "Jimi Hendrix" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1755336.68,
+      "ranking" : 5,
+      "mostProfitableSong" : "Foxy Lady"
+    },
+    "Frank Sinatra" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1699361.18,
+      "ranking" : 6,
+      "mostProfitableSong" : "Silent Night"
+    },
+    "Stevie Wonder" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1576477.71,
+      "ranking" : 7,
+      "mostProfitableSong" : "Sir Duke"
+    },
+    "Marvin Gaye" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1542558.96,
+      "ranking" : 8,
+      "mostProfitableSong" : "God Is Love"
+    },
+    "Bob Dylan" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1498452.01,
+      "ranking" : 9,
+      "mostProfitableSong" : "Corrina, Corrina"
+    },
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1479258.78,
+      "ranking" : 10,
+      "mostProfitableSong" : "Respect"
+    },
+    "Fleetwood Mac" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1359889.41,
+      "ranking" : 11,
+      "mostProfitableSong" : "Gold Dust Woman"
+    },
+    "Bruce Springsteen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1332643.97,
+      "ranking" : 12,
+      "mostProfitableSong" : "No Surrender"
+    },
+    "Led Zeppelin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1195705.55,
       "ranking" : 13,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "Babe I'm Gonna Leave You"
     }
   }
 } ]
