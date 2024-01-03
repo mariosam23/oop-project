@@ -1,4 +1,4 @@
-package app.user;
+package app.notifications;
 
 import lombok.Getter;
 import lombok.Setter;

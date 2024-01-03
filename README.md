@@ -1,18 +1,21 @@
-# Proiect GlobalWaves - Etapa 2 - Pagination
+# Proiect GlobalWaves
 
 ---
 
-### Prezentarea aplicatiei
+### Application Overview
 
-&emsp; Aceasta este etapa a doua a proiectului `GlobalWaves`, care imita functionalitatile Spotify. Un utilizator poate sa isi creeze playlist-uri, aprecieze melodiile favorite, precum si sa vada recomandarile facute de aplicatie pentru acesta. De asemenea, aplicatie ofera functionalitati pentru creatorii de continut, care pot adauga cu usurinta in baza de date melodii, albume, podcast-uri si isi pot personaliza dupa plac pagina.
+&emsp; This is the last stage of the `GlobalWaves` project , which emulates Spotify's
+functionalities. A user can create playlists, like favorite songs, and view the 
+application's recommendations for them. Additionally, the application offers features 
+for content creators, who can easily add songs, albums, podcasts to the database, and 
+personalize their page to their liking. This app is known for well paying its artists,
+and for very good recommendations.
 
 ---
 
-### Mostenirile folosite
+### Inheritance Hierarchy
 
 - LibraryEntry
-  - Artist
-  - Host
   - AudioFile
     -  Song
     - Episode
@@ -22,6 +25,24 @@
     - Playlist
 
 
+- SearchBase
+  - SearchCreator
+    - SearchArtistStrategy
+    - SearchHostStrategy
+  - SearchAudio
+    - SearchAlbumStrategy
+    - SearchPlaylistStrategy
+    - SearchPodcastStrategy
+    - SearchSongStrategy
+
+
+- UserAbstract
+  - ContentCreator
+    - Artist
+    - Host
+  - User
+
+
 - Page
   - ArtistPage
   - HostPage
@@ -29,83 +50,81 @@
   - UserContentPage
 
 
-- SearchStrategyBase, care implementeaza interfata SearchStrategy
-  - SearchAlbumStrategy
-  - SearchArtistStrategy
-  - SearchHostStrategy
-  - SearchPlaylistStrategy
-  - SearchPodcastStrategy
-  - SearchSongStrategy
+- RecommendationStrategy
+  - FansPlaylistStrategy
+  - RandomPlaylistStrategy
+  - RandomSongStrategy
+---
+
+### Package Structure
+
+- audio/ &rarr; Contains all the audio files and collection of audio files.
+  All audio files inherit the `LibraryEntry` class.
+- commandHandle/ &rarr; Manages the commands of users, artists, hosts.
+  - The OutputBuilder class uses the Builder design pattern.
+    This pattern facilitates the construction of an output message, tailored to
+    the specifics of each command. Generics were used for quality coding.
+  - The CommandType class is an enum, incorporating anonymous classes
+    to implement the abstract execute method within it.
+    This approach is a variant of the Command design pattern.
+  - The CommandExecution class interacts with CommandType, adding to the dictionary
+    all methods defined in the enum. When a command is invoked, it is searched
+    in the dictionary and the execute method is called.
+
+
+- pages/ &rarr; Contains pages of each user along with their content.
+
+
+- player/ &rarr; Presents classes that offer basic functionalities of a player.
+  Each regular user has their own player, from where they can listen to music, albums,
+  playlists, podcasts.
+
+
+- recommendations/ &rarr; Contains classes that implement recommendation strategies.
+  - The Strategy design pattern was used to implement a specific recommendation algorithm
+  for each type of audio file or content creator.
+
+
+- searchBar/ &rarr; Contains search strategies and applicable filters.
+  - The Strategy design pattern was used to implement a specific search algorithm for
+  each type of audio file or content creator. _Factory_ in combination with _Singleton_ was implemented
+  to generate instances of strategies in this package.
+
+
+- users/ &rarr; Presents classes that define the application's users: regular user,
+  artist, and host.
 
 ---
 
-### Descrierea pachetelor
-
-- audio/ &rarr; Pachetul ce contine toate entitatile audio din cadrul aplicatiei.
-Toate fisierele audio mostenesc clasa LibraryEntry.
-
-
-- commandHandle/ &rarr; Se ocupa de gestionarea comenzilor utilizatorilor, artistilor, host-urilor.
-  - Clasa `OutputBuilder` utilizeaza modelul de design **Builder**. 
-  Acest model faciliteaza construirea unui mesaj de iesire, adaptat
-  particularitatilor fiecarei comenzi. Am folosit genericitatea pentru un cod mai calitativ.
-  - Clasa `CommandType` este un enum, care incorporeaza clase anonime
-  pentru a implementa metoda abstracta _execute_ din interiorul acesteia.
-  Aceasta abordare este o varianta a modelului de design **Command**.
-  - Clasa `CommandExecution`, interactioneaza cu `CommandType`, adaugand in dictionar
-  toate metodele definite in enum. Cand o comanda este invocata, se cauta 
-  in dictionar si se apeleaza metoda _execute_.
+### Design Patterns
+- **Builder**: This design pattern was used to construct output messages, tailored to
+  each command. Thus, code repetition was avoided and a more qualitative code was offered.
+  The `OutputBuilder` class implements this design pattern.
 
 
-
-- pages/ &rarr; Contine paginile fiecarui utilizator impreuna cu continutul accestora.
-  - Am folosit clasa `PageFactory` pentru a genera instante ale claselor inrudite din acest
-pachet. Aceasta este de tip **Singleton** pentru eficienta din punct de vedere al memoriei.
-
-
-- player/ &rarr; Prezinta clase care ofera functionalitatile de baza ale unui player.
-Fiecare utilizator normal are propriul player, de unde poate asculta muzica, albume,
-playlist-uri, podcast-uri.
+- **Command**: This design pattern was used to implement the commands of users,
+  artists, and hosts. The CommandType class is an enum, incorporating anonymous classes
+  to implement the abstract execute method within it.
 
 
-- searchBar/ &rarr; Contine strategiile de cautare si filtrele care pot fi aplicate.
-  - Am folosit modelul de design **Strategy** pentru a implementa un algoritm de
-  cautare specific fiecarui tip de fisier audio sau creator de continut. Am implementat
-  **Factory** pentru a genera instante ale strategiilor din acest pachet.
+- **Factory**: Used to generate instances of related classes in the `searchBar` package.
 
 
-- users/ &rarr; Prezinta clasele care definesc utilizatorii aplicatiei: utilizator normal
-, artist si host.
-
----
-### Descrierea modelelor de design folosite
-- **Builder**: Am folosit acest model de design pentru a construi mesaje de iesire, adaptate
-  fiecarei comenzi in parte. Astfel, am putut sa evit repetarea codului si sa
-  ofer un cod mai calitativ. Clasa `OutputBuilder` implementeaza acest model de design.
+- **Strategy**: This design pattern was used to implement a specific search algorithm for
+  each type of audio file or content creator. Was also used to implement a specific
+  recommendation algorithm.
 
 
-- **Command**: Am folosit acest model de design pentru a implementa comenzile utilizatorilor,
-  artistilor si host-urilor. Clasa `CommandType` este un enum, care incorporeaza clase anonime
-  pentru a implementa metoda abstracta _execute_ din interiorul acesteia.
-
-
-- **Factory**: Folosit pentru a genera instante ale claselor inrudite (vezi pachetele `pages`
-  si `searchBar`).
-
-
-- **Strategy**: Am folosit acest model de design pentru a implementa un algoritm de cautare
-  specific fiecarui tip de fisier audio sau creator de continut.
-
-
-- **Singleton**: Utilizat pentru clasa `Admin` si impreuna cu clasele de tip _factory_, pentru
-  a fi eficienti din punct de vedere al memoriei utilizate, intrucat este nevoie de o singura
-  instanta a acestora.
+- **Singleton**: Used for the Admin class and together with factory type classes, for
+  memory efficiency as there is a need for only one instance of these.
 
 ---
 
-#### Mentiuni
-  - Am folosit scheletul de cod de la rezolvarea oficiala.
-  - Am folosit Chat-GPT pentru a inlocui for-uri/while-uri imbricate cu stream-uri.
+#### Notes
+- The official solution's code skeleton was used.
+- Chat-GPT was used to: 
+  - replace nested for/while loops with streams.
+  - sort hashmaps.
 
 ---
 
