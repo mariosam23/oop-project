@@ -118,15 +118,5 @@ and for very good recommendations.
 - **Singleton**: Used for the Admin class and together with factory type classes, for
   memory efficiency as there is a need for only one instance of these.
 
----
-
-#### Notes
-- The official solution's code skeleton was used.
-- Chat-GPT was used to: 
-  - replace nested for/while loops with streams.
-  - sort hashmaps.
-
----
-
 
 #### &copy; Sampetru Mario 321Ca
