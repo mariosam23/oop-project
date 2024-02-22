@@ -118,5 +118,6 @@ and for very good recommendations.
 - **Singleton**: Used for the Admin class and together with factory type classes, for
   memory efficiency as there is a need for only one instance of these.
 
+---
 
 #### &copy; Sampetru Mario 321Ca
